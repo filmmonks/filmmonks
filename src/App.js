@@ -49,7 +49,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <div className="container">
+      <div>
         <nav>
           <Navbar />
         </nav>
