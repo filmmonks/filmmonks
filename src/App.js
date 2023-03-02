@@ -6,7 +6,9 @@ import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material/styles";
 import { green, purple } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
-import "./index.css"
+import "./index.css";
+import Contact from "./components/Page/Contact/Contact";
+import { Route, Routes } from "react-router-dom";
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,7 +20,7 @@ const theme = createTheme({
   },
   typography: {
     fontSize: 16,
-    fontFamily:'Inter',
+    fontFamily: "Inter",
     h1: {
       fontSize: "40px",
       fontWeight: "400",
@@ -39,21 +41,24 @@ const theme = createTheme({
       fontSize: "18px",
       fontWeight: "400",
     },
-    p:{
+    p: {
       fontSize: "16px",
       fontWeight: "400",
-    }
+    },
   },
 });
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
+      <CssBaseline />
       <div>
         <nav>
           <Navbar />
         </nav>
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </ThemeProvider>
   );
