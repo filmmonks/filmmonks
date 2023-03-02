@@ -8,6 +8,10 @@ import { green, purple } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
 import "./index.css";
 
+import Contact from "./components/Page/Contact/Contact";
+import { Route, Routes } from "react-router-dom";
+
+
 import Footer from "./components/Shared/Footer/Footer";
 // const theme = createTheme({
 //   palette: {
@@ -102,11 +106,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
+      <div>
+
       <div className="bg-[#000]">
+
         <nav>
           <Navbar />
         </nav>
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
     </ThemeProvider>
 
