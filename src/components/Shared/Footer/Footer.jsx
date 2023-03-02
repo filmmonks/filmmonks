@@ -63,7 +63,7 @@ const Footer = () => {
   return (
     <div
       style={{ background: `url(${img})`, backgroundSize: "cover" }}
-      className="w-full"
+      className=""
     >
       <Container
         maxWidth="md"
