@@ -84,6 +84,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import logo from "../../../Assets/Logo/logo.png";
+import { useState } from "react";
+import { useEffect } from "react";
+import { makeStyles } from "@mui/styles";
+import { useRef } from "react";
 
 const drawerWidth = 240;
 const navItems = [
@@ -127,11 +131,37 @@ function Navbar(props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+  // const [navBackground, setNavBackground] = useState("appBarTransparent");
 
+  // // const useStyles = makeStyles((theme) => ({
+  // //   appBarTransparent: {
+  // //     backgroundColor: "transparent",
+  // //   },
+  // //   appBarSolid: "#F45656",
+  // // }));
+  // // const classes = useStyles();
+  // // const navRef = useRef();
+  // // navRef.current = navBackground;
+  // // useEffect(() => {
+  // //   const handleScroll = () => {
+  // //     const show = window.scrollY > 310;
+  // //     console.log(window.scrollY);
+  // //     if (show) {
+  // //       setNavBackground("appBarSolid");
+  // //     } else {
+  // //       setNavBackground("appBarTransparent");
+  // //     }
+  // //   };
+  // //   document.addEventListener("scroll", handleScroll);
+  // //   return () => {
+  // //     document.removeEventListener("scroll", handleScroll);
+  // //   };
+  // // });
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
+        // className={classes[navRef.current]}
         component="nav"
         sx={{
           backgroundColor: "transparent",
