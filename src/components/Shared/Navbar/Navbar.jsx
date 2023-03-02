@@ -14,9 +14,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import "./Navbar.css"
+import "./Navbar.css";
 import navbarData from "../../Data/NavbarData";
-
 
 const drawerWidth = 240;
 function Navbar(props) {
@@ -30,12 +29,12 @@ function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-      Filmmonks
+        Filmmonks
       </Typography>
       <Divider />
       <List>
         {navbarData.map((item) => (
-          <ListItem key={item} >
+          <ListItem key={item}>
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item.route} />
             </ListItemButton>
@@ -49,13 +48,18 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-   <div>
-    <ul>
-      <li>
-        {navbarData.map(data=><a style={{color:"white"}} key={data._id} href={data.path}> {data.route}</a>)}
-      </li>
-    </ul>
-   </div>
+    <div>
+      <ul>
+        <li>
+          {navbarData.map((data) => (
+            <a style={{ color: "white" }} key={data._id} href={data.path}>
+              {" "}
+              {data.route}
+            </a>
+          ))}
+        </li>
+      </ul>
+    </div>
   );
 }
 
