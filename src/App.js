@@ -7,6 +7,7 @@ import { createTheme } from "@mui/material/styles";
 import { green, purple } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
 import "./index.css";
+import { useEffect } from "react";
 const theme = createTheme({
   palette: {
     primary: {
