@@ -8,6 +8,7 @@ import { green, purple } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
 import "./index.css";
 import Footer from "./components/Shared/Footer/Footer";
+import { useEffect } from "react";
 // const theme = createTheme({
 //   palette: {
 //     primary: {
