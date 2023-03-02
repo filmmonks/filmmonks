@@ -6,7 +6,7 @@ import { ThemeProvider } from "@emotion/react";
 import { createTheme } from "@mui/material/styles";
 import { green, purple } from "@mui/material/colors";
 import { CssBaseline } from "@mui/material";
-import "./index.css"
+import "./index.css";
 const theme = createTheme({
   palette: {
     primary: {
@@ -18,7 +18,7 @@ const theme = createTheme({
   },
   typography: {
     fontSize: 16,
-    fontFamily:'Inter',
+    fontFamily: "Inter",
     h1: {
       fontSize: "40px",
       fontWeight: "400",
@@ -39,17 +39,17 @@ const theme = createTheme({
       fontSize: "18px",
       fontWeight: "400",
     },
-    p:{
+    p: {
       fontSize: "16px",
       fontWeight: "400",
-    }
+    },
   },
 });
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <div>
+      <CssBaseline />
+      <div className="bg-[#000]">
         <nav>
           <Navbar />
         </nav>

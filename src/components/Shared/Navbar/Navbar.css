@@ -11,3 +11,10 @@
 .css-sxsnpn-MuiButtonBase-root-MuiButton-root {
   padding: 20px !important;
 }
+.hover{
+  color: #fff ;
+}
+.hover:hover{
+  color: #F45656;
+  transition: ease 0.3s;
+}
