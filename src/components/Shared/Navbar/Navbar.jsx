@@ -83,11 +83,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+
+import "./Navbar.css";
+import navbarData from "../../Data/NavbarData";
+
 import logo from "../../../Assets/Logo/logo.png";
 import { useState } from "react";
 import { useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 import { useRef } from "react";
+
 
 const drawerWidth = 240;
 const navItems = [
@@ -114,12 +119,21 @@ function Navbar(props) {
       sx={{ textAlign: "center", color: "#000" }}
     >
       <Typography variant="h6" sx={{ my: 2 }}>
+
+        Filmmonks
+      </Typography>
+      <Divider />
+      <List>
+        {navbarData.map((item) => (
+          <ListItem key={item}>
+
         MUI
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
+
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText sx={{ color: "#000" }} primary={item} />
             </ListItemButton>
@@ -158,6 +172,20 @@ function Navbar(props) {
   // //   };
   // // });
   return (
+
+    <div>
+      <ul>
+        <li>
+          {navbarData.map((data) => (
+            <a style={{ color: "white" }} key={data._id} href={data.path}>
+              {" "}
+              {data.route}
+            </a>
+          ))}
+        </li>
+      </ul>
+    </div>
+
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
@@ -222,6 +250,7 @@ function Navbar(props) {
         </Drawer>
       </Box>
     </Box>
+
   );
 }
 
