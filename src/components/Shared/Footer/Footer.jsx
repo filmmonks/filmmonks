@@ -1,18 +1,3 @@
-// import React from "react";
-// import footer from "../../../Assets/Footer/footer.png";
-
-// const Footer = () => {
-//   return (
-//     <div
-//       className="screen"
-//       style={{ background: `url(${footer})`, backgroundSize: "cover" }}
-//     >
-//       <p className="text-[#fff]">Footer</p>
-//     </div>
-//   );
-// };
-
-// export default Footer;
 import React from "react";
 import { Grid, Link, Typography } from "@mui/material";
 import { Container } from "@mui/system";
