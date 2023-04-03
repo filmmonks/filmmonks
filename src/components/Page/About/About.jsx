@@ -1,8 +1,16 @@
-import { ImageList, ImageListItem, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
+import { ImageList, ImageListItem } from "@mui/material";
 import React from "react";
 import "./About.css";
+import { experimentalStyled as styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(2),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 function srcset(image, size, rows = 1, cols = 1) {
   return {
     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
@@ -13,47 +21,60 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 const About = () => {
   return (
-    <div className="about container">
-      <Stack sx={{ color: "white", width: "50%" }}>
-        <Typography variant="h1">about</Typography>
-        <Typography variant="p">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis fugiat
-          dolorum cumque earum inventore pariatur ipsum. Dolor eum at nobis
-          beatae alias delectus dolore vero, quaerat quis magnam eligendi neque
-          repellendus illum quidem eos ullam molestias autem deserunt nam iste?
+    <div className="bg-[#0F100B] grid grid-cols-2 gap-16">
+      <div className="container">
+        <h1>about</h1>
+        <h5>
+          FILM MONKS is a production house that specializes in the development
+          and production of a wide range of visual mediums, including fiction
+          and non-fiction cinema,onlinevideo content,television commercials,
+          event videographyand photography, music videos, and promotional
+          materials.
           <br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis cumque
-          at laboriosam repellat aliquid, error nemo harum deserunt non adipisci
-          dolor maiores dicta ratione quibusdam excepturi sunt unde. Fuga facere
-          sed perspiciatis officiis id harum! Maxime ratione itaque iure alias.
+          We place an emphasis on contemporary storylines and storytelling with
+          a focus on aesthetics. We strive to create cinematic experiences that
+          entertain and provoke thought, while keeping in mind the emotions,
+          arguments, traditions, nature, and crises that are universally
+          accessible to our audiences.
           <br />
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
-          soluta ab saepe ipsam quas ducimus minima necessitatibus rem qui
-          laborum libero eligendi cum odit rerum officia quibusdam nemo iusto.
-          Atque totam consectetur in ad corrupti blanditiis non odit dolor ut?
-        </Typography>
-      </Stack>
-      <ImageList
-      
-        sx={{ width:"50%", height: "87vh", rowGap:"0" }}
-        variant="quilted" 
-        cols={4}
-        rowHeight={121}
-      >
-        {itemData.map((item) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              {...srcset(item.img, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+          We aim to produce visually stunning and impactful content for our
+          clients
+        </h5>
+
+        <img
+          style={{
+            width: "400px",
+            marginLeft: "auto",
+            marginTop: "-164px",
+            transform: "rotate(120deg)",
+          }}
+          src="https://i.ibb.co/brJbQz8/world.png"
+          alt=""
+        />
+      </div>
+      <div>
+        {" "}
+        <ImageList
+          sx={{ width: "70%", height: "70vh", rowGap: "0" }}
+          variant="quilted"
+          cols={4}
+          rowHeight={121}
+        >
+          {itemData.map((item) => (
+            <ImageListItem
+              key={item.img}
+              cols={item.cols || 1}
+              rows={item.rows || 1}
+            >
+              <img
+                {...srcset(item.img, 121, item.rows, item.cols)}
+                alt={item.title}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
     </div>
   );
 };

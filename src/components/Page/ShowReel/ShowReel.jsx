@@ -4,13 +4,33 @@ import React from "react";
 
 const ShowReel = () => {
   return (
-    <Stack sx={{background:"white"}}>
-      <Typography variant="h1">showreel</Typography>
+    <Stack sx={{ background: "white" }}>
+      <Typography
+        variant="h3"
+        style={{
+          position: "absolute",
+          marginLeft: "42%",
+          zIndex: "20",
+        }}
+      >
+        showreel
+      </Typography>
       <img
-        style={{ width: "100%", height: "100vh" }}
-        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80"
+        style={{ width: "100%", height: "100vh", position: "relative" }}
+        src="https://i.ibb.co/VCHrmF9/showreel-back.png"
         alt=""
       />
+      <img
+        style={{
+          width: "1000px",
+          height: "450px",
+          position: "absolute",
+          marginTop: "100px",
+          marginLeft: "17%",
+        }}
+        src="https://i.ibb.co/MfSK7fD/showreel.png"
+        alt=""
+      />{" "}
     </Stack>
   );
 };
