@@ -11,6 +11,10 @@
   height: 100vh;
 }
 
+.card {
+  width: 340px;
+  height: 340px;
+}
 @layer utilities {
   .headline {
     font-size: 40px;

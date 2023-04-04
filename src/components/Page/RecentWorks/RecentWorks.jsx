@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from "@mui/material";
 import React from "react";
+import Headline from "../../TextComponents/Headline";
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -12,7 +13,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 const RecentWorks = () => {
   return (
     <div className="">
-      <h1>Our Resent Works </h1>
+      <Headline content="Our Resent Work" lastWord="s" />
       <p>
         Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien
         ornare morbin dd we can understand the fact po of film{" "}

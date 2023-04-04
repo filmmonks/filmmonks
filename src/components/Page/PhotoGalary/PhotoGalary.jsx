@@ -1,9 +1,11 @@
 import React from "react";
+import Headline from "../../TextComponents/Headline";
 
 const PhotoGalary = () => {
   return (
     <div>
-      <h1>PhotoGalary</h1>
+   
+     <Headline content=" Monks Galler" lastWord="y" />
     </div>
   );
 };

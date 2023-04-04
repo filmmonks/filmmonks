@@ -3,6 +3,7 @@ import React from "react";
 import "./About.css";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import Headline from "../../TextComponents/Headline";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -23,9 +24,7 @@ const About = () => {
   return (
     <div className="bg-[#0F100B] grid grid-cols-2 gap-16">
       <div className="container text-[#FFF8F8]">
-        <h1 className="headline capitalize lg:mb-12">
-          about u<span className="text-[#F45656]">s</span>
-        </h1>
+        <Headline content="about u" lastWord="s" />
         <p className="content-2">
           FILM MONKS is a production house that specializes in the development
           and production of a wide range of visual mediums, including fiction
@@ -49,7 +48,6 @@ const About = () => {
             marginLeft: " 210px",
             marginTop: "-164px",
             transform: "rotate(94deg)",
-        
           }}
           src="https://i.ibb.co/brJbQz8/world.png"
           alt=""

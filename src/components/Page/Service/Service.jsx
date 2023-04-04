@@ -7,12 +7,13 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import Headline from "../../TextComponents/Headline";
 
 const Service = () => {
   //
   return (
     <div className="container">
-      <h1 className="headline">service</h1>
+       <Headline content="service" lastWord="s" />
       <p className="content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero alias non
         adipisci odio nulla iure, sed consectetur explicabo similique facere.

@@ -1,15 +1,24 @@
 import { Card, CardActionArea, CardMedia } from "@mui/material";
 import React from "react";
+import Headline from "../../TextComponents/Headline";
 
 const Team = () => {
   return (
-    <div className="" style={{ height: "100vh" }}>
-      <img src="https://i.ibb.co/d4ndNdd/Rectangle-79.png" alt="" />
-      <div
+    <div
+      className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[50vh]
+    pt-12"
+    >
+      <Headline content="Meet The Tea" lastWord="m" />
+      <p className="text-center">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel expedita
+        quo molestias quod amet consequatur molestiae veniam suscipit,
+        reprehenderit assumenda!
+      </p>
+      {/* <div
         style={{ marginTop: "-172px" }}
         className="grid grid-cols-3 mx-44 gap-20"
       >
-        <div >
+        <div>
           <Card>
             <CardActionArea>
               <CardMedia
@@ -38,7 +47,7 @@ const Team = () => {
             />
           </CardActionArea>
         </Card>
-      </div>
+      </div> */}
     </div>
   );
 };
