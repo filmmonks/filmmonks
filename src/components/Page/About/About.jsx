@@ -22,40 +22,43 @@ function srcset(image, size, rows = 1, cols = 1) {
 const About = () => {
   return (
     <div className="bg-[#0F100B] grid grid-cols-2 gap-16">
-      <div className="container">
-        <h1>about</h1>
-        <h5>
+      <div className="container text-[#FFF8F8]">
+        <h1 className="headline capitalize lg:mb-12">
+          about u<span className="text-[#F45656]">s</span>
+        </h1>
+        <p className="content-2">
           FILM MONKS is a production house that specializes in the development
           and production of a wide range of visual mediums, including fiction
           and non-fiction cinema,onlinevideo content,television commercials,
           event videographyand photography, music videos, and promotional
           materials.
-          <br />
-          We place an emphasis on contemporary storylines and storytelling with
-          a focus on aesthetics. We strive to create cinematic experiences that
-          entertain and provoke thought, while keeping in mind the emotions,
-          arguments, traditions, nature, and crises that are universally
-          accessible to our audiences.
-          <br />
+          <p className="lg:my-8">
+            We place an emphasis on contemporary storylines and storytelling
+            with a focus on aesthetics. We strive to create cinematic
+            experiences that entertain and provoke thought, while keeping in
+            mind the emotions, arguments, traditions, nature, and crises that
+            are universally accessible to our audiences.
+          </p>
           We aim to produce visually stunning and impactful content for our
           clients
-        </h5>
+        </p>
 
         <img
           style={{
             width: "400px",
-            marginLeft: "auto",
+            marginLeft: " 210px",
             marginTop: "-164px",
-            transform: "rotate(120deg)",
+            transform: "rotate(94deg)",
+        
           }}
           src="https://i.ibb.co/brJbQz8/world.png"
           alt=""
         />
       </div>
-      <div>
+      <div className="mt-32 mb-20">
         {" "}
         <ImageList
-          sx={{ width: "70%", height: "70vh", rowGap: "0" }}
+          sx={{ width: "70%", height: "100vh", rowGap: "0" }}
           variant="quilted"
           cols={4}
           rowHeight={121}
@@ -69,6 +72,11 @@ const About = () => {
               <img
                 {...srcset(item.img, 121, item.rows, item.cols)}
                 alt={item.title}
+                style={
+                  item.title === "Coffee"
+                    ? { marginTop: "-60px" }
+                    : { marginTop: "0px" }
+                }
                 loading="lazy"
               />
             </ImageListItem>
@@ -82,40 +90,40 @@ const About = () => {
 export default About;
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: "https://i.ibb.co/r2B2Pfr/Rectangle-6.png",
     title: "Breakfast",
     rows: 2,
     cols: 3,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: "https://i.ibb.co/tCVV5bn/Rectangle-7.png",
     title: "Burger",
-    rows: 1,
+    rows: 1.5,
     cols: 1,
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    img: "https://i.ibb.co/DWbJ7hg/Rectangle-9.png",
     title: "Camera",
-    rows: 1,
+    rows: 1.25,
     cols: 3,
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    img: "https://i.ibb.co/6FP9x1Z/Rectangle-8.png",
     title: "Coffee",
-    rows: 1,
+    rows: 1.75,
     cols: 1,
   },
   {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
+    img: "https://i.ibb.co/Mh5bkbT/Rectangle-11.png",
     title: "Hats",
-    rows: 2,
+    rows: 1,
     cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
+    img: "https://i.ibb.co/LnGYs9f/Rectangle-10.png",
     title: "Honey",
     author: "@arwinneil",
-    rows: 2,
+    rows: 1,
     cols: 2,
   },
 ];

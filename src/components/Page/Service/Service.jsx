@@ -11,9 +11,9 @@ import React from "react";
 const Service = () => {
   //
   return (
-    <div className="mx-44 my-28">
-      <Typography variant="h4">service</Typography>
-      <p>
+    <div className="container">
+      <h1 className="headline">service</h1>
+      <p className="content">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero alias non
         adipisci odio nulla iure, sed consectetur explicabo similique facere.
       </p>

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,12 +10,21 @@
   margin-inline: auto;
   height: 100vh;
 }
-@layer base {
-  h1 {
-    @apply text-3xl;
+
+@layer utilities {
+  .headline {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
   }
-  h2 {
-    @apply text-xl;
+  .content-1 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
   }
-  /* ... */
+  .content-2 {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+  }
 }
