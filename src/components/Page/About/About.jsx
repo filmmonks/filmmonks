@@ -5,21 +5,21 @@ import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Headline from "../../TextComponents/Headline";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+// const Item = styled(Paper)(({ theme }) => ({
+//   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+//   ...theme.typography.body2,
+//   padding: theme.spacing(2),
+//   textAlign: "center",
+//   color: theme.palette.text.secondary,
+// }));
+// function srcset(image, size, rows = 1, cols = 1) {
+//   return {
+//     src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+//     srcSet: `${image}?w=${size * cols}&h=${
+//       size * rows
+//     }&fit=crop&auto=format&dpr=2 2x`,
+//   };
+// }
 const About = () => {
   return (
     <div className="bg-[#0F100B] grid grid-cols-2 gap-16">
@@ -53,7 +53,7 @@ const About = () => {
           alt=""
         />
       </div>
-      <div className="mt-32 mb-20">
+      {/* <div className="mt-32 mb-20">
         {" "}
         <ImageList
           sx={{ width: "70%", height: "100vh", rowGap: "0" }}
@@ -80,6 +80,27 @@ const About = () => {
             </ImageListItem>
           ))}
         </ImageList>
+      </div> */}
+
+      <div className="grid lg:grid-cols-2 w-[700px]">
+        {itemData.map((item) => (
+          <img
+            className={`row-span-${item.rows} col-span-${item.cols} w-${[
+              item.width,
+            ]}`}
+            key={item.title}
+            src={item.img}
+            style={{
+              marginTop:
+                item.title === "4"
+                  ? "-60px"
+                  : item.title === "5"
+                  ? "-19px"
+                  : "0px",
+            }}
+            alt=""
+          />
+        ))}
       </div>
     </div>
   );
@@ -89,39 +110,40 @@ export default About;
 const itemData = [
   {
     img: "https://i.ibb.co/r2B2Pfr/Rectangle-6.png",
-    title: "Breakfast",
-    rows: 2,
-    cols: 3,
+    title: "1",
+    rows: 0,
+    cols: 1,
+    width: "371px",
   },
   {
     img: "https://i.ibb.co/tCVV5bn/Rectangle-7.png",
-    title: "Burger",
-    rows: 1.5,
+    title: "2",
+    rows: 1,
     cols: 1,
   },
   {
     img: "https://i.ibb.co/DWbJ7hg/Rectangle-9.png",
-    title: "Camera",
-    rows: 1.25,
-    cols: 3,
+    title: "3",
+    rows: 1,
+    cols: 1,
   },
   {
     img: "https://i.ibb.co/6FP9x1Z/Rectangle-8.png",
-    title: "Coffee",
-    rows: 1.75,
+    title: "4",
+    rows: 1,
     cols: 1,
   },
   {
     img: "https://i.ibb.co/Mh5bkbT/Rectangle-11.png",
-    title: "Hats",
-    rows: 1,
-    cols: 2,
+    title: "5",
+    rows: 2,
+    cols: 1.5,
   },
   {
     img: "https://i.ibb.co/LnGYs9f/Rectangle-10.png",
-    title: "Honey",
+    title: "6",
     author: "@arwinneil",
-    rows: 1,
-    cols: 2,
+    rows: 2,
+    cols: 1,
   },
 ];

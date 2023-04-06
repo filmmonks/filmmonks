@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-48">
       <footer
         style={{ background: `url(${img})`, backgroundSize: "cover" }}
         className=""
