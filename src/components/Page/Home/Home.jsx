@@ -6,6 +6,7 @@ import Service from "../Service/Service";
 import RecentWorks from "../RecentWorks/RecentWorks";
 import Production from "../Production/Production";
 import Team from "../Team/Team";
+import PhotoGalary from "../PhotoGalary/PhotoGalary";
 const Home = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const Home = () => {
       <Service />
       <RecentWorks />
       <Production />
+      <PhotoGalary />
       <Team />
     </div>
   );

@@ -7,6 +7,7 @@ import "keen-slider/keen-slider.min.css";
 import "./styles.css";
 import { SiFacebook } from "react-icons/si";
 import { FaInstagramSquare } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -45,64 +46,78 @@ const Team = () => {
         <div className="navigation-wrapper">
           <div ref={sliderRef} className="keen-slider">
             {teamData.map((data) => (
-              <div className="keen-slider__slide number-slide2">
-                {/* <img
-                  className="w-[300px] hover:brightness-50 "
-                  src={data.img}
-                  alt={data.id}
-                  srcset=""
-                /> */}
-
-                <div class="">
-                  <a
-                    class="relative block w-[330px] 
+              <>
+                <div className="keen-slider__slide number-slide2">
+                  <div class="">
+                    <a
+                      class="relative block w-[330px] 
                       group"
-                    href="##"
-                  >
-                    <div class=""></div>
-                    <img
-                      className="w-[330px] hover:brightness-50 absolute inset-0 
-                   group-hover:brightness-50"
-                      src={data.img}
-                      alt={data.id}
-                      srcset=""
-                    />
-                    <div class="relative p-10">
-                      <div class="mt-2">
-                        <div
-                          class="transition-all transform 
+                      href="##"
+                    >
+                      <div>
+                        {" "}
+                        <img
+                          className="w-[330px] hover:brightness-50 absolute inset-0 
+                   group-hover:brightness-50  "
+                          src={data.img}
+                          alt={data.id}
+                          srcset=""
+                        />
+                        {/* <p className="text-xs text-[#000000]">{data?.name}</p> */}
+                      </div>
+
+                      <div class="relative p-10">
+                        <div class="mt-2">
+                          <div
+                            class="transition-all duration-500 transform 
                                 translate-y-8 opacity-0 
                                 group-hover:opacity-100 
                                 group-hover:translate-y-0"
-                        >
-                          <div class="p-2">
-                            <p class="text-base text-center text-white">
-                              we can ipsum dolor sit amet consectetur. Lorem
-                              adipiscing erat sit sapien ornare morbin dd we can
-                              understand the fact po of film
-                            </p>
-                            <div className="text-center">
-                              {" "}
-                              <button
-                                class="px-4 py-2 text-lg 
+                          >
+                            <div class="p-2">
+                              <p class="text-base text-center text-white">
+                                we can ipsum dolor sit amet consectetur. Lorem
+                                adipiscing erat sit sapien ornare morbin dd we
+                                can understand the fact po of film
+                              </p>
+                              <div className="text-center">
+                                {" "}
+                                <Link to={data.fb_link}>
+                                  <button
+                                    class="px-4 py-2 text-lg 
                                             text-white"
-                              >
-                                <SiFacebook />
-                              </button>
-                              <button
-                                class="px-4 py-2 text-lg
+                                  >
+                                    <SiFacebook />
+                                  </button>
+                                </Link>
+                                <button
+                                  class="px-4 py-2 text-lg
                                             text-white"
-                              >
-                                <FaInstagramSquare />
-                              </button>
+                                >
+                                  <FaInstagramSquare />
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </a>
+                    </a>
+                  </div>
+                  {/* <div className="">
+                    <img
+                      className="w-[330px]"
+                      src={data?.img}
+                      alt={data?.name}
+                    />
+                    <p className="text-[#000000] text-sm w-[100%] mx-auto">
+                      {data.name}
+                    </p>
+                    <p className="text-[#000000] text-xs w-44 mx-auto">
+                      {data.title}
+                    </p>
+                  </div> */}
                 </div>
-              </div>
+              </>
             ))}
           </div>
 
@@ -138,38 +153,50 @@ export default Team;
 const teamData = [
   {
     id: 1,
-    name: "x",
-    title: "y",
+    name: "SHITHE DEBNATH",
+    title: "Co-Founder, Producer",
+    email: "shithe.deb@gmail.com",
+    fb_link: "https://www.facebook.com/shithe.debnath",
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
   {
     id: 2,
-    name: "x",
-    title: "y",
+    name: "JAYNTO KUMAR KUNDU",
+    title: "Co-Founder, Director",
+    email: "jaynto.k.kundu@gmail.com",
+    fb_link: "https://www.facebook.com/profile.php?id=100011977185218",
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
   {
     id: 3,
-    name: "x",
-    title: "y",
+    name: "ANIRBAN SAHA",
+    title: "Head of Research",
+    email: "anirbansahaarpon@gmail.com",
+    fb_link: "https://www.facebook.com/aami.anirban",
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
   {
     id: 4,
-    name: "x",
-    title: "y",
+    name: "JAYNTO KUMAR KUNDU",
+    title: "Co-Founder, Director",
+    email: "jaynto.k.kundu@gmail.com",
+    fb_link: "https://www.facebook.com/profile.php?id=100011977185218",
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
   {
     id: 5,
-    name: "x",
-    title: "y",
+    name: "SHIBLY SADIK",
+    title: "Brand Manager",
+    email: "shibly209@gmail.com",
+    fb_link: "https://www.facebook.com/shiblysadik.sifat",
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
   {
     id: 6,
-    name: "x",
-    title: "y",
+    name: "EBSAN ZAMAN",
+    title: "Editor",
+    email: "ebsanzaman404@gmail.com",
+    fb_link: "https://www.facebook.com/ebsanzaman.ebsanzaman",
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
 ];
