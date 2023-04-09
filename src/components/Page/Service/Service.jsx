@@ -19,16 +19,16 @@ const Service = () => {
         content=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero alias non
         adipisci odio nulla iure, sed consectetur explicabo similique facere."
       ></Content>
-      <div className="grid grid-cols-3 gap-x-7 gap-y-6 relative">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-7 gap-y-6 ">
         {servicesData.map((data) => (
-          <div key={data._id} className="">
+          <div key={data._id} className="relative">
             <img
               className=""
               style={{ filter: "brightness(30%)" }}
               src={data.image}
               alt=""
             />
-            <span className="text-5xl absolute">{data.icon}</span>
+            <p className="text-5xl">{data.icon}</p>
           </div>
         ))}
       </div>
