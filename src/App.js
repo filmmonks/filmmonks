@@ -7,21 +7,16 @@ import Navbar from "./components/Shared/Navbar/Navbar";
 import "./index.css";
 import { useEffect, useState } from "react";
 import ScrollToTop from "react-scroll-up";
-import logo from "./Assets/Logo/Black Simple YouTube Thumbnail.png";
+
 import video from "./Assets/FILM MONKS.mp4";
-const override = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "red",
-};
+
 function App() {
   let [loading, setLoading] = useState(true);
-  let [color, setColor] = useState("#C75846");
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 9000 );
   }, []);
   return (
     <>
@@ -36,7 +31,7 @@ function App() {
           }}
         >
           <div className="flex flex-col justify-center items-center">
-            {/* <video src={video} autoPlay loop muted /> */}
+            <video src={video} autoPlay loop muted />
           </div>
         </div>
       ) : (
