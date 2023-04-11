@@ -13,17 +13,13 @@ import { BiVideoRecording } from "react-icons/bi";
 const Service = () => {
   //
   return (
-    <div className="container">
+    <div className="lg:mx-24 mx-8 md:mx-16 my-8">
       <Headline content="service" lastWord="s" />
-      <Content
-        content=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero alias non
-        adipisci odio nulla iure, sed consectetur explicabo similique facere."
-      ></Content>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-7 gap-y-6 ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1  mx-auto  gap-x-7 gap-y-6 ">
         {servicesData.map((data) => (
           <div key={data._id} className="relative">
             <img
-              className=""
+              className="w-[100%]"
               style={{ filter: "brightness(30%)" }}
               src={data.image}
               alt=""

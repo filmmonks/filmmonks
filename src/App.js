@@ -6,9 +6,14 @@ import Navbar from "./components/Shared/Navbar/Navbar";
 
 import "./index.css";
 import { useEffect, useState } from "react";
-import ScrollToTop from "react-scroll-up";
+// import ScrollToTop from "react-scroll-up";
 
 import video from "./Assets/FILM MONKS.mp4";
+import { Route, Routes } from "react-router-dom";
+import Contact from "./components/Page/Contact/Contact";
+import NotFound from "./components/Shared/NotFound/NotFound";
+import ScrollToTop from "./components/Shared/ScrollToTop/ScrollToTop";
+import Banner from "./components/Page/Banner/Banner";
 
 function App() {
   let [loading, setLoading] = useState(true);
@@ -16,7 +21,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 9000 );
+    }, 9000);
   }, []);
   return (
     <>
@@ -36,16 +41,17 @@ function App() {
         </div>
       ) : (
         <div setLoading="false">
-          <ScrollToTop showUnder={160}>
-            <img
-              src="https://milosjanda.github.io/react-scroll-up/img/up_arrow_round.png"
-              alt=""
-            />
-          </ScrollToTop>
+          <Banner />
           <nav>
             <Navbar />
           </nav>
-          <Home />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/contact" element={<Contact />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+          <ScrollToTop />
           <Footer />
         </div>
       )}

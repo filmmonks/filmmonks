@@ -1,17 +1,20 @@
 import React from "react";
-import logo from "../../../Assets/Logo/logo.png";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../../Assets/Logo/logo.png";
+const menuItem = [
+  { _id: 1, menu: "Home", route: "#" },
+  { _id: 2, menu: "About", route: "#about" },
+  { _id: 3, menu: "Service", route: "#service" },
+  { _id: 4, menu: "Work", route: "#work" },
+  { _id: 5, menu: "Team", route: "#team" },
+  { _id: 6, menu: "Monks Gallery", route: "#monks-gallery" },
+];
 
 const Navbar = () => {
-  const menuItem = [
-    { _id: 1, menu: "Home", route: "#" },
-    { _id: 2, menu: "About", route: "#about" },
-    { _id: 3, menu: "Service", route: "#service" },
-    { _id: 4, menu: "Work", route: "#work" },
-    { _id: 5, menu: "Team", route: "#team" },
-    { _id: 6, menu: "Monks Gallery", route: "#monks-gallery" },
-  ];
+  let [open, setOpen] = useState(false);
   const [active, setActive] = useState(false);
   const changeBackground = () => {
     console.log(window.scrollY);
@@ -23,59 +26,57 @@ const Navbar = () => {
   };
   window.addEventListener("scroll", changeBackground);
   return (
-    <div>
-      <div
-        className={
-          active
-            ? "navbar fixed bg-[#000] text-[#fff] z-10 px-20"
-            : "navbar fixed bg-transparent text-[#fff] z-10 px-20"
-        }
-      >
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+    <div
+      className={
+        active ? "w-full fixed top-0 bg-black z-10 " : "w-full fixed top-0"
+      }
+    >
+      <div className="md:flex items-center justify-between lg:bg-transparent md:bg-transparent bg-black py-8 lg:px-16 md:px-10 px-7">
+        <div
+          className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+      text-white"
+        >
+          <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
+          <img className="w-36" src={logo} alt="logo" />
+        </div>
+
+        <div
+          onClick={() => setOpen(!open)}
+          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden text-white"
+        >
+          {open ? <AiFillCloseCircle /> : <GiHamburgerMenu />}
+        </div>
+
+        <ul
+          className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static lg:bg-transparent md:bg-transparent bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  ${
+            open ? "top-20 " : "top-[-490px]"
+          }`}
+        >
+          {menuItem.map((link) => (
+            <li
+              key={link.name}
+              className="md:ml-8 w-4 lg:w-auto md:w-auto mr-auto lg:text-base md:text-xs uppercase md:my-0 my-7"
             >
-              {menuItem.map((menu) => (
-                <li className="text-[#000] uppercase">
-                  <a href={menu.route}>{menu.menu}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <a className="btn btn-ghost normal-case text-xl">
-            <img className="h-6" src={logo} alt="" />
-          </a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal py-5">
-            {menuItem.map((menu) => (
-              <li className=" uppercase">
-                <a href={menu.route}>{menu.menu}</a>
-              </li>
-            ))}
-            <li>
-              <Link to="/contact">CONTACT</Link>
+              <a
+                style={{ color: "white" }}
+                // style={({ isActive, isPending }) => {
+                //   return {
+                //     fontWeight: isActive ? "bold" : "",
+                //     color: isPending ? "red" : "black",
+                //   };
+                // }}
+                href={link.route}
+              >
+                {link.menu}
+              </a>
             </li>
-          </ul>
-        </div>
+          ))}
+          <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
+            <Link className=" text-white" to="/contact">
+              CONTACT
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

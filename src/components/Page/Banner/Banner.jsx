@@ -21,7 +21,7 @@ const Banner = () => {
   });
 
   return (
-    <div ref={sliderRef} className="fader h-screen">
+    <div ref={sliderRef} className="fader h-screen relative">
       {images.map((src, idx) => (
         <div
           key={idx}

@@ -53,6 +53,7 @@ export default function Contact() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            background:""
           }}
         >
           <Typography component="h1" variant="h5">

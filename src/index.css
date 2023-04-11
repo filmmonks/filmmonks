@@ -30,5 +30,24 @@
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
+    text-align: left;
+  }
+  .content-md {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    text-align: left;
+  }
+  .content-sm {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+    text-align: left;
+  }
+  .content-xs {
+    font-size: 12px;
+    line-height: 26px;
+    font-weight: 400;
+    text-align: left;
   }
 }

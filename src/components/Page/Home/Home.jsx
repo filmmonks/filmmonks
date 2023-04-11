@@ -1,5 +1,4 @@
 import React from "react";
-import Banner from "../Banner/Banner";
 import About from "../About/About";
 import ShowReel from "../ShowReel/ShowReel";
 import Service from "../Service/Service";
@@ -10,7 +9,6 @@ import PhotoGalary from "../PhotoGalary/PhotoGalary";
 const Home = () => {
   return (
     <div>
-      <Banner />
       <About />
       <ShowReel />
       <Service />

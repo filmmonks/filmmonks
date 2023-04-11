@@ -14,31 +14,13 @@ const RecentWorks = () => {
   return (
     <div className="">
       <Headline content="Our Resent Work" lastWord="s" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien
-        ornare morbin dd we can understand the fact po of film{" "}
-      </p>
-
-      <ImageList
-        sx={{ width: "100%", height: 600 }}
-        variant="quilted"
-        cols={4}
-        rowHeight={121}
-      >
-        {itemData.map((item) => (
-          <ImageListItem
-            key={item.img}
-            cols={item.cols || 1}
-            rows={item.rows || 1}
-          >
-            <img
-              {...srcset(item.img, 121, item.rows, item.cols)}
-              alt={item.title}
-              loading="lazy"
-            />
-          </ImageListItem>
+      <div className="grid grid-cols-5 ">
+        {itemData.map((data) => (
+          <div>
+            <img src={data.img} alt="works" />
+          </div>
         ))}
-      </ImageList>
+      </div>
     </div>
   );
 };
