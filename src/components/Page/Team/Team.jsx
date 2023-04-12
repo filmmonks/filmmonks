@@ -32,7 +32,7 @@ const Team = () => {
   });
   return (
     <div
-      className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[60vh]
+      className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[75vh]
     pt-12"
     >
       <Headline content="Meet The Tea" lastWord="m" />

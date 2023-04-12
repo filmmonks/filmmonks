@@ -21,7 +21,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 9000);
+    }, 1000);
   }, []);
   return (
     <>
@@ -36,7 +36,7 @@ function App() {
           }}
         >
           <div className="flex flex-col justify-center items-center">
-            <video src={video} autoPlay loop muted />
+            {/* <video src={video} autoPlay loop muted /> */}
           </div>
         </div>
       ) : (
@@ -52,7 +52,7 @@ function App() {
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       )}
     </>
