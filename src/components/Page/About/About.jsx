@@ -41,9 +41,23 @@ const About = () => {
         </div>
       </Wrapper>
       <Fade right>
-        <div className=" lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2">
+        <div
+          style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
+          className=" lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2"
+        >
           {itemData.map((item) => (
-            <img key={item.title} src={item.img} alt="" />
+            <img
+              style={{
+                width: `${item.width}`,
+                height: `${item.height}`,
+                marginLeft: `${item.marginLeft}`,
+                marginTop: `${item.marginTop}`,
+                zIndex: `${item.zIndex}`,
+              }}
+              key={item.title}
+              src={item.img}
+              alt=""
+            />
           ))}
         </div>
       </Fade>
@@ -60,31 +74,51 @@ const itemData = [
     title: "1",
     rows: 0,
     cols: 1,
-    width: "371px",
-  },
-  {
-    img: img2,
-    title: "2",
-    rows: 1,
-    cols: 1,
+    width: "373px",
+    height: "222px",
+    marginLeft: "50%",
   },
   {
     img: img3,
+    title: "2",
+    rows: 1,
+    cols: 1,
+    width: "198px",
+    height: "222px",
+    marginTop: "124px",
+    marginLeft: "45px",
+  },
+  {
+    img: img2,
     title: "3",
     rows: 1,
     cols: 1,
-  },
-  {
-    img: img4,
-    title: "4",
-    rows: 1,
-    cols: 1,
+    width: "263px",
+    height: "229px",
+    marginTop: "-160px",
+    marginLeft: "-20px",
   },
   {
     img: img5,
+    title: "4",
+    rows: 1,
+    cols: 1,
+    width: "308px",
+    height: "229px",
+    marginTop: "-25px",
+    marginLeft: "0px",
+    zIndex: 4,
+  },
+  {
+    img: img4,
     title: "5",
     rows: 2,
     cols: 1.5,
+    width: "263px",
+    height: "173px",
+    marginTop: "-90px",
+    marginLeft: "60px",
+    zIndex: 3,
   },
   {
     img: img6,
@@ -92,5 +126,10 @@ const itemData = [
     author: "@arwinneil",
     rows: 2,
     cols: 1,
+    width: "308px",
+    height: "173px",
+    marginTop: "50px",
+    zIndex: 1,
+    marginLeft: "-60px",
   },
 ];

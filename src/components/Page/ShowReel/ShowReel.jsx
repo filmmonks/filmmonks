@@ -3,7 +3,7 @@ import Headline from "../../TextComponents/Headline";
 import { IoLogoYoutube } from "react-icons/io";
 const ShowReel = () => {
   return (
-    <div className="bg-[url('https://i.ibb.co/VCHrmF9/showreel-back.png')] bg-cover bg-center h-screen pt-12 ">
+    <div className="bg-[url('https://i.ibb.co/t3gPjNT/Background-Image.jpg')] bg-cover bg-center h-screen pt-12 ">
       <Headline content="ShowReel" style={{ color: "white" }} />
       {/* <h1 className="headline capitalize  text-[#FFF8F8] text-center mb-5">
         showReel
@@ -16,6 +16,7 @@ const ShowReel = () => {
         >
           <IoLogoYoutube />
         </p>
+        {/* <video src={video} autoPlay loop muted /> */}
         <img
           className="w-[850px] mx-auto"
           src="https://i.ibb.co/MfSK7fD/showreel.png"

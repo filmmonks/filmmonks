@@ -28,7 +28,11 @@ const Banner = () => {
           className="fader__slide"
           style={{ opacity: opacities[idx] }}
         >
-          <img className="" src={src} alt="banner" />
+          <img
+            className=""
+            src="https://i.ibb.co/282GgY7/Picsart-23-04-14-13-07-37-128.jpg"
+            alt="banner"
+          />
         </div>
       ))}
     </div>

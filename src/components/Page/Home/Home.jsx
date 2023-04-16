@@ -17,7 +17,7 @@ const Home = () => {
       <Timeline />
       <Production />
       <PhotoGalary />
-      <Team />
+      {/* <Team /> */}
     </div>
   );
 };

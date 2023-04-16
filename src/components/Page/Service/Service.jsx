@@ -31,8 +31,11 @@ const Service = () => {
             {servicesData.slice(0, 4).map((data) => (
               <div key={data._id} className="relative">
                 <img
-                  className="w-[100%]"
-                  style={{ filter: "brightness(30%)" }}
+                  style={{
+                    filter: "brightness(14%)",
+                    width: "409px",
+                    height: "231px",
+                  }}
                   src={data.image}
                   alt=""
                 />
@@ -46,8 +49,11 @@ const Service = () => {
             {servicesData.slice(4, 8).map((data) => (
               <div key={data._id} className="relative">
                 <img
-                  className="w-[100%]"
-                  style={{ filter: "brightness(30%)" }}
+                  style={{
+                    filter: "brightness(14%)",
+                    width: "409px",
+                    height: "231px",
+                  }}
                   src={data.image}
                   alt=""
                 />
