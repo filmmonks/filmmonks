@@ -26,7 +26,7 @@ const Footer = () => {
             />
           </div>
           <div className="flex flex-col lg:flex-row lg:px-14 px-5">
-            <div className="lg:mx-10">
+            <div className="lg:mx-10 mx-7">
               <h3 className="text-[#F45656] font-bold text-xl text-left">
                 Head Quarter
               </h3>
@@ -47,7 +47,7 @@ const Footer = () => {
                 01705099380
               </p>{" "}
             </div>
-            <div className="lg:mx-10 my-8 flex flex-col lg:items-center">
+            <div className="lg:mx-10 mx-7 my-8 flex flex-col lg:items-center">
               <p className="link link-hover font-bold text-left">Follow Us</p>
               <div className="flex lg:flex-col">
                 <p className="link link-hover text-xl my-3 mx-2">
