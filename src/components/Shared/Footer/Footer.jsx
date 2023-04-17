@@ -12,10 +12,7 @@ import {
 const Footer = () => {
   return (
     <div className="mt-48">
-      <footer
-        style={{ background: `url(${img})`, backgroundSize: "cover" }}
-        className=""
-      >
+      <footer style={{ background: `url(${img})`, backgroundSize: "cover" }}>
         <div className="flex flex-col lg:flex-row lg:p-28 text-[#fff]">
           <div className="lg:pl-24">
             <Iframe
@@ -23,18 +20,20 @@ const Footer = () => {
               // width="509px"
               // height="316px"
               id=""
-              className="lg:w-[509px] h-[316px]"
+              className="lg:w-[509px] h-[316px] mx-auto my-10 rounded-md"
               display="block"
               position="relative"
             />
           </div>
-          <div className="flex flex-col lg:flex-row lg:px-14">
-            <div className="mx-10">
-              <span className=" text-[#F45656] font-bold text-xl">
+          <div className="flex flex-col lg:flex-row lg:px-14 px-5">
+            <div className="lg:mx-10">
+              <h3 className="text-[#F45656] font-bold text-xl text-left">
                 Head Quarter
-              </span>
-              <p className="link link-hover font-bold my-3">Connect Us</p>
-              <p className="link link-hover text-[#B19B9B] mb-4">
+              </h3>
+              <p className="link link-hover font-bold my-3 text-left">
+                Connect Us
+              </p>
+              <p className="link link-hover text-[#B19B9B] mb-4 text-left">
                 Office Address: House 12,
                 <br /> Block C, Future Town <br /> Housing, Mohammadpur,
                 <br /> Dhaka-1207
@@ -46,23 +45,25 @@ const Footer = () => {
               <p className="link link-hover text-[#B19B98] flex items-center">
                 <BsTelephoneFill className="mr-3 text-[#fff]" />
                 01705099380
-              </p>
+              </p>{" "}
             </div>
-            <div className="mx-10 mt-8 flex flex-col lg:items-center">
-              <p className="link link-hover font-bold">Follow Us</p>
-              <p className="link link-hover text-xl my-3">
-                <BsFacebook />
-              </p>
-              <p className="link link-hover text-xl my-3">
-                <BsYoutube />
-              </p>
-              <p className="link link-hover text-xl my-3">
-                <BsInstagram />
-              </p>
+            <div className="lg:mx-10 my-8 flex flex-col lg:items-center">
+              <p className="link link-hover font-bold text-left">Follow Us</p>
+              <div className="flex lg:flex-col">
+                <p className="link link-hover text-xl my-3 mx-2">
+                  <BsFacebook />
+                </p>
+                <p className="link link-hover text-xl my-3 mx-2">
+                  <BsYoutube />
+                </p>
+                <p className="link link-hover text-xl my-3 mx-2">
+                  <BsInstagram />
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-center bg-[#000] px-[200px] text-[#fff] py-5">
+        <div className="flex flex-col lg:flex-row justify-center bg-[#000] lg:px-[200px] px-5 text-[#fff] py-7">
           <p className="mr-40">Dhaka, Bangladesh </p>
           <p>&copy; 2023 Filmmonks. All Rights Reserved </p>
         </div>

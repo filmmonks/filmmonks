@@ -52,7 +52,7 @@ function App() {
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
-          {/* <Footer /> */}
+          <Footer />
         </div>
       )}
     </>
