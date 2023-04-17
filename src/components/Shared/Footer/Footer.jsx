@@ -20,7 +20,7 @@ const Footer = () => {
               // width="509px"
               // height="316px"
               id=""
-              className="lg:w-[509px] h-[316px] mx-auto my-10 rounded-md"
+              className="lg:w-[509px] lg:h-[316px] h-[190px] mx-auto my-10 rounded-md"
               display="block"
               position="relative"
             />
