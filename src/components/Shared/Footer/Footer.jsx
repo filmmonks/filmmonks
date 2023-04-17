@@ -63,8 +63,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row justify-center bg-[#000] lg:px-[200px] px-5 text-[#fff] py-7">
-          <p className="mr-40">Dhaka, Bangladesh </p>
+        <div className="flex flex-col lg:flex-row justify-center bg-[#000] lg:px-[200px] px-5 text-[#fff] lg:py-7 py-1">
+          <p className="mr-40 hidden lg:block">Dhaka, Bangladesh </p>
           <p>&copy; 2023 Filmmonks. All Rights Reserved </p>
         </div>
       </footer>
