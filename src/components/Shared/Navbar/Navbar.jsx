@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../../Assets/Logo/logo.png";
 const menuItem = [
   { _id: 1, menu: "Home", route: "#" },
@@ -10,7 +10,7 @@ const menuItem = [
   { _id: 3, menu: "Service", route: "#service" },
   { _id: 4, menu: "Work", route: "#work" },
   { _id: 5, menu: "Team", route: "#team" },
-  { _id: 6, menu: "Monks Gallery", route: "#monks-gallery" },
+  { _id: 6, menu: "Gallery", route: "#monks-gallery" },
 ];
 
 const Navbar = () => {
@@ -37,12 +37,12 @@ const Navbar = () => {
       text-white"
         >
           <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
-          <img className="w-36" src={logo} alt="logo" />
+          <img className="w-52" src={logo} alt="logo" />
         </div>
 
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden text-white"
+          className="text-3xl absolute right-8 top-7 cursor-pointer md:hidden text-white"
         >
           {open ? <AiFillCloseCircle /> : <GiHamburgerMenu />}
         </div>

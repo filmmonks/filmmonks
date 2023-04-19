@@ -21,21 +21,20 @@ const About = () => {
           <Headline style={{ color: "white" }} content="about u" lastWord="s" />
 
           <Fade left>
-            <p className="lg:content-2 md:content-md content-sm xs:content-xs">
+            <p className="lg:content-2 md:content-md content-sm xs:content-xs pb-6">
               Film Monks is a production house that specializes in the
               development and production of a wide range of visual mediums,
               including fiction and non-fiction cinema online video content,
               television commercials event videography and photography, music
               videos, and promotional materials
-              <p className="lg:content-2 md:content-md content-sm xs:content-xs">
-                we place an emphasis on contemporary storylines and story
-                telling with a focus on aesthetics. We strive to create
-                cinematic experiences that entertain and provoke thought while
-                keeping in mind the emotions, arguments, traditions nature, and
-                crises that are university accessible to our audiences. We aim
-                to produce visually stunning and impactful content for our
-                clients.
-              </p>
+            </p>
+            <p className="lg:content-2 md:content-md content-sm xs:content-xs">
+              we place an emphasis on contemporary storylines and story telling
+              with a focus on aesthetics. We strive to create cinematic
+              experiences that entertain and provoke thought while keeping in
+              mind the emotions, arguments, traditions nature, and crises that
+              are university accessible to our audiences. We aim to produce
+              visually stunning and impactful content for our clients.
             </p>
           </Fade>
         </div>
@@ -74,8 +73,8 @@ const itemData = [
     title: "1",
     rows: 0,
     cols: 1,
-    width: "373px",
-    height: "222px",
+    width: "355px",
+    height: "200px",
     marginLeft: "50%",
   },
   {
@@ -95,8 +94,8 @@ const itemData = [
     cols: 1,
     width: "263px",
     height: "229px",
-    marginTop: "-160px",
-    marginLeft: "-20px",
+    marginTop: "-168px",
+    marginLeft: "-6px",
   },
   {
     img: img5,
@@ -116,7 +115,7 @@ const itemData = [
     cols: 1.5,
     width: "263px",
     height: "173px",
-    marginTop: "-90px",
+    marginTop: "-144px",
     marginLeft: "60px",
     zIndex: 3,
   },
@@ -128,8 +127,8 @@ const itemData = [
     cols: 1,
     width: "308px",
     height: "173px",
-    marginTop: "50px",
+    marginTop: "0px",
     zIndex: 1,
-    marginLeft: "-60px",
+    marginLeft: "-95px",
   },
 ];

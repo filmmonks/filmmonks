@@ -23,7 +23,7 @@ import { Slide } from "react-reveal";
 const Service = () => {
   //
   return (
-    <div className="lg:mx-24 mx-8 md:mx-16 my-8">
+    <div id="service" className="lg:mx-24 mx-8 md:mx-16 my-8">
       <Headline content="service" lastWord="s" />
       <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-x-7">
         <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mx-auto  gap-x-7 gap-y-6 ">
@@ -31,6 +31,7 @@ const Service = () => {
             {servicesData.slice(0, 4).map((data) => (
               <div key={data._id} className="relative">
                 <img
+                  className="relative"
                   style={{
                     filter: "brightness(14%)",
                     width: "409px",
@@ -39,7 +40,6 @@ const Service = () => {
                   src={data.image}
                   alt=""
                 />
-                <p className="text-5xl">{data.icon}</p>
               </div>
             ))}
           </Slide>
@@ -47,17 +47,20 @@ const Service = () => {
         <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mx-auto  gap-x-7 gap-y-6 ">
           <Slide right>
             {servicesData.slice(4, 8).map((data) => (
-              <div key={data._id} className="relative">
-                <img
-                  style={{
-                    filter: "brightness(14%)",
-                    width: "409px",
-                    height: "231px",
-                  }}
-                  src={data.image}
-                  alt=""
-                />
-                <p className="text-5xl">{data.icon}</p>
+              <div>
+                {" "}
+                <div key={data._id}>
+                  <img
+                    style={{
+                      filter: "brightness(14%)",
+                      width: "409px",
+                      height: "231px",
+                      position: "relative",
+                    }}
+                    src={data.image}
+                    alt=""
+                  />
+                </div>
               </div>
             ))}
           </Slide>

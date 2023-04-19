@@ -34,8 +34,13 @@ function ScrollToTop() {
   return (
     <div className="scroll-to-top">
       {isVisible && (
-        <button onClick={scrollToTop}>
-          <BsArrowUpCircle />
+        <button className="hover:scale-110 duration-1000 ease-in-out" onClick={scrollToTop}>
+          <img
+            style={{ width: "20px" }}
+            src="https://pixlok.com/wp-content/uploads/2021/10/Up-Arrow-0s8m3s.png"
+            alt="arrow"
+          />
+          {/* <BsArrowUpCircle /> */}
         </button>
       )}
     </div>
