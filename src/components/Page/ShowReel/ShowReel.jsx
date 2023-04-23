@@ -2,7 +2,12 @@ import React from "react";
 import Headline from "../../TextComponents/Headline";
 import { IoLogoYoutube } from "react-icons/io";
 import video from "../../../Assets/Film Monks Showreel 2023 (2).mp4";
+import { useState } from "react";
 const ShowReel = () => {
+  const [play, setPlay] = useState(false);
+  const handleClick = () => {
+    console.log(play);
+  };
   return (
     <div
       style={{ boxShadow: " 0px 8px 8px rgba(0, 0, 0, 0.3)" }}
@@ -23,14 +28,9 @@ const ShowReel = () => {
             color: "red",
           }}
         >
-          <IoLogoYoutube />
+          <IoLogoYoutube onClick={() => handleClick(setPlay(!play))} />
         </p>
-        {/* <video className="w-[850px] mx-auto" autoPlay loop src={video} /> */}
-        <img
-          className="lg:w-[850px] lg:h-[425px] md:w-[550px] md:h-[225px] xs:w-[300px] xs:h-[150px] mx-auto"
-          src="https://i.ibb.co/MfSK7fD/showreel.png"
-          alt=""
-        />{" "}
+        <video className="w-[850px] mx-auto" controls src={video} />
       </div>
     </div>
   );

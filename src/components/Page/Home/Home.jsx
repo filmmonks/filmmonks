@@ -13,10 +13,10 @@ const Home = () => {
       <About />
       <ShowReel />
       <Service />
-      {/* <RecentWorks />
+      <RecentWorks />
       <Timeline />
-      <Production /> */}
-      {/* <PhotoGalary /> */}
+      <Production />
+      <PhotoGalary />
       {/* <Team /> */}
     </div>
   );

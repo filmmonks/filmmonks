@@ -1,6 +1,6 @@
 import React from "react";
 import Headline from "../../TextComponents/Headline";
-import Content from "../../TextComponents/Content";
+
 import img1 from "../../../Assets/MonksGalary/img1.png";
 import img2 from "../../../Assets/MonksGalary/img2.png";
 import img3 from "../../../Assets/MonksGalary/img3.png";
@@ -11,8 +11,15 @@ const PhotoGalary = () => {
   return (
     <div className="my-12">
       <Headline content=" Monks Galler" lastWord="y" />
-      <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 mx-44 ">
+      <div class="grid grid-cols-2 gap-4">
+        <div class=""></div>
+        <div class="lg:w-[450px] -ml-[150px]">
+          Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit
+          sapien ornare morbin dd we can understand the fact po of film{" "}
+        </div>
+      </div>
+
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 lg:mx-56 ">
         <img className="photo-gallery" src={img1} alt="" />
         <img className="mt-16 photo-gallery" src={img2} alt="" />
         <img className=" mt-32 photo-gallery" src={img3} alt="" />

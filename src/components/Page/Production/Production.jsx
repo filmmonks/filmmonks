@@ -5,42 +5,73 @@ import Content from "../../TextComponents/Content";
 const Production = () => {
   return (
     <div>
-      <Headline content="Complete Film Productio" lastWord="n" />
+      <Headline content="Production Proces" lastWord="s" />
       <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
       <div style={{ height: "313px" }} className="bg-[#F45656]"></div>
-      <div
-        style={{
-          marginTop: "-240px",
-          marginBottom: "200px",
-        }}
-        className="flex justify-evenly flex-wrap"
-      >
-        {" "}
-        <div className="card">
-          <img src="https://i.ibb.co/FsQ7cvt/Rectangle-194.png" alt="" />
-          <p className="text-center my-4">title</p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit
-            sapien ornare morbin dd we can understand the fact po of{" "}
-          </p>
-        </div>
-        ;
-      </div>
-      {productionData.map((data) => {
-          
-        })}
-      <div className="flex justify-between mb-8">
-        {" "}
-        <div className="border border-[#F35659] mb-3 w-[40%]"></div>
-        <div className="border border-[#F35659] mb-3 w-[40%]"></div>
+
+      <div className="grid grid-cols-4 mx-28 mb-64">
+        {productionData.map((data) => (
+          <div style={{ marginTop: "-240px" }} className="ml-4">
+            {" "}
+            {/* <div className="card">
+              <img src={data?.img} alt="" />
+              <p className="text-center my-4 capitalize">{data?.title}</p>
+
+              <div>
+                {data.list.slice(0, 3).map((l) => (
+                  <div
+                    style={{
+                      width: "185px",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                    className="flex items-center "
+                  >
+                    <img
+                      className="mr-3"
+                      src="https://i.ibb.co/rb2nHDR/Exclude.png"
+                      alt=""
+                      srcset=""
+                    />
+                    <div>
+                      {l.description.length > 15 ? (
+                        <p
+                          title={l.description}
+                          className="hover:cursor-pointer"
+                        >
+                          {l.description.slice(0, 15) + "..."}{" "}
+                        </p>
+                      ) : (
+                        <p
+                          title={l.description}
+                          className="hover:cursor-pointer"
+                        >
+                          {l.description}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                <img
+                  className="bg-[#F45656] ml-auto w-[20px]"
+                  src="https://i.ibb.co/m04ghjk/211688-forward-arrow-icon-1.png"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+            </div> */}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
+
 const productionData = [
   {
     id: 1,
     title: "research",
+    img: "https://i.ibb.co/BnhsYjr/Research.jpg",
     list: [
       {
         id: 1,
@@ -59,6 +90,7 @@ const productionData = [
   {
     id: 2,
     title: "Pre Production",
+    img: "https://i.ibb.co/tJ3NppM/Pre-production.jpg",
 
     list: [
       {
@@ -135,6 +167,7 @@ const productionData = [
   {
     id: 3,
     title: "Production",
+    img: "https://i.ibb.co/r7PzXWL/Production.png",
     list: [
       {
         id: 1,
@@ -145,6 +178,7 @@ const productionData = [
   {
     id: 4,
     title: "Post Production",
+    img: "https://i.ibb.co/JCY2GZ0/Post-Production.png",
     list: [
       {
         id: 1,

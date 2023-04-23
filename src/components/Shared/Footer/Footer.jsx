@@ -2,12 +2,8 @@ import React from "react";
 import Iframe from "react-iframe";
 import { MdEmail } from "react-icons/md";
 import img from "../../../Assets/Footer/footer.png";
-import {
-  BsTelephoneFill,
-  BsFacebook,
-  BsYoutube,
-  BsInstagram,
-} from "react-icons/bs";
+import { BsTelephoneFill } from "react-icons/bs";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 const Footer = () => {
   return (
@@ -49,17 +45,7 @@ const Footer = () => {
             </div>
             <div className="lg:mx-10 mx-7 my-8 flex flex-col lg:items-center">
               <p className="link link-hover font-bold text-left">Follow Us</p>
-              <div className="flex lg:flex-col">
-                <p className="link link-hover text-xl my-3 mx-2">
-                  <BsFacebook />
-                </p>
-                <p className="link link-hover text-xl my-3 mx-2">
-                  <BsYoutube />
-                </p>
-                <p className="link link-hover text-xl my-3 mx-2">
-                  <BsInstagram />
-                </p>
-              </div>
+              <SocialMedia />
             </div>
           </div>
         </div>

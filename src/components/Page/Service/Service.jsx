@@ -21,7 +21,6 @@ import img8 from "../../../Assets/services/8. Collaboration.jpg";
 import { Slide } from "react-reveal";
 
 const Service = () => {
-  //
   return (
     <div id="service" className="lg:mx-24 mx-8 md:mx-16 my-8">
       <Headline content="service" lastWord="s" />
@@ -29,9 +28,9 @@ const Service = () => {
         <div className="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mx-auto  gap-x-7 gap-y-6 ">
           <Slide left>
             {servicesData.slice(0, 4).map((data) => (
-              <div key={data._id} className="relative">
+              <div key={data._id} className="">
                 <img
-                  className="relative"
+                  className=""
                   style={{
                     filter: "brightness(14%)",
                     width: "409px",
@@ -40,6 +39,7 @@ const Service = () => {
                   src={data.image}
                   alt=""
                 />
+                {/* <small className=""> play</small> */}
               </div>
             ))}
           </Slide>
