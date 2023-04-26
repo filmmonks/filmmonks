@@ -13,11 +13,11 @@ const Home = () => {
       <About />
       <ShowReel />
       <Service />
-      <RecentWorks />
+      {/* <RecentWorks /> */}
       <Timeline />
       <Production />
       <PhotoGalary />
-      {/* <Team /> */}
+      <Team />
     </div>
   );
 };

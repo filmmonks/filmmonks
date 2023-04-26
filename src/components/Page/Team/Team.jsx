@@ -32,6 +32,7 @@ const Team = () => {
   });
   return (
     <div
+      id="team"
       className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[75vh]
     pt-12"
     >
@@ -74,28 +75,26 @@ const Team = () => {
                                 group-hover:opacity-100 
                                 group-hover:translate-y-0"
                           >
-                            <div class="p-2">
-                              <p class="text-base text-center text-white">
-                                we can ipsum dolor sit amet consectetur. Lorem
-                                adipiscing erat sit sapien ornare morbin dd we
-                                can understand the fact po of film
-                              </p>
-                              <div className="text-center">
+                            <div class="p-16">
+                              <div className="flex flex-col">
                                 {" "}
                                 <Link to={data.fb_link}>
                                   <button
-                                    class="px-4 py-2 text-lg 
+                                    class="px-4 text-lg 
                                             text-white"
                                   >
                                     <SiFacebook />
                                   </button>
                                 </Link>
-                                <button
-                                  class="px-4 py-2 text-lg
+                                <Link>
+                                  {" "}
+                                  <button
+                                    class="px-4  text-lg
                                             text-white"
-                                >
-                                  <FaInstagramSquare />
-                                </button>
+                                  >
+                                    <FaInstagramSquare />
+                                  </button>
+                                </Link>
                               </div>
                             </div>
                           </div>

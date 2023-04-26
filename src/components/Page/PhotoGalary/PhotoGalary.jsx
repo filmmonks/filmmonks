@@ -9,7 +9,7 @@ import img5 from "../../../Assets/MonksGalary/img5.png";
 import "./PhotoGalary.css";
 const PhotoGalary = () => {
   return (
-    <div className="my-12">
+    <div id="monks-gallery" className="my-12">
       <Headline content=" Monks Galler" lastWord="y" />
       <div class="grid grid-cols-2 gap-4">
         <div class=""></div>

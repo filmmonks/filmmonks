@@ -4,7 +4,7 @@ import Content from "../../TextComponents/Content";
 
 const Production = () => {
   return (
-    <div>
+    <div id="production">
       <Headline content="Production Proces" lastWord="s" />
       <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
       <div style={{ height: "313px" }} className="bg-[#F45656]"></div>
@@ -13,7 +13,7 @@ const Production = () => {
         {productionData.map((data) => (
           <div style={{ marginTop: "-240px" }} className="ml-4">
             {" "}
-            {/* <div className="card">
+            <div className="card">
               <img src={data?.img} alt="" />
               <p className="text-center my-4 capitalize">{data?.title}</p>
 
@@ -59,7 +59,7 @@ const Production = () => {
                   srcset=""
                 />
               </div>
-            </div> */}
+            </div>
           </div>
         ))}
       </div>

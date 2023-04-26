@@ -57,7 +57,7 @@ const Navbar = () => {
               className="md:ml-8 w-4 lg:w-auto md:w-auto mr-auto lg:text-[15px] md:text-xs uppercase md:my-0 my-7"
             >
               <a
-                style={{ color: "white" }}
+                style={{ color: "white", fontWeight: 400 }}
                 // style={({ isActive, isPending }) => {
                 //   return {
                 //     fontWeight: isActive ? "bold" : "",
