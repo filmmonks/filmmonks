@@ -2,6 +2,7 @@ import React from "react";
 import Headline from "../../TextComponents/Headline";
 import img1 from "../../../Assets/Timeline/img1.png";
 import { Bounce } from "react-reveal";
+import { Link } from "react-router-dom";
 const Timeline = () => {
   return (
     <div className="bg-[#000000] lg:pt-8 lg:pb-36 py-3 md:py-6">
@@ -12,7 +13,7 @@ const Timeline = () => {
       />
 
       <Bounce left>
-        <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16">
+        <Link to="/article" className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16">
           <img
             className="xl:mr-auto w-[450px]"
             src="https://i.ibb.co/XWRbWXY/jpg-20230414-045047-0000.jpg"
@@ -32,7 +33,7 @@ const Timeline = () => {
               in it.
             </p>
           </div>
-        </div>
+        </Link>
       </Bounce>
       <Bounce right>
         <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16">

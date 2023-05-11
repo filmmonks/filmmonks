@@ -36,11 +36,11 @@ const Footer = () => {
               </p>
               <p className="link link-hover text-[#B19B9B] flex items-center my-2">
                 <MdEmail className="mr-3 text-2xl text-[#fff]" />
-                jayanto.k.kundu@gmail.com
+                filmmonksofficial@gmail.com
               </p>
               <p className="link link-hover text-[#B19B98] flex items-center">
                 <BsTelephoneFill className="mr-3 text-[#fff]" />
-                01705099380
+                +8801327114855
               </p>{" "}
             </div>
             <div className="lg:mx-10 mx-7 my-8 flex flex-col lg:items-center">

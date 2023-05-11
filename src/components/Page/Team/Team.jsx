@@ -37,11 +37,11 @@ const Team = () => {
     pt-12"
     >
       <Headline content="Meet The Tea" lastWord="m" />
-      <Content
+      {/* <Content
         content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel expedita
         quo molestias quod amet consequatur molestiae veniam suscipit,
         reprehenderit assumenda!"
-      />
+      /> */}
 
       <div className=" w-[1150px] mx-auto mt-8">
         <div className="navigation-wrapper">
@@ -67,7 +67,7 @@ const Team = () => {
                         {/* <p className="text-xs text-[#000000]">{data?.name}</p> */}
                       </div>
 
-                      <div class="relative p-10">
+                      <div class="relative ">
                         <div class="mt-2">
                           <div
                             class="transition-all duration-500 transform 
@@ -102,19 +102,6 @@ const Team = () => {
                       </div>
                     </a>
                   </div>
-                  {/* <div className="">
-                    <img
-                      className="w-[330px]"
-                      src={data?.img}
-                      alt={data?.name}
-                    />
-                    <p className="text-[#000000] text-sm w-[100%] mx-auto">
-                      {data.name}
-                    </p>
-                    <p className="text-[#000000] text-xs w-44 mx-auto">
-                      {data.title}
-                    </p>
-                  </div> */}
                 </div>
               </>
             ))}
