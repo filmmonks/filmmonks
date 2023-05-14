@@ -26,58 +26,63 @@ const Navbar = () => {
   };
   window.addEventListener("scroll", changeBackground);
   return (
-    <div
-      className={
-        active ? "w-full fixed top-0 bg-black z-10 " : "w-full fixed top-0"
-      }
-    >
-      <div className="md:flex items-center justify-between lg:bg-transparent md:bg-transparent bg-black py-8 lg:px-16 md:px-10 px-7">
-        <div
-          className=" text-2xl cursor-pointer flex items-center font-[Poppins] 
-      text-white"
-        >
-          <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
-          <img className="w-44" src={logo} alt="logo" />
-        </div>
+    <>
+      {" "}
+      <div
+        className={
+          active
+            ? "w-full fixed top-0 bg-black z-10 "
+            : "w-full fixed bg-black z-10"
+        }
+      >
+        <div className="md:flex items-center justify-between lg:bg-transparent md:bg-transparent bg-black py-8 lg:px-16 md:px-10 px-7">
+          <div
+            className=" text-2xl cursor-pointer flex items-center font-[Poppins] 
+  text-white"
+          >
+            <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
+            <img className="w-44" src={logo} alt="logo" />
+          </div>
 
-        <div
-          onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-7 cursor-pointer md:hidden text-white"
-        >
-          {open ? <AiFillCloseCircle /> : <GiHamburgerMenu />}
-        </div>
-        <ul
-          className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static lg:bg-transparent md:bg-transparent bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  ${
-            open ? "top-20 " : "top-[-490px]"
-          }`}
-        >
-          {menuItem.map((link) => (
-            <li
-              key={link.name}
-              className="md:ml-8 w-4 lg:w-auto md:w-auto mr-auto lg:text-[15px] md:text-xs uppercase md:my-0 my-7"
-            >
-              <a
-                style={{ color: "white", fontWeight: 400 }}
-                // style={({ isActive, isPending }) => {
-                //   return {
-                //     fontWeight: isActive ? "bold" : "",
-                //     color: isPending ? "red" : "black",
-                //   };
-                // }}
-                href={link.route}
+          <div
+            onClick={() => setOpen(!open)}
+            className="text-3xl absolute right-8 top-7 cursor-pointer md:hidden text-white"
+          >
+            {open ? <AiFillCloseCircle /> : <GiHamburgerMenu />}
+          </div>
+          <ul
+            className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static lg:bg-transparent md:bg-transparent bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  ${
+              open ? "top-20 " : "top-[-490px]"
+            }`}
+          >
+            {menuItem.map((link) => (
+              <li
+                key={link.name}
+                className="md:ml-8 w-4 lg:w-auto md:w-auto mr-auto lg:text-[15px] md:text-xs uppercase md:my-0 my-7"
               >
-                {link.menu}
-              </a>
+                <a
+                  style={{ color: "white", fontWeight: 400 }}
+                  // style={({ isActive, isPending }) => {
+                  //   return {
+                  //     fontWeight: isActive ? "bold" : "",
+                  //     color: isPending ? "red" : "black",
+                  //   };
+                  // }}
+                  href={link.route}
+                >
+                  {link.menu}
+                </a>
+              </li>
+            ))}
+            <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
+              <Link className=" text-[#F45656]" to="/contact">
+                CONTACT
+              </Link>
             </li>
-          ))}
-          <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
-            <Link className=" text-[#F45656]" to="/contact">
-              CONTACT
-            </Link>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

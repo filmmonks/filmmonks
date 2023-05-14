@@ -21,7 +21,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 9000);
+    }, 1000);
   }, []);
   return (
     <>
@@ -41,7 +41,6 @@ function App() {
         </div>
       ) : (
         <div setLoading="false">
-          <Banner />
           <nav>
             <Navbar />
           </nav>

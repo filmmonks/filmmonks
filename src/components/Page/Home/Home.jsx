@@ -7,17 +7,19 @@ import Production from "../Production/Production";
 import Team from "../Team/Team";
 import PhotoGalary from "../PhotoGalary/PhotoGalary";
 import Timeline from "../Timeline/Timeline";
+import Banner from "../Banner/Banner";
 const Home = () => {
   return (
     <div>
+       <Banner  />
       <About />
       <ShowReel />
       <Service />
       {/* <RecentWorks /> */}
       <Timeline />
-      <Production />
+      {/* <Production /> */}
       <PhotoGalary />
-      <Team />
+      {/* <Team /> */}
     </div>
   );
 };

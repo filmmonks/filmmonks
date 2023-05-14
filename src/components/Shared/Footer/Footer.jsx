@@ -4,10 +4,11 @@ import { MdEmail } from "react-icons/md";
 import img from "../../../Assets/Footer/footer.png";
 import { BsTelephoneFill } from "react-icons/bs";
 import SocialMedia from "../SocialMedia/SocialMedia";
+import { ContactWrapper } from "../../Page/Contact/Contact";
 
 const Footer = () => {
   return (
-    <div className="mt-48">
+    <ContactWrapper className="mt-48">
       <footer style={{ background: `url(${img})`, backgroundSize: "cover" }}>
         <div className="flex flex-col lg:flex-row lg:p-28 text-[#fff]">
           <div className="lg:pl-24">
@@ -54,7 +55,7 @@ const Footer = () => {
           <p>&copy; 2023 Filmmonks. All Rights Reserved </p>
         </div>
       </footer>
-    </div>
+    </ContactWrapper>
   );
 };
 

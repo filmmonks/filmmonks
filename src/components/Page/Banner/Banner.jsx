@@ -3,6 +3,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "../../../Styles/Banner.css";
 import banner from "../../../Assets/Banner/banner.png";
+import { ContactWrapper } from "../Contact/Contact";
 
 const images = [banner, banner, banner];
 
@@ -21,21 +22,13 @@ const Banner = () => {
   });
 
   return (
-    <div ref={sliderRef} className="fader h-screen relative">
-      {images.map((src, idx) => (
-        <div
-          key={idx}
-          className="fader__slide"
-          style={{ opacity: opacities[idx] }}
-        >
-          <img
-            className=""
-            src="https://i.ibb.co/282GgY7/Picsart-23-04-14-13-07-37-128.jpg"
-            alt="banner"
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <img
+        className=""
+        src="https://i.ibb.co/282GgY7/Picsart-23-04-14-13-07-37-128.jpg"
+        alt="banner"
+      />
+    </>
   );
 };
 export default Banner;
