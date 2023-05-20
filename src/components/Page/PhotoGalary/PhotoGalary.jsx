@@ -9,11 +9,11 @@ import img5 from "../../../Assets/MonksGalary/img5.png";
 import "./PhotoGalary.css";
 const PhotoGalary = () => {
   return (
-    <div id="monks-gallery" className="my-12">
+    <div id="monks-gallery" className="my-12 hidden lg:block">
       <Headline content=" Monks Galler" lastWord="y" />
       <div class="grid grid-cols-2 gap-4">
         <div class=""></div>
-        <div class="lg:w-[450px] -ml-[150px]">
+        <div class="lg:w-[300px] -ml-[150px]">
           Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit
           sapien ornare morbin dd we can understand the fact po of film{" "}
         </div>

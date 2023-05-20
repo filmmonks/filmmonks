@@ -75,7 +75,7 @@ const Navbar = () => {
               </li>
             ))}
             <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
-              <Link className=" text-[#F45656]" to="/contact">
+              <Link className=" text-[#F45656] font-normal" to="/contact">
                 CONTACT
               </Link>
             </li>

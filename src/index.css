@@ -18,11 +18,7 @@ html {
   height: 280px;
 }
 @layer utilities {
-  .headline {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 48px;
-  }
+  
   .content-1 {
     font-size: 20px;
     line-height: 28px;

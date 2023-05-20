@@ -11,15 +11,15 @@ import Banner from "../Banner/Banner";
 const Home = () => {
   return (
     <div>
-       <Banner  />
+      <Banner />
       <About />
       <ShowReel />
       <Service />
-      {/* <RecentWorks /> */}
+      <RecentWorks />
       <Timeline />
       {/* <Production /> */}
       <PhotoGalary />
-      {/* <Team /> */}
+      <Team />
     </div>
   );
 };

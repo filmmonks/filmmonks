@@ -45,68 +45,8 @@ const Team = () => {
 
       <div className=" w-[1150px] mx-auto mt-8">
         <div className="navigation-wrapper">
-          <div ref={sliderRef} className="keen-slider">
-            {teamData.map((data) => (
-              <>
-                <div className="keen-slider__slide number-slide2">
-                  <div class="">
-                    <a
-                      class="relative block w-[330px] 
-                      group"
-                      href="##"
-                    >
-                      <div>
-                        {" "}
-                        <img
-                          className="w-[330px] hover:brightness-50 absolute inset-0 
-                   group-hover:brightness-50  "
-                          src={data.img}
-                          alt={data.id}
-                          srcset=""
-                        />
-                        {/* <p className="text-xs text-[#000000]">{data?.name}</p> */}
-                      </div>
-
-                      <div class="relative ">
-                        <div class="mt-2">
-                          <div
-                            class="transition-all duration-500 transform 
-                                translate-y-8 opacity-0 
-                                group-hover:opacity-100 
-                                group-hover:translate-y-0"
-                          >
-                            <div class="p-16">
-                              <div className="flex flex-col">
-                                {" "}
-                                <Link to={data.fb_link}>
-                                  <button
-                                    class="px-4 text-lg 
-                                            text-white"
-                                  >
-                                    <SiFacebook />
-                                  </button>
-                                </Link>
-                                <Link>
-                                  {" "}
-                                  <button
-                                    class="px-4  text-lg
-                                            text-white"
-                                  >
-                                    <FaInstagramSquare />
-                                  </button>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </>
-            ))}
-          </div>
-
+          
+        
           {loaded && instanceRef.current && (
             <>
               <Arrow
