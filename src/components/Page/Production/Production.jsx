@@ -1,72 +1,240 @@
 import React from "react";
 import Headline from "../../TextComponents/Headline";
 import Content from "../../TextComponents/Content";
-
+import { useKeenSlider } from "keen-slider/react";
+import { useState } from "react";
+import "./Production.module.css";
 const Production = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel);
+    },
+    created() {
+      setLoaded(true);
+    },
+
+    // breakpoints: {
+    //   "(min-width: 400px)": {
+    //     slides: { perView: 1, spacing: 10 },
+    //   },
+    //   "(min-width: 1000px)": {
+    //     slides: { perView: 3, spacing: 10 },
+    //   },
+    // },
+    // slides: { perView: 1 },
+  });
   return (
-    <div id="production">
-      <Headline content="Production Proces" lastWord="s" />
-      <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
-      <div style={{ height: "313px" }} className="bg-[#F45656]"></div>
+    <>
+      <div id="production" className="lg:block md:block hidden">
+        <Headline content="Production Proces" lastWord="s" />
+        <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
+        <div style={{ height: "313px" }} className="bg-[#F45656]"></div>
 
-      <div className="grid grid-cols-4 mx-28 mb-64">
-        {productionData.map((data) => (
-          <div style={{ marginTop: "-240px" }} className="ml-4">
-            {" "}
-            <div className="card">
-              <img src={data?.img} alt="" />
-              <p className="text-center my-4 capitalize">{data?.title}</p>
+        <div className="grid grid-cols-4 mx-28 mb-64">
+          {productionData.map((data) => (
+            <div style={{ marginTop: "-240px" }} className="ml-4">
+              {" "}
+              <div className="card">
+                <img src={data?.img} alt="" />
+                <p className="text-center my-4 capitalize">{data?.title}</p>
 
-              <div>
-                {data.list.slice(0, 3).map((l) => (
-                  <div
-                    style={{
-                      width: "185px",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                    className="flex items-center "
-                  >
-                    <img
-                      className="mr-3"
-                      src="https://i.ibb.co/rb2nHDR/Exclude.png"
-                      alt=""
-                      srcset=""
-                    />
-                    <div>
-                      {l.description.length > 15 ? (
+                <div>
+                  {data.list.slice(0, 3).map((l) => (
+                    <div
+                      style={{
+                        width: "185px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                      className="flex items-center "
+                    >
+                      <img
+                        className="mr-3"
+                        src="https://i.ibb.co/rb2nHDR/Exclude.png"
+                        alt=""
+                        srcset=""
+                      />
+                      <div>
+                        {l.description.length > 15 ? (
+                          <p
+                            title={l.description}
+                            className="hover:cursor-pointer"
+                          >
+                            {l.description.slice(0, 15) + "..."}{" "}
+                          </p>
+                        ) : (
+                          <p
+                            title={l.description}
+                            className="hover:cursor-pointer"
+                          >
+                            {l.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                  <img
+                    className="bg-[#F45656] ml-auto w-[20px]"
+                    src="https://i.ibb.co/m04ghjk/211688-forward-arrow-icon-1.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div id="production" className="block md:hidden lg:hidden">
+        <Headline content="Production Proces" lastWord="s" />
+        {/* <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
+         */}
+
+        {/* <div className="grid grid-cols-4 mx-28 mb-64">
+          {productionData.map((data) => (
+            <div style={{ marginTop: "-240px" }} className="ml-4">
+              {" "}
+              <div className="card">
+                <img src={data?.img} alt="" />
+                <p className="text-center my-4 capitalize">{data?.title}</p>
+
+                <div>
+                  {data.list.slice(0, 3).map((l) => (
+                    <div
+                      style={{
+                        width: "185px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                      className="flex items-center "
+                    >
+                      <img
+                        className="mr-3"
+                        src="https://i.ibb.co/rb2nHDR/Exclude.png"
+                        alt=""
+                        srcset=""
+                      />
+                      <div>
+                        {l.description.length > 15 ? (
+                          <p
+                            title={l.description}
+                            className="hover:cursor-pointer"
+                          >
+                            {l.description.slice(0, 15) + "..."}{" "}
+                          </p>
+                        ) : (
+                          <p
+                            title={l.description}
+                            className="hover:cursor-pointer"
+                          >
+                            {l.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                  <img
+                    className="bg-[#F45656] ml-auto w-[20px]"
+                    src="https://i.ibb.co/m04ghjk/211688-forward-arrow-icon-1.png"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div> */}
+
+        <div className="navigation-wrapper  relative">
+          <div ref={sliderRef} className="keen-slider">
+            {productionData.map((data) => (
+              <div key={data._id} className="keen-slider__slide">
+                <p className="title mb-6">{data?.title}</p>
+                <img
+                  className="w-[310px] mx-auto mb-5"
+                  src={data?.img}
+                  alt=""
+                />
+                <div>
+                  {data.list.slice(0, 3).map((l) => (
+                    <div
+                      style={{
+                        width: "185px",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                      className="flex items-center "
+                    >
+                      <img
+                        className="mr-3"
+                        src="https://i.ibb.co/rb2nHDR/Exclude.png"
+                        alt=""
+                        srcset=""
+                      />
+                      <div>
                         <p
                           title={l.description}
-                          className="hover:cursor-pointer"
-                        >
-                          {l.description.slice(0, 15) + "..."}{" "}
-                        </p>
-                      ) : (
-                        <p
-                          title={l.description}
-                          className="hover:cursor-pointer"
+                          className="hover:cursor-pointer text-base"
                         >
                           {l.description}
                         </p>
-                      )}
+                      </div>
                     </div>
-                  </div>
-                ))}
-                <img
-                  className="bg-[#F45656] ml-auto w-[20px]"
-                  src="https://i.ibb.co/m04ghjk/211688-forward-arrow-icon-1.png"
-                  alt=""
-                  srcset=""
-                />
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
+          {loaded && instanceRef.current && (
+            <>
+              <Arrow
+                left
+                onClick={(e) =>
+                  e.stopPropagation() || instanceRef.current?.prev()
+                }
+                disabled={currentSlide === 0}
+              />
+
+              <Arrow
+                onClick={(e) =>
+                  e.stopPropagation() || instanceRef.current?.next()
+                }
+                disabled={
+                  currentSlide ===
+                  instanceRef.current.track.details.slides.length - 1
+                }
+              />
+            </>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
+function Arrow(props) {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? "arrow--left" : "arrow--right"
+      } ${disabeld}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  );
+}
 const productionData = [
   {
     id: 1,

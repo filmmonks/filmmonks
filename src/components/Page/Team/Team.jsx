@@ -4,10 +4,11 @@ import Headline from "../../TextComponents/Headline";
 import Content from "../../TextComponents/Content";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import "./styles.css";
+import "./Team.module.css";
 import { SiFacebook } from "react-icons/si";
 import { FaInstagramSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -20,60 +21,137 @@ const Team = () => {
       setLoaded(true);
     },
 
-    breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 10 },
-      },
-      "(min-width: 1000px)": {
-        slides: { perView: 3, spacing: 10 },
-      },
-    },
-    slides: { perView: 1 },
+    // breakpoints: {
+    //   "(min-width: 400px)": {
+    //     slides: { perView: 1, spacing: 10 },
+    //   },
+    //   "(min-width: 1000px)": {
+    //     slides: { perView: 3, spacing: 10 },
+    //   },
+    // },
+    // slides: { perView: 1 },
   });
   return (
-    <div
-      id="team"
-      className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[75vh]
-    pt-12"
-    >
-      <Headline content="Meet The Tea" lastWord="m" />
-      {/* <Content
-        content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel expedita
-        quo molestias quod amet consequatur molestiae veniam suscipit,
-        reprehenderit assumenda!"
-      /> */}
+    <TeamWrapper>
+      <div
+        id="team"
+        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[75vh]
+    pt-12 lg:block hidden"
+      >
+        <Headline content="Meet The Tea" lastWord="m" />
 
-      <div className=" w-[1150px] mx-auto mt-8">
-        <div className="navigation-wrapper">
-          
-        
-          {loaded && instanceRef.current && (
-            <>
-              <Arrow
-                left
-                onClick={(e) =>
-                  e.stopPropagation() || instanceRef.current?.prev()
-                }
-                disabled={currentSlide === 0}
-              />
+        <div className=" ">
+          <div className="navigation-wrapper">
+            {loaded && instanceRef.current && (
+              <>
+                <Arrow
+                  left
+                  onClick={(e) =>
+                    e.stopPropagation() || instanceRef.current?.prev()
+                  }
+                  disabled={currentSlide === 0}
+                />
 
-              <Arrow
-                onClick={(e) =>
-                  e.stopPropagation() || instanceRef.current?.next()
-                }
-                disabled={
-                  currentSlide ===
-                  instanceRef.current.track.details.slides.length - 1
-                }
-              />
-            </>
-          )}
+                <Arrow
+                  onClick={(e) =>
+                    e.stopPropagation() || instanceRef.current?.next()
+                  }
+                  disabled={
+                    currentSlide ===
+                    instanceRef.current.track.details.slides.length - 1
+                  }
+                />
+              </>
+            )}
+          </div>
         </div>
+      </div>{" "}
+      {/* mobile device */}
+      <div>
+        <Headline content="Meet The Tea" lastWord="m" />
+        <div
+          id="team"
+          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[30vh]
+    pt-8 block lg:hidden mt-6"
+        >
+          <div className="navigation-wrapper  relative mt-8">
+            <div ref={sliderRef} className="keen-slider">
+              {teamData.map((data) => (
+                <div key={data._id} className="keen-slider__slide">
+                  <img
+                    className="w-[250px] mx-auto mb-5"
+                    src={data?.img}
+                    alt=""
+                  />
+                  <h5 className="name">{data?.name}</h5>
+                  <p className="title">{data?.title}</p>
+                </div>
+              ))}
+            </div>
+            {loaded && instanceRef.current && (
+              <>
+                <Arrow
+                  left
+                  onClick={(e) =>
+                    e.stopPropagation() || instanceRef.current?.prev()
+                  }
+                  disabled={currentSlide === 0}
+                />
+
+                <Arrow
+                  onClick={(e) =>
+                    e.stopPropagation() || instanceRef.current?.next()
+                  }
+                  disabled={
+                    currentSlide ===
+                    instanceRef.current.track.details.slides.length - 1
+                  }
+                />
+              </>
+            )}
+          </div>
+        </div>{" "}
       </div>
-    </div>
+    </TeamWrapper>
   );
 };
-
+function Arrow(props) {
+  const disabeld = props.disabled ? " arrow--disabled" : "";
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow ${
+        props.left ? "arrow--left" : "arrow--right"
+      } ${disabeld}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  );
+}
+const TeamWrapper = styled.div`
+  .name {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .title {
+    margin-top: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+  }
+`;
 export default Team;
 
 const teamData = [
@@ -126,24 +204,3 @@ const teamData = [
     img: "https://i.ibb.co/Lxbj87n/Ellipse-7.png",
   },
 ];
-
-function Arrow(props) {
-  const disabeld = props.disabled ? " arrow--disabled" : "";
-  return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${disabeld}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
-  );
-}

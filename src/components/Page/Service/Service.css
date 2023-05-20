@@ -124,7 +124,3 @@ body {
   left: auto;
   right: 5px;
 }
-
-.arrow--disabled {
-  fill: rgba(182, 42, 42, 0.5);
-}
