@@ -9,13 +9,13 @@ import { useEffect, useState } from "react";
 // import ScrollToTop from "react-scroll-up";
 
 import video from "./Assets/FILM MONKS.mp4";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Contact from "./components/Page/Contact/Contact";
 import NotFound from "./components/Shared/NotFound/NotFound";
 import ScrollToTop from "./components/Shared/ScrollToTop/ScrollToTop";
-import Banner from "./components/Page/Banner/Banner";
 
 function App() {
+  const location = useLocation();
   let [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
@@ -51,7 +51,7 @@ function App() {
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
-          <Footer />
+          {location.pathname !== "/contact" && <Footer />}
         </div>
       )}
     </>

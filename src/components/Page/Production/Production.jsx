@@ -4,6 +4,165 @@ import Content from "../../TextComponents/Content";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import "./Production.module.css";
+import research from "../../../Assets/production/research.png";
+import production from "../../../Assets/production/production (2).png";
+import preproduction from "../../../Assets/production/pre-production.png";
+import postroduction from "../../../Assets/production/Post Production 1.png";
+
+const productionData = [
+  {
+    id: 1,
+    title: "research",
+    img: "https://i.ibb.co/yY1GT8B/research.png",
+    list: [
+      {
+        id: 1,
+        description: "Reference Findings",
+      },
+      {
+        id: 2,
+        description: "Analyses",
+      },
+      {
+        id: 3,
+        description: " Research File",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Pre Production",
+    img: "https://i.ibb.co/MBNrMP6/pre-production.png",
+
+    list: [
+      {
+        id: 1,
+        description: " Finalizing the script",
+      },
+      {
+        id: 2,
+        description: "Budget",
+      },
+      {
+        id: 3,
+        description: "Script Breakdown",
+      },
+      {
+        id: 4,
+        description: "Selection of the Casts and Crews",
+      },
+      {
+        id: 5,
+        description: "Finding Locations",
+      },
+      {
+        id: 6,
+        description: "Crew Orientation and Briefing",
+      },
+      {
+        id: 7,
+        description: "1st Pre Production Meeting(PPM)",
+      },
+
+      {
+        id: 8,
+        description: "Location Recce",
+      },
+      {
+        id: 9,
+        description: "Finalizing Costumes",
+      },
+      {
+        id: 10,
+        description: "Finalizing Props & Set Design",
+      },
+      {
+        id: 11,
+        description: "Finalizing department based decisions",
+      },
+      {
+        id: 12,
+        description: "Permission and Insurance",
+      },
+      {
+        id: 13,
+        description: "2nd PPM",
+      },
+      {
+        id: 14,
+        description: "Shot Division",
+      },
+      {
+        id: 15,
+        description: "Storyboard",
+      },
+      {
+        id: 16,
+        description: "Rehearsal",
+      },
+      {
+        id: 17,
+        description: "3rd PPM",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Production",
+    img: "https://i.ibb.co/Bgp7PPX/production-2.png",
+    list: [
+      {
+        id: 1,
+        description: "Shoot days",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Post Production",
+    img: "https://i.ibb.co/NKTfPzQ/Post-Production-1.png",
+    list: [
+      {
+        id: 1,
+        description: " Music",
+      },
+      {
+        id: 2,
+        description: "Sound Mixing",
+      },
+      {
+        id: 3,
+        description: "First Cut",
+      },
+      {
+        id: 4,
+        description: "Color Grading",
+      },
+      {
+        id: 5,
+        description: "Visual effects",
+      },
+      {
+        id: 6,
+        description: "insertion",
+      },
+      {
+        id: 7,
+        description: "Supervising",
+      },
+
+      {
+        id: 8,
+        description: "Final Editing",
+      },
+      {
+        id: 9,
+        description: "Project Submission",
+      },
+    ],
+  },
+];
+
 const Production = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -235,157 +394,5 @@ function Arrow(props) {
     </svg>
   );
 }
-const productionData = [
-  {
-    id: 1,
-    title: "research",
-    img: "https://i.ibb.co/BnhsYjr/Research.jpg",
-    list: [
-      {
-        id: 1,
-        description: "Reference Findings",
-      },
-      {
-        id: 2,
-        description: "Analyses",
-      },
-      {
-        id: 3,
-        description: " Research File",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Pre Production",
-    img: "https://i.ibb.co/tJ3NppM/Pre-production.jpg",
 
-    list: [
-      {
-        id: 1,
-        description: " Finalizing the script",
-      },
-      {
-        id: 2,
-        description: "Budget",
-      },
-      {
-        id: 3,
-        description: "Script Breakdown",
-      },
-      {
-        id: 4,
-        description: "Selection of the Casts and Crews",
-      },
-      {
-        id: 5,
-        description: "Finding Locations",
-      },
-      {
-        id: 6,
-        description: "Crew Orientation and Briefing",
-      },
-      {
-        id: 7,
-        description: "1st Pre Production Meeting(PPM)",
-      },
-
-      {
-        id: 8,
-        description: "Location Recce",
-      },
-      {
-        id: 9,
-        description: "Finalizing Costumes",
-      },
-      {
-        id: 10,
-        description: "Finalizing Props & Set Design",
-      },
-      {
-        id: 11,
-        description: "Finalizing department based decisions",
-      },
-      {
-        id: 12,
-        description: "Permission and Insurance",
-      },
-      {
-        id: 13,
-        description: "2nd PPM",
-      },
-      {
-        id: 14,
-        description: "Shot Division",
-      },
-      {
-        id: 15,
-        description: "Storyboard",
-      },
-      {
-        id: 16,
-        description: "Rehearsal",
-      },
-      {
-        id: 17,
-        description: "3rd PPM",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Production",
-    img: "https://i.ibb.co/r7PzXWL/Production.png",
-    list: [
-      {
-        id: 1,
-        description: "Shoot days",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Post Production",
-    img: "https://i.ibb.co/JCY2GZ0/Post-Production.png",
-    list: [
-      {
-        id: 1,
-        description: " Music",
-      },
-      {
-        id: 2,
-        description: "Sound Mixing",
-      },
-      {
-        id: 3,
-        description: "First Cut",
-      },
-      {
-        id: 4,
-        description: "Color Grading",
-      },
-      {
-        id: 5,
-        description: "Visual effects",
-      },
-      {
-        id: 6,
-        description: "insertion",
-      },
-      {
-        id: 7,
-        description: "Supervising",
-      },
-
-      {
-        id: 8,
-        description: "Final Editing",
-      },
-      {
-        id: 9,
-        description: "Project Submission",
-      },
-    ],
-  },
-];
 export default Production;

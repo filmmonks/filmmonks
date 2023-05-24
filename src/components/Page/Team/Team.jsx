@@ -1,13 +1,8 @@
-import { Card, CardActionArea, CardMedia } from "@mui/material";
 import React, { useState } from "react";
 import Headline from "../../TextComponents/Headline";
-import Content from "../../TextComponents/Content";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Team.module.css";
-import { SiFacebook } from "react-icons/si";
-import { FaInstagramSquare } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,7 +62,7 @@ const Team = () => {
         </div>
       </div>{" "}
       {/* mobile device */}
-      <div>
+      <div className="block lg:hidden">
         <Headline content="Meet The Tea" lastWord="m" />
         <div
           id="team"
