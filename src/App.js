@@ -13,6 +13,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Contact from "./components/Page/Contact/Contact";
 import NotFound from "./components/Shared/NotFound/NotFound";
 import ScrollToTop from "./components/Shared/ScrollToTop/ScrollToTop";
+import Article from "./components/Page/Article/Article";
 
 function App() {
   const location = useLocation();
@@ -48,10 +49,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/contact" element={<Contact />}></Route>
+            <Route path="/article" element={<Article />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
-          {location.pathname !== "/contact" && <Footer />}
+          {location.pathname !== "/contact" &&
+            location.pathname !== "/article" && <Footer />}
         </div>
       )}
     </>

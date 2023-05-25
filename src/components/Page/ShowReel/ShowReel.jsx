@@ -1,20 +1,19 @@
 import React from "react";
 import Headline from "../../TextComponents/Headline";
 
-import video from "../../../Assets/Film Monks Showreel 2023 (2).mp4";
-import { useState } from "react";
+// import { useState } from "react";
 import styled from "styled-components";
 const ShowReel = () => {
-  const [play, setPlay] = useState(false);
-  const handleClick = () => {
-    console.log(play);
-  };
+  // const [play, setPlay] = useState(false);
+  // const handleClick = () => {
+  //   console.log(play);
+  // };
   return (
     <Wrapper>
       {" "}
       <div
         style={{ boxShadow: " 0px 8px 8px rgba(0, 0, 0, 0.3)" }}
-        className="bg-[url('https://i.ibb.co/t3gPjNT/Background-Image.jpg')] bg-cover bg-center lg:h-screen pt-4 pb-4 "
+        className="bg-[url('https://i.ibb.co/mSQdkpJ/showreel.png')] bg-cover bg-center lg:h-screen pt-4 pb-4 "
       >
         <Headline
           content="ShowReel"

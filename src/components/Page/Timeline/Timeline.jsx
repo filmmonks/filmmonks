@@ -1,6 +1,5 @@
 import React from "react";
 import Headline from "../../TextComponents/Headline";
-import img1 from "../../../Assets/Timeline/img1.png";
 import { Bounce } from "react-reveal";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -154,7 +153,14 @@ const timelineData = [
       "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
   },
   {
-    id: 1,
+    id: 2,
+    title: "Article 25",
+    type: "Short Film",
+    logline:
+      "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
+  },
+  {
+    id: 2,
     title: "Article 25",
     type: "Short Film",
     logline:
