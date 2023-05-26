@@ -7,6 +7,7 @@ import img1 from "../../../Assets/About/about1.png";
 import img2 from "../../../Assets/About/about2.jpg";
 import img3 from "../../../Assets/About/about3.jpg";
 import img4 from "../../../Assets/About/about4.jpg";
+import SocialMedia from "../../Shared/SocialMedia/SocialMedia"; // Import your SocialMedia component
 
 const About = () => {
   return (
@@ -45,11 +46,10 @@ const About = () => {
         </Wrapper>
 
         <div className="lg:block hidden md:block lg:w-[50%] mt-44">
-          {" "}
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
-              className=" lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2 gap-x-10 gap-y-5"
+              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2 gap-x-10 gap-y-5"
             >
               {itemData.map((item) => (
                 <img
@@ -67,11 +67,10 @@ const About = () => {
         </div>
         {/* mobile device */}
         <div className="lg:hidden block md:hidden">
-          {" "}
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
-              className=" lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2"
+              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2"
             >
               {itemData1.map((item) => (
                 <img
@@ -89,6 +88,11 @@ const About = () => {
               ))}
             </div>
           </Fade>
+        </div>
+
+        {/* Add SocialMedia component */}
+        <div className="hidden lg:flex md:flex items-center justify-center pr-5">
+          <SocialMedia />
         </div>
       </div>
     </>

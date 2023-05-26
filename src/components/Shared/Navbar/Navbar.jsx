@@ -68,17 +68,10 @@ const Navbar = () => {
               open ? "top-20 " : "top-[-490px]"
             }`}
           >
-            {location.pathname === "/contact" ? (
+            {location.pathname === "/contact" ||
+            location.pathname === "/article" ||
+            location.pathname === "/monks-galary" ? (
               <>
-                <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
-                  <Link
-                    className="hove:text-[#F45656]  text-white font-normal"
-                    to="/contact"
-                    onClick={handleContactClick}
-                  >
-                    CONTACT
-                  </Link>
-                </li>
                 <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                   <Link
                     className="hover:text-[#F45656]  text-white font-normal "

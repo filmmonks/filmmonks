@@ -11,6 +11,7 @@ import img7 from "../../../Assets/services/7. Promotional Content.jpg";
 import img8 from "../../../Assets/services/8. Collaboration.jpg";
 import { useKeenSlider } from "keen-slider/react";
 import "./Service.css";
+import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 const Service = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -35,7 +36,7 @@ const Service = () => {
   });
 
   return (
-    <>
+    <div className="relative">
       <div
         id="service"
         className="lg:mx-24 mx-8 md:mx-16 my-8 lg:block hidden md:block"
@@ -149,7 +150,21 @@ const Service = () => {
           )}
         </div>
       </div>
-    </>
+
+      <div
+        style={{
+          top: "45%",
+          right: "0%",
+          width: "65px",
+          height: "247px",
+          background: " #F45656",
+          clipPath: "polygon(10% 0, 100% 13%, 100% 85%, 9% 90%)",
+        }}
+        className="absolute hidden lg:flex md:flex items-center justify-center"
+      >
+        <SocialMedia />
+      </div>
+    </div>
   );
 };
 

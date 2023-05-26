@@ -1,4 +1,4 @@
-import { RingLoader } from "react-spinners";
+
 import "./App.css";
 import Home from "./components/Page/Home/Home";
 import Footer from "./components/Shared/Footer/Footer";
@@ -56,7 +56,9 @@ function App() {
           </Routes>
           <ScrollToTop />
           {location.pathname !== "/contact" &&
-            location.pathname !== "/article" && <Footer />}
+            location.pathname !== "/article" && 
+            location.pathname !== "/monks-galary"&&
+            <Footer />}
         </div>
       )}
     </>
