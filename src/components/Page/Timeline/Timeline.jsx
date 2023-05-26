@@ -13,100 +13,82 @@ const Timeline = () => {
       />
 
       <div className="lg:block hidden md:block">
-        <Bounce left>
-          <Link
-            to="/article"
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16"
-          >
-            <img
-              className="xl:mr-auto w-[450px]"
-              src="https://i.ibb.co/XWRbWXY/jpg-20230414-045047-0000.jpg"
-              alt=""
-            />
-            <div className="text-left mt-10">
-              <h4 className="text-3xl">article</h4>
-              <p>description</p>
-              <p
-                style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
-              >
-                A small-town struggling woman searches for her missing brother
-                who guided and implemented confidence within herself to be
-                independent. While revolving around her she learns about the
-                complex socio-political instances and the substantial
-                uncertainty in it.
-              </p>
+        {timelineData.slice(0, 1).map((data) => (
+          <Bounce left>
+            <Link
+              to="/article"
+              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16"
+            >
+              <img className="xl:mr-auto w-[450px]" src={data?.img} alt="" />
+              <div className="text-left mt-10">
+                <h4 className="text-3xl">{data?.title}</h4>
+                <p>{data?.type}</p>
+                <p
+                  style={{ textAlign: "justify" }}
+                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                >
+                  {data?.logline}
+                </p>
+              </div>
+            </Link>
+          </Bounce>
+        ))}
+
+        {timelineData.slice(1, 2).map((data) => (
+          <Bounce right>
+            <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-[#FFF8F8] pt-16">
+              <div className="text-left mt-10">
+                <h4 className="text-3xl">{data?.title}</h4>
+                <p>{data?.type}</p>
+                <p
+                  style={{ textAlign: "justify" }}
+                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                >
+                  {data?.logline}
+                </p>
+              </div>
+              <img className="xl:ml-auto w-[450px]" src={data?.img} alt="" />
             </div>
-          </Link>
-        </Bounce>
-        <Bounce right>
-          <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16">
-            <div className="text-left mt-10">
-              <h4 className="text-3xl">article</h4>
-              <p>description</p>
-              <p
-                style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
-              >
-                A small-town struggling woman searches for her missing brother
-                who guided and implemented confidence within herself to be
-                independent. While revolving around her she learns about the
-                complex socio-political instances and the substantial
-                uncertainty in it.
-              </p>
+          </Bounce>
+        ))}
+
+        {timelineData.slice(2, 3).map((data) => (
+          <Bounce left>
+            {" "}
+            <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16   pt-16">
+              <img className="w-[450px]" src={data?.img} alt="" />
+              <div className="text-left mt-10">
+                <h4 className="text-3xl">{data?.title}</h4>
+                <p>{data?.type}</p>
+                <p
+                  style={{ textAlign: "justify" }}
+                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                >
+                  {data?.logline}
+                </p>
+              </div>
             </div>
-            <img
-              className="xl:ml-auto w-[450px]"
-              src="https://i.ibb.co/6FFPLx2/IMG-20230414-045241.jpg"
-              alt=""
-            />
-          </div>
-        </Bounce>
-        <Bounce left>
-          {" "}
-          <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16">
-            <img
-              className="w-[450px]"
-              src="https://i.ibb.co/3TbKVnP/IMG-20230414-045927.jpg"
-              alt=""
-            />
-            <div className="text-left mt-10">
-              <h4 className="text-3xl">article</h4>
-              <p>description</p>
-              <p
-                style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
-              >
-                A small-town struggling woman searches for her missing brother
-                who guided and implemented confidence within herself to be
-                independent. While revolving around her she learns about the
-                complex socio-political instances and the substantial
-                uncertainty in it.
-              </p>
-            </div>
-          </div>
-        </Bounce>
+          </Bounce>
+        ))}
       </div>
+
+      {/* // mobile device */}
       <div className="lg:hidden block md:hidden mb-10">
         {timelineData.map((data) => (
           <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16   border-red-50 ">
             <img
               className="xl:ml-auto w-[450px] timeline-image"
-              src="https://i.ibb.co/6FFPLx2/IMG-20230414-045241.jpg"
+              src={data?.img}
               alt=""
             />
             <div className="text-left mt-10">
-              <h4 className="text-3xl">article</h4>
-              <p>description</p>
+              <h4>{data?.title}</h4>
+              <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
                 className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
               >
-                A small-town struggling woman searches for her missing brother
-                who guided and implemented confidence within herself to be
-                independent. While revolving around her she learns about the
-                complex socio-political instances and the substantial
-                uncertainty in it.
+                {data?.logline}
               </p>
             </div>
           </div>
@@ -121,26 +103,30 @@ export default Timeline;
 export const WrapperTimeLine = styled.div`
   h4 {
     font-size: 30px;
+    color: #fff8f8;
+    margin-bottom: 27px;
     @media only screen and (max-width: 440px) {
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
       line-height: 17px;
+      margin-bottom: 10px;
     }
   }
   p {
+    margin-bottom: 10px;
+
     @media only screen and (max-width: 440px) {
       font-style: normal;
       font-weight: 400;
       font-size: 12px;
       line-height: 27px;
-      /* identical to box height, or 225% */
     }
   }
   .timeline-image {
     @media only screen and (max-width: 440px) {
-      margin-top: 25px;
+      margin-top: 0px;
     }
   }
 `;
@@ -151,19 +137,23 @@ const timelineData = [
     type: "Short Film",
     logline:
       "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
+    img: "https://i.ibb.co/BqLC7Bk/Rectangle-267-1.png",
   },
   {
     id: 2,
-    title: "Article 25",
-    type: "Short Film",
+    title: "Balancing Acts:",
+    type: "Documentary",
     logline:
-      "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
+      "A portrayal of how women from different professions and social classes balance their lives between professions and other activities in our society.",
+    img: "https://i.ibb.co/3TbKVnP/IMG-20230414-045927.jpg",
   },
   {
-    id: 2,
-    title: "Article 25",
-    type: "Short Film",
+    id: 3,
+    title:
+      "Silver Jubilee Events",
+    type: "Compiled Project (Promotional video, documentary & event documentation)",
     logline:
-      "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
+      "A compiled project of promotional video, documentary and event documentation video for the Department of Fisheries of Dhaka University on their Silver Jubilee events.",
+    img: "https://i.ibb.co/6FFPLx2/IMG-20230414-045241.jpg",
   },
 ];

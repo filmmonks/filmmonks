@@ -71,9 +71,9 @@ const Service = () => {
                   transition: "opacity 0.3s ease",
                 }}
               >
-                {data?.icon}
+                {data?.title}
                 <p className="text-xs ">
-                  {hoveredId === data._id ? data.content : data.title}
+                  {hoveredId === data._id && data.content}
                 </p>
               </div>
             </div>
@@ -160,7 +160,11 @@ const servicesData = [
     _id: 1,
     image: img1,
     title: "CINEMA",
-    icon: <BiVideoRecording />,
+    icon: (
+      <p style={{ width: "33px", height: "33px" }}>
+        <BiVideoRecording />
+      </p>
+    ),
     content:
       "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
   },

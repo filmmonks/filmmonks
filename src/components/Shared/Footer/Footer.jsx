@@ -55,7 +55,7 @@ const Footer = () => {
               <p className="link link-hover font-bold text-left lg:text-xl md:text-lg text-base">
                 Follow Us
               </p>
-              <SocialMedia />
+              <SocialMedia style={{ display: "flex" }} />
             </div>
           </div>
         </div>

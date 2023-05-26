@@ -1,9 +1,9 @@
 import React from "react";
 import { BsFacebook, BsYoutube, BsInstagram } from "react-icons/bs";
 import { Link } from "react-router-dom";
-const SocialMedia = () => {
+const SocialMedia = ({style}) => {
   return (
-    <div className="flex lg:flex-col">
+    <div style={style}>
       <p className="link link-hover text-xl my-3 mx-2">
         <Link to="https://www.facebook.com/filmmonksarthouse" target="_blank" > <BsFacebook /></Link>
        

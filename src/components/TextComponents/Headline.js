@@ -28,9 +28,11 @@ export const HeadlineWrapper = styled.div`
     }
   }
   h1 {
-    margin-top: 100px;
+    margin-top: 80px;
+    margin-bottom: 50px;
     @media only screen and (max-width: 440px) {
       margin-top: 25px;
+      margin-bottom: 25px;
     }
   }
 `;

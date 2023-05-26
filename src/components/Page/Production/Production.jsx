@@ -187,14 +187,17 @@ const Production = () => {
   });
   return (
     <>
-      <div id="production" className="lg:block md:block hidden">
+      <div id="production" className="lg:block md:block hidden ">
         <Headline content="Production Proces" lastWord="s" />
         <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
-        <div style={{ height: "313px" }} className="bg-[#F45656]"></div>
 
-        <div className="grid grid-cols-4 mx-28 mb-64">
+        <div className="">
+
+          
+        </div>
+        <div className="grid grid-cols-4 pt-16 px-24 mb-64 bg-[#F45656] h-[600px] ">
           {productionData.map((data) => (
-            <div style={{ marginTop: "-240px" }} className="ml-4">
+            <div  className="ml-4">
               {" "}
               <div className="card">
                 <img src={data?.img} alt="" />
@@ -247,6 +250,8 @@ const Production = () => {
           ))}
         </div>
       </div>
+      {/*  */}
+      {/* // mobile device */}
       <div id="production" className="block md:hidden lg:hidden">
         <Headline content="Production Proces" lastWord="s" />
         {/* <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />

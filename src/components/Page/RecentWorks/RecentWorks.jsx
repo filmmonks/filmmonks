@@ -1,66 +1,53 @@
-import { ImageList, ImageListItem } from "@mui/material";
 import React from "react";
 import Headline from "../../TextComponents/Headline";
+import styled from "styled-components";
 
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
 const RecentWorks = () => {
   return (
-    <div className="">
-      <Headline content="Our Resent Work" lastWord="s" />
-      <div className="grid grid-cols-5 ">
+    <Wrapper className="">
+      <Headline content="Our Recent Work" lastWord="s" />
+      <div className="flex flex-wrap justify-between lg:mx-24 md:mx-16 mx-12 lg:gap-6 gap-y-12 lg:mb-24 mb-16">
         {itemData.map((data) => (
-          <div>
-            <img src={data.img} alt="works" />
+          <div className="mx-auto">
+            <iframe
+              className="video-size"
+              src={data.videoLink}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
           </div>
         ))}
       </div>
-    </div>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  .video-size {
+    width: 400px;
+    height: 315px;
+
+    @media screen and (max-width: 440px) {
+      width: 320px;
+      height: 215px;
+    }
+  }
+`;
 export default RecentWorks;
 
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    videoLink: "https://www.youtube.com/embed/gx2G1mfMpVM",
     title: "Breakfast",
-    rows: 2,
-    cols: 2,
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    videoLink: "https://www.youtube.com/embed/uN1C1d8AlyQ",
     title: "Burger",
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    videoLink: "https://www.youtube.com/embed/uqep8ajOiMU",
     title: "Camera",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
-    title: "Coffee",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
   },
 ];

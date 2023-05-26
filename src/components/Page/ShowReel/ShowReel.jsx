@@ -17,11 +17,12 @@ const ShowReel = () => {
       >
         <Headline
           content="ShowReel"
-          style={{ color: "white", marginTop: "50px" }}
+          className="headline-showreel"
+          style={{ color: "white", marginTop: "35px" }}
         />
 
         <div className="flex justify-center ">
-          <div>
+          <div className="">
             {" "}
             <iframe
               className="showReel-video"
@@ -40,7 +41,8 @@ const ShowReel = () => {
 export const Wrapper = styled.div`
   .showReel-video {
     width: 800px;
-    height: 75vh;
+    height: 70vh;
+
     @media only screen and (max-width: 440px) {
       width: 300px;
       height: 40vh;

@@ -1,36 +1,36 @@
 import React from "react";
 import Headline from "../../TextComponents/Headline";
 
-import img1 from "../../../Assets/MonksGalary/img1.png";
-import img2 from "../../../Assets/MonksGalary/img2.png";
-import img3 from "../../../Assets/MonksGalary/img3.png";
-import img4 from "../../../Assets/MonksGalary/img4.png";
-import img5 from "../../../Assets/MonksGalary/img5.png";
+import img1 from "../../../Assets/MonksGalary/galary1 (2).png";
+import img2 from "../../../Assets/MonksGalary/galary2 (1).png";
+import img3 from "../../../Assets/MonksGalary/galary3 (1).png";
+import img4 from "../../../Assets/MonksGalary/galary4 (1).png";
+import img5 from "../../../Assets/MonksGalary/galary5 (1).png";
+import img6 from "../../../Assets/MonksGalary/galary2 (1).png";
 import "./PhotoGalary.css";
 import styled from "styled-components";
+import Content from "../../TextComponents/Content";
+import { Link } from "react-router-dom";
 const PhotoGalary = () => {
   return (
     <PhotoGalaryWrapper>
       <div id="monks-gallery" className="my-12 ">
         <Headline content=" Monks Galler" lastWord="y" />
-        <div className="hidden lg:block ">
-          {" "}
-          <div class="grid grid-cols-2 gap-4">
-            <div class=""></div>
-            <div class="lg:w-[300px] -ml-[150px]">
-              Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit
-              sapien ornare morbin dd we can understand the fact po of film{" "}
-            </div>
+        <Content content="We capture our moments and showcase them here." />
+
+        <div className="hidden lg:block md:block">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  lg:mx-40 gap-10 mx-auto ">
+            {galleryData.map((data) => (
+              <div className="w-[380px]">
+                <img src={data?.image} alt="" />
+              </div>
+            ))}
           </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 lg:mx-56 ">
-            <img className="photo-gallery" src={img1} alt="" />
-            <img className="mt-16 photo-gallery" src={img2} alt="" />
-            <img className=" mt-32 photo-gallery" src={img3} alt="" />
-            <img className="-mt-32 photo-gallery" src={img4} alt="" />
-            <img className="-mt-16 photo-gallery" src={img5} alt="" />
-            <img className=" photo-gallery" src={img5} alt="" />
-          </div>
+          <button className="mt-16 mx-auto desktop-btn">
+            <Link to="/monks-galary">see more</Link>
+          </button>
         </div>
+        {/* // mobile device */}
         <div className="lg:hidden block mx-8 mb-6">
           <img className="mt-6" src={img1} alt="" />
           <button className="mt-6">
@@ -41,7 +41,7 @@ const PhotoGalary = () => {
     </PhotoGalaryWrapper>
   );
 };
-const galleryData = [
+export const galleryData = [
   {
     id: 1,
     image: img1,
@@ -62,8 +62,29 @@ const galleryData = [
     id: 5,
     image: img5,
   },
+  {
+    id: 6,
+    image: img6,
+  },
 ];
 export const PhotoGalaryWrapper = styled.div`
+  .desktop-btn {
+    height: 59px;
+    width: 157px;
+    left: 891px;
+    top: 7996px;
+    border-radius: 2px;
+    padding: 16px 32px 16px 32px;
+  }
+  .desktop-btn > a {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.005em;
+    text-align: left;
+    color: #ffffff;
+  }
   button {
     width: 88px;
     height: 43px;

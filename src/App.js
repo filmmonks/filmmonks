@@ -14,6 +14,7 @@ import Contact from "./components/Page/Contact/Contact";
 import NotFound from "./components/Shared/NotFound/NotFound";
 import ScrollToTop from "./components/Shared/ScrollToTop/ScrollToTop";
 import Article from "./components/Page/Article/Article";
+import AllPhotosGalary from "./components/Page/PhotoGalary/AllPhotosGalary";
 
 function App() {
   const location = useLocation();
@@ -50,6 +51,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/article" element={<Article />}></Route>
+            <Route path="/monks-galary" element={<AllPhotosGalary />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
