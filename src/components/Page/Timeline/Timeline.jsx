@@ -3,9 +3,10 @@ import Headline from "../../TextComponents/Headline";
 import { Bounce } from "react-reveal";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 const Timeline = () => {
   return (
-    <WrapperTimeLine className="bg-[#000000] lg:pt-8 lg:pb-36 py-3 md:py-6">
+    <WrapperTimeLine id="work" className="bg-[#000000] lg:pt-8 lg:pb-36 py-3 md:py-6 relative">
       <Headline
         style={{ color: "white" }}
         content="Work TimeLin"
@@ -94,6 +95,16 @@ const Timeline = () => {
           </div>
         ))}
       </div>
+      <div
+        style={{
+          top: "30%",
+          right: "1%",
+
+        }}
+        className="absolute hidden lg:flex md:flex items-center justify-center"
+      >
+        <SocialMedia />
+      </div>
     </WrapperTimeLine>
   );
 };
@@ -149,8 +160,7 @@ const timelineData = [
   },
   {
     id: 3,
-    title:
-      "Silver Jubilee Events",
+    title: "Silver Jubilee Events",
     type: "Compiled Project (Promotional video, documentary & event documentation)",
     logline:
       "A compiled project of promotional video, documentary and event documentation video for the Department of Fisheries of Dhaka University on their Silver Jubilee events.",

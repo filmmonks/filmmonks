@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "./Team.module.css";
 import styled from "styled-components";
+import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -27,7 +28,7 @@ const Team = () => {
     // slides: { perView: 1 },
   });
   return (
-    <TeamWrapper>
+    <TeamWrapper className="relative">
       <div
         id="team"
         className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[75vh]
@@ -106,6 +107,15 @@ const Team = () => {
             )}
           </div>
         </div>{" "}
+      </div>
+      <div
+        style={{
+          top: "45%",
+          right: "1%",
+        }}
+        className="absolute hidden lg:flex md:flex items-center justify-center"
+      >
+        <SocialMedia />
       </div>
     </TeamWrapper>
   );
