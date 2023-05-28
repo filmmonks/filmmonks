@@ -86,7 +86,10 @@ const Timeline = () => {
       {/* // mobile device */}
       <div className="lg:hidden block md:hidden mb-10">
         {timelineData.map((data) => (
-          <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16   border-red-50 ">
+          <Link
+            to="/article"
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16   border-red-50 "
+          >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
               src={data?.img}
@@ -102,7 +105,7 @@ const Timeline = () => {
                 {data?.logline}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div

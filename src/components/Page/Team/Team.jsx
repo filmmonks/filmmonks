@@ -30,9 +30,8 @@ const Team = () => {
   });
 
   return (
-    <TeamWrapper className="relative">
+    <TeamWrapper id="team" className="relative">
       <div
-        id="team"
         className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[60vh]
     pt-12 lg:block hidden "
       >
@@ -99,7 +98,7 @@ const Team = () => {
         <Headline content="Meet The Tea" lastWord="m" />
         <div
           id="team"
-          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[30vh]
+          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[50vh]
     pt-8 block lg:hidden mt-6"
         >
           <div className="navigation-wrapper  relative mt-8">

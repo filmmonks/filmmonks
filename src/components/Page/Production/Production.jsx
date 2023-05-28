@@ -199,7 +199,7 @@ const Production = () => {
     },
     slides: { perView: 1 },
   });
- 
+
   return (
     <ProductionWrapper>
       <div id="production" className="lg:block md:block hidden ">
@@ -250,7 +250,6 @@ const Production = () => {
                   }}
                   className="text-left mx-auto text-white"
                 >
-                  
                   {data?.list?.slice(0, 3).map((l) => (
                     <div>
                       -
@@ -270,8 +269,11 @@ const Production = () => {
       </div>
 
       {/* // mobile device */}
-      <div id="production" className="block md:hidden lg:hidden">
+      <div id="production" className="block md:hidden lg:hidden mt-12">
         <Headline content="Production Proces" lastWord="s" />
+        <p className="-mt-4 mb-2 text-[#B19B9B]" style={{ fontSize: "12px" }}>
+          Six Individual Phases of A Production
+        </p>
 
         <div className="navigation-wrapper  relative">
           <div ref={sliderRef} className="keen-slider">
@@ -302,7 +304,7 @@ const Production = () => {
                       <div>
                         <p
                           title={l?.description}
-                          className="hover:cursor-pointer text-base"
+                          className="hover:cursor-pointer text-base subtitle"
                         >
                           {l?.description}
                         </p>
@@ -315,15 +317,16 @@ const Production = () => {
           </div>
           {loaded && instanceRef.current && (
             <>
-              <Arrow
+              {/* <Arrow
                 left
                 onClick={(e) =>
                   e.stopPropagation() || instanceRef.current?.prev()
                 }
                 disabled={currentSlide === 0}
-              />
+              /> */}
 
               <Arrow
+                style={{ fill: "#8d1313" }}
                 onClick={(e) =>
                   e.stopPropagation() || instanceRef.current?.next()
                 }
@@ -407,8 +410,11 @@ const ProductionWrapper = styled.div`
     font-size: 24px;
     line-height: 36px;
     color: rgba(15, 16, 11, 0.8);
+    @media only screen and (max-width: 440px) {
+      font-size: 14px;
+      color: #0f100b;
+    }
   }
-
   .subtitle {
     margin-left: 5px;
     display: inline;
@@ -417,6 +423,10 @@ const ProductionWrapper = styled.div`
     font-size: 14px;
     line-height: 22px;
     color: #ffffff;
+    @media only screen and (max-width: 440px) {
+      font-size: 12px;
+      color: #5A5A5A;
+    }
   }
 `;
 export default Production;

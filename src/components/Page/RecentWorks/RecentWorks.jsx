@@ -33,6 +33,14 @@ const Wrapper = styled.div`
       width: 320px;
       height: 215px;
     }
+    @media screen and (max-width: 376px) {
+      width: 280px;
+      height: 215px;
+    }
+    @media screen and (max-width: 321px) {
+      width: 230px;
+      height: 215px;
+    }
   }
 `;
 export default RecentWorks;

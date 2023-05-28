@@ -36,11 +36,8 @@ const Service = () => {
   });
 
   return (
-    <div className="relative">
-      <div
-        id="service"
-        className="lg:mx-24 mx-8 md:mx-16 my-8 lg:block hidden md:block"
-      >
+    <div id="service" className="relative">
+      <div className="lg:mx-24 mx-8 md:mx-16 my-8 lg:block hidden md:block">
         <Headline content="service" lastWord="s" />
         <div className="grid  xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
           {servicesData.map((data) => (
@@ -83,10 +80,7 @@ const Service = () => {
       </div>
 
       {/* //for mobile device */}
-      <div
-        id="service"
-        className="lg:mx-24 mx-8 md:mx-16 my-8 lg:hidden block md:hidden"
-      >
+      <div className="lg:mx-24 mx-8 md:mx-16 my-8 lg:hidden block md:hidden">
         <Headline content="service" lastWord="s" />
         <div className="navigation-wrapper">
           <div ref={sliderRef} className="keen-slider">
@@ -119,9 +113,9 @@ const Service = () => {
                     transition: "opacity 0.3s ease",
                   }}
                 >
-                  {data?.icon}
+                  {data?.title}
                   <p className="text-xs ">
-                    {hoveredId === data._id ? data.content : data.title}
+                    {hoveredId === data._id && data.content}
                   </p>
                 </div>
               </div>
@@ -151,6 +145,7 @@ const Service = () => {
         </div>
       </div>
 
+      {/* social media */}
       <div
         style={{
           top: "45%",

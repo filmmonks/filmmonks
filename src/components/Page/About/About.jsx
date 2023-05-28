@@ -137,17 +137,19 @@ const itemData1 = [
     img: img2,
     title: "2",
     width: "130px",
+    marginLeft: "10px"
   },
   {
     img: img3,
     title: "1",
     width: "130px",
+    marginTop: "10px",
   },
   {
     img: img4,
     title: "2",
     width: "116px",
-    marginTop: "20px",
-    marginLeft: "15px",
+    marginTop: "30px",
+    marginLeft: "25px",
   },
 ];

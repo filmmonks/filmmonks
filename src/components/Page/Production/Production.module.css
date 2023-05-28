@@ -1,32 +1,8 @@
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.navigation-wrapper {
-  position: relative;
-}
-
-.arrow {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  fill: #d31010;
-  cursor: pointer;
-}
-
-.arrow--left {
-  left: 5px;
-}
 
 .arrow--right {
   left: auto;
   right: -44px;
+  fill: cadetblue;
 }
 
 .arrow--disabled {
