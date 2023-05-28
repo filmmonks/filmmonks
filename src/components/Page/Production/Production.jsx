@@ -9,39 +9,67 @@ import production from "../../../Assets/production/production (2).png";
 import preproduction from "../../../Assets/production/pre-production.png";
 import postroduction from "../../../Assets/production/Post Production 1.png";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
+import styled from "styled-components";
 const productionData = [
   {
     id: 1,
-    title: "research",
+    title: "Research",
     img: "https://i.ibb.co/yY1GT8B/research.png",
     list: [
       {
         id: 1,
-        description: "Reference Findings",
+        description: "Script Analysis",
       },
       {
         id: 2,
-        description: "Analyses",
+        description: "Reference Findings",
       },
       {
         id: 3,
-        description: " Research File",
+        description: "Research File",
+      },
+    ],
+  },
+
+  {
+    id: 2,
+    title: "Project Development",
+    img: "https://i.ibb.co/yY1GT8B/research.png",
+    list: [
+      {
+        id: 1,
+        description: "Budget",
+      },
+      {
+        id: 2,
+        description: "Public Relation (PR) Design",
       },
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Pre Production",
     img: "https://i.ibb.co/MBNrMP6/pre-production.png",
 
     list: [
       {
         id: 1,
-        description: " Finalizing the script",
+        description: "Selection of Casts and Crews",
       },
       {
         id: 2,
-        description: "Budget",
+        description: "Crew Orientation and Briefing",
       },
       {
         id: 3,
@@ -49,82 +77,68 @@ const productionData = [
       },
       {
         id: 4,
-        description: "Selection of the Casts and Crews",
+        description: "1st Pre Production Meeting(PPM)",
       },
       {
         id: 5,
-        description: "Finding Locations",
+        description: "Location Recce",
       },
       {
         id: 6,
-        description: "Crew Orientation and Briefing",
+        description: "Finalizing Costumes",
       },
       {
         id: 7,
-        description: "1st Pre Production Meeting(PPM)",
+        description: "Finalizing Props & Set Design",
       },
 
       {
         id: 8,
-        description: "Location Recce",
+        description: "Finalizing Equipment",
       },
       {
         id: 9,
-        description: "Finalizing Costumes",
+        description: "Finalizing Locations",
       },
       {
         id: 10,
-        description: "Finalizing Props & Set Design",
-      },
-      {
-        id: 11,
-        description: "Finalizing department based decisions",
-      },
-      {
-        id: 12,
         description: "Permission and Insurance",
       },
       {
-        id: 13,
+        id: 11,
         description: "2nd PPM",
       },
       {
-        id: 14,
+        id: 12,
         description: "Shot Division",
       },
       {
-        id: 15,
+        id: 13,
         description: "Storyboard",
       },
       {
-        id: 16,
+        id: 14,
         description: "Rehearsal",
       },
       {
-        id: 17,
+        id: 15,
         description: "3rd PPM",
       },
     ],
   },
   {
-    id: 3,
-    title: "Production",
+    id: 4,
+    title: "PreShooting",
     img: "https://i.ibb.co/Bgp7PPX/production-2.png",
-    list: [
-      {
-        id: 1,
-        description: "Shoot days",
-      },
-    ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Post Production",
     img: "https://i.ibb.co/NKTfPzQ/Post-Production-1.png",
     list: [
       {
         id: 1,
-        description: " Music",
+        description: "First Cut",
       },
       {
         id: 2,
@@ -132,7 +146,7 @@ const productionData = [
       },
       {
         id: 3,
-        description: "First Cut",
+        description: "Music",
       },
       {
         id: 4,
@@ -140,26 +154,27 @@ const productionData = [
       },
       {
         id: 5,
-        description: "Visual effects",
+        description: "Visual Effects Insertion",
       },
       {
         id: 6,
-        description: "insertion",
+        description: "Supervising",
       },
       {
         id: 7,
-        description: "Supervising",
+        description: "Final Editing",
       },
 
       {
         id: 8,
-        description: "Final Editing",
-      },
-      {
-        id: 9,
         description: "Project Submission",
       },
     ],
+  },
+  {
+    id: 6,
+    title: "Delivery",
+    img: "https://i.ibb.co/NKTfPzQ/Post-Production-1.png",
   },
 ];
 
@@ -175,142 +190,87 @@ const Production = () => {
       setLoaded(true);
     },
 
-    // breakpoints: {
-    //   "(min-width: 400px)": {
-    //     slides: { perView: 1, spacing: 10 },
-    //   },
-    //   "(min-width: 1000px)": {
-    //     slides: { perView: 3, spacing: 10 },
-    //   },
-    // },
-    // slides: { perView: 1 },
+    breakpoints: {
+      "(min-width: 400px)": {
+        slides: { perView: 1, spacing: 10 },
+      },
+      "(min-width: 1000px)": {
+        slides: { perView: 4, spacing: 10 },
+      },
+    },
+    slides: { perView: 1 },
   });
   return (
-    <>
+    <ProductionWrapper>
       <div id="production" className="lg:block md:block hidden ">
         <Headline content="Production Proces" lastWord="s" />
-        <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
+        <Content content="Six Individual Phases of A Production" />
 
-        <div className="">
-
-          
-        </div>
-        <div className="grid grid-cols-4 pt-16 px-24 mb-64 bg-[#F45656] h-[600px] ">
-          {productionData.map((data) => (
-            <div  className="ml-4">
-              {" "}
-              <div className="card">
-                <img src={data?.img} alt="" />
-                <p className="text-center my-4 capitalize">{data?.title}</p>
-
-                <div>
-                  {data.list.slice(0, 3).map((l) => (
-                    <div
-                      style={{
-                        width: "185px",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
-                      className="flex items-center "
-                    >
-                      <img
-                        className="mr-3"
-                        src="https://i.ibb.co/rb2nHDR/Exclude.png"
-                        alt=""
-                        srcset=""
-                      />
-                      <div>
-                        {l.description.length > 15 ? (
-                          <p
-                            title={l.description}
-                            className="hover:cursor-pointer"
-                          >
-                            {l.description.slice(0, 15) + "..."}{" "}
-                          </p>
-                        ) : (
-                          <p
-                            title={l.description}
-                            className="hover:cursor-pointer"
-                          >
-                            {l.description}
-                          </p>
-                        )}
-                      </div>
+        <div className=" pt-16  bg-[#F45656] h-[600px] ">
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            freeMode={true}
+            cssMode={true}
+            navigation={true}
+            mousewheel={true}
+            keyboard={true}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+            className="mySwiper"
+            breakpoints={{
+              440: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            {productionData.map((data) => (
+              <SwiperSlide key={data._id}>
+                <img
+                  className="w-[310px] mx-auto mb-5"
+                  src={data?.img}
+                  alt=""
+                />
+                <p className="title mb-6">{data?.title}</p>
+                <div
+                  style={{
+                    width: "185px",
+                  }}
+                  className="text-left mx-auto text-white"
+                >
+                  {data?.list?.slice(0, 3).map((l) => (
+                    <div>
+                      -
+                      <p
+                        title={l?.description}
+                        className="hover:cursor-pointer text-base  subtitle"
+                      >
+                        {l?.description}
+                      </p>
                     </div>
                   ))}
-                  <img
-                    className="bg-[#F45656] ml-auto w-[20px]"
-                    src="https://i.ibb.co/m04ghjk/211688-forward-arrow-icon-1.png"
-                    alt=""
-                    srcset=""
-                  />
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
-      {/*  */}
+
       {/* // mobile device */}
       <div id="production" className="block md:hidden lg:hidden">
         <Headline content="Production Proces" lastWord="s" />
-        {/* <Content content="Lorem ipsum dolor sit amet consectetur. Lorem adipiscing erat sit sapien ornare morbin dd we  can understand the fact po of film  " />
-         */}
-
-        {/* <div className="grid grid-cols-4 mx-28 mb-64">
-          {productionData.map((data) => (
-            <div style={{ marginTop: "-240px" }} className="ml-4">
-              {" "}
-              <div className="card">
-                <img src={data?.img} alt="" />
-                <p className="text-center my-4 capitalize">{data?.title}</p>
-
-                <div>
-                  {data.list.slice(0, 3).map((l) => (
-                    <div
-                      style={{
-                        width: "185px",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
-                      className="flex items-center "
-                    >
-                      <img
-                        className="mr-3"
-                        src="https://i.ibb.co/rb2nHDR/Exclude.png"
-                        alt=""
-                        srcset=""
-                      />
-                      <div>
-                        {l.description.length > 15 ? (
-                          <p
-                            title={l.description}
-                            className="hover:cursor-pointer"
-                          >
-                            {l.description.slice(0, 15) + "..."}{" "}
-                          </p>
-                        ) : (
-                          <p
-                            title={l.description}
-                            className="hover:cursor-pointer"
-                          >
-                            {l.description}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                  <img
-                    className="bg-[#F45656] ml-auto w-[20px]"
-                    src="https://i.ibb.co/m04ghjk/211688-forward-arrow-icon-1.png"
-                    alt=""
-                    srcset=""
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div> */}
 
         <div className="navigation-wrapper  relative">
           <div ref={sliderRef} className="keen-slider">
@@ -323,7 +283,7 @@ const Production = () => {
                   alt=""
                 />
                 <div>
-                  {data.list.slice(0, 3).map((l) => (
+                  {data?.list?.slice(0, 3).map((l) => (
                     <div
                       style={{
                         width: "185px",
@@ -340,10 +300,10 @@ const Production = () => {
                       />
                       <div>
                         <p
-                          title={l.description}
+                          title={l?.description}
                           className="hover:cursor-pointer text-base"
                         >
-                          {l.description}
+                          {l?.description}
                         </p>
                       </div>
                     </div>
@@ -375,7 +335,7 @@ const Production = () => {
           )}
         </div>
       </div>
-    </>
+    </ProductionWrapper>
   );
 };
 
@@ -399,5 +359,63 @@ function Arrow(props) {
     </svg>
   );
 }
+const ProductionWrapper = styled.div`
+  :root {
+    --swiper-navigation-size: 20px !important;
+  }
+  .swiper,
+  swiper-container {
+    padding-left: 96px !important;
+    padding-right: 96px !important;
+  }
+  .swiper-button-prev {
+    font-size: 20px !important;
+    width: 47px;
+    height: 49px;
+    color: red;
+    border-radius: 50%;
 
+    background: #fff8f8;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  }
+  .swiper-button-next {
+    font-size: 20px !important;
+    width: 47px;
+    height: 49px;
+    color: red;
+    border-radius: 50%;
+    background: #fff8f8;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: 20px !important;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-feature-settings: ;
+    font-variant: initial;
+    line-height: 1;
+  }
+
+  .title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(15, 16, 11, 0.8);
+  }
+
+  .subtitle {
+    margin-left: 5px;
+    display: inline;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    color: #ffffff;
+  }
+`;
 export default Production;

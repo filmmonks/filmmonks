@@ -25,7 +25,7 @@
     "react-scroll-up": "^1.4.0",
     "react-spinners": "^0.13.8",
     "styled-components": "^5.3.10",
-    "swiper": "^9.2.0",
+    "swiper": "^9.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

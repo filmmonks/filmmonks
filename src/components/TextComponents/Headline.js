@@ -29,7 +29,7 @@ export const HeadlineWrapper = styled.div`
   }
   h1 {
     margin-top: 80px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     @media only screen and (max-width: 440px) {
       margin-top: 25px;
       margin-bottom: 25px;
