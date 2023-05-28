@@ -16,7 +16,8 @@ const ShowReel = () => {
         className="bg-[url('https://i.ibb.co/mSQdkpJ/showreel.png')] bg-cover bg-center lg:h-screen pt-4 pb-4 "
       >
         <Headline
-          content="ShowReel"
+          content="ShowRee"
+          lastWord="l"
           className="headline-showreel"
           style={{ color: "white", marginTop: "35px" }}
         />

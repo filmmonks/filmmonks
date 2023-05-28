@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Home from "./components/Page/Home/Home";
 import Footer from "./components/Shared/Footer/Footer";
@@ -15,6 +14,7 @@ import NotFound from "./components/Shared/NotFound/NotFound";
 import ScrollToTop from "./components/Shared/ScrollToTop/ScrollToTop";
 import Article from "./components/Page/Article/Article";
 import AllPhotosGalary from "./components/Page/PhotoGalary/AllPhotosGalary";
+import AllWorkTimeline from "./components/Page/Timeline/AllWorkTimeline";
 
 function App() {
   const location = useLocation();
@@ -52,13 +52,14 @@ function App() {
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/article" element={<Article />}></Route>
             <Route path="/monks-galary" element={<AllPhotosGalary />}></Route>
+            <Route path="/work-timeline" element={<AllWorkTimeline />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
           {location.pathname !== "/contact" &&
-            location.pathname !== "/article" && 
-            location.pathname !== "/monks-galary"&&
-            <Footer />}
+            location.pathname !== "/article" &&
+            location.pathname !== "/monks-galary" &&
+            location.pathname !== "/work-timeline" && <Footer />}
         </div>
       )}
     </>

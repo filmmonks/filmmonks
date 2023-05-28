@@ -41,7 +41,6 @@ const productionData = [
       },
     ],
   },
-
   {
     id: 2,
     title: "Project Development",
@@ -200,6 +199,7 @@ const Production = () => {
     },
     slides: { perView: 1 },
   });
+ 
   return (
     <ProductionWrapper>
       <div id="production" className="lg:block md:block hidden ">
@@ -250,6 +250,7 @@ const Production = () => {
                   }}
                   className="text-left mx-auto text-white"
                 >
+                  
                   {data?.list?.slice(0, 3).map((l) => (
                     <div>
                       -

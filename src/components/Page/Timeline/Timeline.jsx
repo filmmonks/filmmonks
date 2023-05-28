@@ -4,9 +4,13 @@ import { Bounce } from "react-reveal";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
+import { PhotoGalaryWrapper } from "../PhotoGalary/PhotoGalary";
 const Timeline = () => {
   return (
-    <WrapperTimeLine id="work" className="bg-[#000000] lg:pt-8 lg:pb-36 py-3 md:py-6 relative">
+    <WrapperTimeLine
+      id="work"
+      className="bg-[#000000] lg:pt-8 lg:pb-16 py-3 md:py-6 relative"
+    >
       <Headline
         style={{ color: "white" }}
         content="Work TimeLin"
@@ -71,6 +75,12 @@ const Timeline = () => {
             </div>
           </Bounce>
         ))}
+        <PhotoGalaryWrapper>
+          {" "}
+          <button className="mt-16 mx-auto desktop-btn">
+            <Link to="/work-timeline">see more</Link>
+          </button>
+        </PhotoGalaryWrapper>
       </div>
 
       {/* // mobile device */}
@@ -99,7 +109,6 @@ const Timeline = () => {
         style={{
           top: "30%",
           right: "1%",
-
         }}
         className="absolute hidden lg:flex md:flex items-center justify-center"
       >

@@ -70,7 +70,8 @@ const Navbar = () => {
           >
             {location.pathname === "/contact" ||
             location.pathname === "/article" ||
-            location.pathname === "/monks-galary" ? (
+            location.pathname === "/monks-galary" ||
+            location.pathname === "/work-timeline" ? (
               <>
                 <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                   <Link

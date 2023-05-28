@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 const Footer = () => {
   return (
-    <FooterWrapper className="mt-48">
+    <FooterWrapper className="lg:mt-72 md:mt-72 mt-48">
       <footer style={{ background: `url(${img})`, backgroundSize: "cover" }}>
         <div className="flex flex-col lg:flex-row lg:p-28 text-[#fff]">
           <div className="lg:pl-24">
@@ -25,10 +25,10 @@ const Footer = () => {
           </div>
           <div className="flex flex-col lg:flex-row lg:px-14 px-5">
             <div className="lg:mx-10 mx-7">
-              <h3 className="text-[#F45656] font-bold lg:text-xl md:text-lg text-lg  text-left">
-                Head Quarter
+              <h3 className="text-[#F45656] font-bold lg:text-2xl md:text-lg text-lg  text-left">
+                Office
               </h3>
-              <p className="link link-hover font-bold my-2 text-left lg:text-2xl md:text-xl text-lg">
+              <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
                 Connect Us
               </p>
               <p className="link link-hover text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">

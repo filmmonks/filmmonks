@@ -5,6 +5,17 @@ import "keen-slider/keen-slider.min.css";
 import "./Team.module.css";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
+import { FaFacebook } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// import required modules
+import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -16,52 +27,73 @@ const Team = () => {
     created() {
       setLoaded(true);
     },
-
-    // breakpoints: {
-    //   "(min-width: 400px)": {
-    //     slides: { perView: 1, spacing: 10 },
-    //   },
-    //   "(min-width: 1000px)": {
-    //     slides: { perView: 3, spacing: 10 },
-    //   },
-    // },
-    // slides: { perView: 1 },
   });
+
   return (
     <TeamWrapper className="relative">
       <div
         id="team"
-        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[75vh]
-    pt-12 lg:block hidden"
+        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[60vh]
+    pt-12 lg:block hidden "
       >
-        <Headline content="Meet The Tea" lastWord="m" />
+        <Headline
+          style={{ color: "white" }}
+          content="Meet The Tea"
+          lastWord="m"
+        />
 
-        <div className=" ">
-          <div className="navigation-wrapper">
-            {loaded && instanceRef.current && (
-              <>
-                <Arrow
-                  left
-                  onClick={(e) =>
-                    e.stopPropagation() || instanceRef.current?.prev()
-                  }
-                  disabled={currentSlide === 0}
+        <div className="mx-auto w-[70%] mt-20">
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={30}
+            freeMode={true}
+            cssMode={true}
+            navigation={true}
+            mousewheel={true}
+            keyboard={true}
+            modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+            className="mySwiper"
+            breakpoints={{
+              440: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
+            }}
+          >
+            {teamData.map((data) => (
+              <SwiperSlide key={data._id}>
+                <img
+                  className="w-[250px] mx-auto mb-5 hover:brightness-50 relative z-10"
+                  src={data?.img}
+                  alt=""
                 />
-
-                <Arrow
-                  onClick={(e) =>
-                    e.stopPropagation() || instanceRef.current?.next()
-                  }
-                  disabled={
-                    currentSlide ===
-                    instanceRef.current.track.details.slides.length - 1
-                  }
-                />
-              </>
-            )}
-          </div>
+                <div className="absolute top-0 left-0 z-20 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <div style={{ display: "flex", flexDirection: "column" }}>
+                    <FaFacebook size={30} className="text-white mt-5" />
+                    <FaFacebook size={30} className="text-white mt-5" />
+                    <FaFacebook size={30} className="text-white mt-5" />
+                  </div>
+                </div>
+                <h5 className="name">{data?.name}</h5>
+                <p className="title">{data?.title}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
-      </div>{" "}
+      </div>
+
       {/* mobile device */}
       <div className="block lg:hidden">
         <Headline content="Meet The Tea" lastWord="m" />
@@ -141,6 +173,9 @@ function Arrow(props) {
   );
 }
 const TeamWrapper = styled.div`
+  .hover:brightness-50:hover {
+    filter: brightness(50%);
+  }
   .name {
     font-family: "Inter";
     font-style: normal;
@@ -155,6 +190,37 @@ const TeamWrapper = styled.div`
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
+  }
+
+  :root {
+    --swiper-navigation-size: 20px !important;
+  }
+  .swiper,
+  swiper-container {
+    padding-left: 96px !important;
+    padding-right: 96px !important;
+  }
+  .swiper-button-prev {
+    font-size: 20px !important;
+    width: 47px;
+    height: 49px;
+    color: #fff8f8;
+  }
+  .swiper-button-next {
+    font-size: 20px !important;
+    width: 47px;
+    height: 49px;
+    color: #fff8f8;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-family: swiper-icons;
+    font-size: 20px !important;
+    text-transform: none !important;
+    letter-spacing: 0;
+    font-feature-settings: ;
+    font-variant: initial;
+    line-height: 1;
   }
 `;
 export default Team;
