@@ -22,7 +22,7 @@ const Article = () => {
     <ArticleWrapper>
       <div className="flex flex-wrap justify-between items-center mb-8">
         <div className="mt-28 text-left lg:mx-24 md:mx-16 mx-12">
-          <h2 className="article">Artcle</h2>
+          <h2 className="article">Article</h2>
           <p className="project-description">project description</p>
           <p className="border mt-2 border-b-[#F25659] w-14"></p>
           <div>
@@ -44,10 +44,17 @@ const Article = () => {
           </p>
           <p className="project-description"> Language: Bangla</p>
           <p className="project-description"> Writer: Jaynto Kumar Kundu</p>
+          <p className="project-description w-[400px]"> 
+          A small-town struggling woman searches for her missing
+            brother who guided and implemented confidence within herself to be
+            independent. While revolving around her she learns about the complex
+            socio-political instances and the substantial uncertainty in it.
+          </p>
+          
         </div>
         <div className="lg:block md:hidden hidden my-auto">
           <img
-            className="w-[595.67px] h-[595px] "
+            className="w-[595.67px] h-[595px] mt-20"
             src="https://i.ibb.co/9qpqzRJ/FILM-MONKS-logo-sign-only-png-1-20-1.png"
             alt=""
           />

@@ -33,7 +33,10 @@ const PhotoGalary = () => {
           </div>
         </div>
         {/* // mobile device */}
-        <p className="-mt-4 mb-2 text-[#B19B9B]" style={{ fontSize: "12px" }}>
+        <p
+          className="-mt-4 mb-2 text-[#B19B9B] lg:hidden md:hidden block"
+          style={{ fontSize: "12px" }}
+        >
           We capture our moments and showcase them here.
         </p>
         <div className="lg:hidden block mx-8 mb-6">
