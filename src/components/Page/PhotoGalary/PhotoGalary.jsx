@@ -17,13 +17,13 @@ const PhotoGalary = () => {
       <PhotoGalaryWrapper>
         <div className="mt-32 mb-12">
           <Headline content=" Monks Galler" lastWord="y" />
-          <div className="hidden lg:block md:block">
+          <div className="hidden lg:block md:hidden">
             {" "}
             <Content content="We capture our moments and showcase them here." />
             <div className="">
-              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  lg:mx-40 gap-10 mx-auto ">
+              <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1  xl:gap-10 lg:gap-5 xl:mx-40 lg:mx-32 ">
                 {galleryData.map((data) => (
-                  <div className="w-[380px]">
+                  <div className="w-[380px] mx-auto">
                     <img src={data?.image} alt="" />
                   </div>
                 ))}
@@ -40,8 +40,8 @@ const PhotoGalary = () => {
           >
             We capture our moments and showcase them here.
           </p>
-          <div className="lg:hidden block mx-8 mb-6">
-            <img className="mt-6" src={img1} alt="" />
+          <div className="lg:hidden block mx-auto mb-6">
+            <img className="mt-6 w-[380px] mx-auto" src={img1} alt="" />
             <button className="mt-6">
               <Link to="/monks-galary">
                 {" "}

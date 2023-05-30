@@ -44,6 +44,11 @@ export const Wrapper = styled.div`
     width: 800px;
     height: 70vh;
 
+    @media only screen and (max-width: 769px) {
+      width: 500px;
+      height: 60vh;
+      margin-bottom: 20px;
+    }
     @media only screen and (max-width: 440px) {
       width: 300px;
       height: 40vh;

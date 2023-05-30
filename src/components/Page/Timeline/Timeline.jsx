@@ -19,7 +19,7 @@ const Timeline = () => {
 
       <div className="lg:block hidden md:block">
         {timelineData.slice(0, 1).map((data) => (
-          <Bounce left>
+          <Bounce delay={500} left>
             <Link
               to="/article"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2  border-b-2 border-red-50 "
@@ -40,7 +40,7 @@ const Timeline = () => {
         ))}
 
         {timelineData.slice(1, 2).map((data) => (
-          <Bounce right>
+          <Bounce delay={500} right>
             <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-[#FFF8F8] pt-16">
               <div className="text-left mt-10">
                 <h4 className="text-3xl">{data?.title}</h4>
@@ -58,7 +58,7 @@ const Timeline = () => {
         ))}
 
         {timelineData.slice(2, 3).map((data) => (
-          <Bounce left>
+          <Bounce delay={500} left>
             {" "}
             <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2   pt-16">
               <img className="w-[480px]" src={data?.img} alt="" />

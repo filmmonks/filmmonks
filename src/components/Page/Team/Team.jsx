@@ -107,7 +107,7 @@ const Team = () => {
         <div
           id="team"
           className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[50vh]
-    pt-8 block lg:hidden mt-6"
+    pt-24 block lg:hidden mt-6"
         >
           <div className="navigation-wrapper  relative mt-8">
             <div ref={sliderRef} className="keen-slider">

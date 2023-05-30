@@ -155,7 +155,7 @@ const Service = () => {
           background: " #F45656",
           clipPath: "polygon(10% 0, 100% 13%, 100% 85%, 9% 90%)",
         }}
-        className="absolute hidden lg:flex md:flex items-center justify-center"
+        className="absolute hidden lg:flex md:hidden items-center justify-center"
       >
         <SocialMedia />
       </div>
@@ -184,15 +184,16 @@ const servicesData = [
     title: "DOCUMENTARY",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "We at Film Monks are dedicated to producing visually stunning, impactful documentary films. Our team of filmmakers and fine-art photographers bring meaningful stories to the big screen.",
   },
+
   {
     _id: 3,
     image: img3,
     title: "MUSIC VIDEO",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life and produce impactful music videos that stand out in the industry",
   },
   {
     _id: 4,
@@ -200,7 +201,7 @@ const servicesData = [
     title: "TVC",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "As a full-service video production studio, Film Monks offers a wide range of services for Television Commercial productions, bringing their unique perspective and artistic skills to every project.",
   },
   {
     _id: 5,
@@ -208,7 +209,7 @@ const servicesData = [
     title: "OVC",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "Film Monks is a full-service video the production company that offers a wide range of services for online video commercials.",
   },
   {
     _id: 6,
@@ -216,7 +217,7 @@ const servicesData = [
     title: "EVENTS DOCUMENTATION",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "Our team members are ready to catch any event with a different polished view and proper technical support. ",
   },
   {
     _id: 7,
@@ -224,7 +225,7 @@ const servicesData = [
     title: "PROMOTIONAL CONTENT",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "Every kind of promotional video that perfectly promote the subject with proper image, we are ready to make.",
   },
   {
     _id: 8,
@@ -232,7 +233,7 @@ const servicesData = [
     title: "COLLABORATION",
     icon: <BiVideoRecording />,
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "We, the Film Monks team could collaborate with any other teams to lead a video project.",
   },
 ];
 

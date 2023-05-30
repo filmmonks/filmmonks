@@ -14,7 +14,7 @@ const About = () => {
     <>
       <div
         id="about"
-        className="bg-[#0F100B] lg:flex block justify-between items-center lg:gap-4 md:gap-4 lg:h-screen py-4 lg:py-0 "
+        className="bg-[#0F100B] lg:flex md:block block justify-between items-center lg:gap-4 md:gap-4 lg:h-screen py-4 lg:py-0 "
       >
         <Wrapper className="lg:w-[50%] w-[100%]">
           <div className="lg:mx-24 mx-8 md:mx-16 my-8 text-[#FFF8F8] ">
@@ -45,11 +45,11 @@ const About = () => {
           </div>
         </Wrapper>
 
-        <div className="lg:block hidden md:block lg:w-[50%] mt-44">
+        <div className="xl:block lg:block hidden lg:w-[50%] mt-44">
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
-              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2 gap-x-10 gap-y-5"
+              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2  gap-x-10 gap-y-5"
             >
               {itemData.map((item) => (
                 <img
@@ -66,7 +66,7 @@ const About = () => {
           </Fade>
         </div>
         {/* mobile device */}
-        <div className="lg:hidden block md:hidden">
+        <div className="lg:hidden block md:block">
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
@@ -91,7 +91,7 @@ const About = () => {
         </div>
 
         {/* Add SocialMedia component */}
-        <div className="hidden lg:flex md:flex items-center justify-center pr-5">
+        <div className="hidden lg:flex md:hidden items-center justify-center pr-5">
           <SocialMedia />
         </div>
       </div>
@@ -99,7 +99,9 @@ const About = () => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+
+`;
 
 export default About;
 

@@ -21,6 +21,8 @@ import "swiper/css/pagination";
 // import required modules
 import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 import styled from "styled-components";
+import Dropdown from "./Dropdown";
+import { FaAddressBook } from "react-icons/fa";
 const productionData = [
   {
     id: 1,
@@ -425,7 +427,7 @@ const ProductionWrapper = styled.div`
     color: #ffffff;
     @media only screen and (max-width: 440px) {
       font-size: 12px;
-      color: #5A5A5A;
+      color: #5a5a5a;
     }
   }
 `;
