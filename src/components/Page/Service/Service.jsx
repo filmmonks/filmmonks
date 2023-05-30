@@ -104,7 +104,7 @@ const Service = () => {
                   alt=""
                 />
                 <div
-                  className="text-white"
+                  className="text-white hover:cursor-pointer"
                   style={{
                     position: "absolute",
                     top: "50%",
@@ -114,7 +114,7 @@ const Service = () => {
                   }}
                 >
                   {data?.title}
-                  <p className="text-xs ">
+                  <p className="text-xs hover:cursor-pointer">
                     {hoveredId === data._id && data.content}
                   </p>
                 </div>

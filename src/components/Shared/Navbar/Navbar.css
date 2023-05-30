@@ -1,23 +1,9 @@
-/* .css-19kzrtu {
-  padding: 0px !important;
-}
+.nav-link {
+  color: #fff8f8;
+  transition: color 0.3s ease;
 
-.MuiTypography-root .MuiTypography-h6 c.ss-1injmrd-MuiTypography-root {
-  margin-left: 180px !important;
 }
-.MuiBox-root .css-17etucb {
-  margin-left: 150px !important;
-}
-.css-sxsnpn-MuiButtonBase-root-MuiButton-root {
-  padding: 20px !important;
-}
-.hover{
-  color: #fff ;
-}
-.hover:hover{
-  color: #F45656;
-  transition: ease 0.3s;
-} */
-.header-bg {
-  background-color: lightgreen;
+.nav-link:hover {
+  color:#F45656;
+  text-decoration: none;
 }

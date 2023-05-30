@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../../Assets/Logo/logo.png";
+import "./Navbar.css";
 
 const menuItem = [
   { _id: 1, menu: "Home", route: "#" },
@@ -75,7 +76,7 @@ const Navbar = () => {
               <>
                 <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                   <Link
-                    className="hover:text-[#F45656]  text-white font-normal "
+                    className="hover:text-red-500 text-white font-normal"
                     to="/home"
                     onClick={handleContactClick}
                   >
@@ -91,8 +92,12 @@ const Navbar = () => {
                     className="md:ml-8 w-4 lg:w-auto md:w-auto mr-auto lg:text-[15px] md:text-xs uppercase md:my-0 my-7"
                   >
                     <a
-                      style={{ color: "white", fontWeight: 400 }}
+                      style={{
+                        fontWeight: 400,
+                        textDecoration: "none",
+                      }}
                       href={link.route}
+                      className="nav-link"
                     >
                       {link.menu}
                     </a>
@@ -104,7 +109,7 @@ const Navbar = () => {
             {location.pathname !== "/contact" && (
               <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                 <Link
-                  className="text-[#F45656] font-normal"
+                  className="text-red-500 font-normal hover:no-underline"
                   to="/contact"
                   onClick={handleContactClick}
                 >
