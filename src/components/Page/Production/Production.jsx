@@ -206,7 +206,7 @@ const Production = () => {
         <Headline content="Production Proces" lastWord="s" />
         <Content content="Six Individual Phases of A Production" />
 
-        <div className=" pt-16  bg-[#F45656] h-[600px] ">
+        <div className=" pt-24 bg-[#F45656] h-[700px] ">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}

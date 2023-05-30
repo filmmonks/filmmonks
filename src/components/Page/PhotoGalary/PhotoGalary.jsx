@@ -13,43 +13,45 @@ import Content from "../../TextComponents/Content";
 import { Link } from "react-router-dom";
 const PhotoGalary = () => {
   return (
-    <PhotoGalaryWrapper>
-      <div id="monks-gallery" className="my-12 ">
-        <Headline content=" Monks Galler" lastWord="y" />
-        <div className="hidden lg:block md:block">
-          {" "}
-          <Content content="We capture our moments and showcase them here." />
-          <div className="">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  lg:mx-40 gap-10 mx-auto ">
-              {galleryData.map((data) => (
-                <div className="w-[380px]">
-                  <img src={data?.image} alt="" />
-                </div>
-              ))}
+    <div id="monks-gallery">
+      <PhotoGalaryWrapper>
+        <div className="mt-32 mb-12">
+          <Headline content=" Monks Galler" lastWord="y" />
+          <div className="hidden lg:block md:block">
+            {" "}
+            <Content content="We capture our moments and showcase them here." />
+            <div className="">
+              <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  lg:mx-40 gap-10 mx-auto ">
+                {galleryData.map((data) => (
+                  <div className="w-[380px]">
+                    <img src={data?.image} alt="" />
+                  </div>
+                ))}
+              </div>
+              <button className="mt-16 mx-auto desktop-btn">
+                <Link to="/monks-galary">see more</Link>
+              </button>
             </div>
-            <button className="mt-16 mx-auto desktop-btn">
-              <Link to="/monks-galary">see more</Link>
+          </div>
+          {/* // mobile device */}
+          <p
+            className="-mt-4 mb-2 text-[#B19B9B] lg:hidden md:hidden block"
+            style={{ fontSize: "12px" }}
+          >
+            We capture our moments and showcase them here.
+          </p>
+          <div className="lg:hidden block mx-8 mb-6">
+            <img className="mt-6" src={img1} alt="" />
+            <button className="mt-6">
+              <Link to="/monks-galary">
+                {" "}
+                <span>see more</span>
+              </Link>
             </button>
           </div>
         </div>
-        {/* // mobile device */}
-        <p
-          className="-mt-4 mb-2 text-[#B19B9B] lg:hidden md:hidden block"
-          style={{ fontSize: "12px" }}
-        >
-          We capture our moments and showcase them here.
-        </p>
-        <div className="lg:hidden block mx-8 mb-6">
-          <img className="mt-6" src={img1} alt="" />
-          <button className="mt-6">
-            <Link to="/monks-galary">
-              {" "}
-              <span>see more</span>
-            </Link>
-          </button>
-        </div>
-      </div>
-    </PhotoGalaryWrapper>
+      </PhotoGalaryWrapper>
+    </div>
   );
 };
 export const galleryData = [

@@ -22,9 +22,9 @@ const Timeline = () => {
           <Bounce left>
             <Link
               to="/article"
-              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-red-50 pt-16"
+              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2  border-b-2 border-red-50 "
             >
-              <img className="xl:mr-auto w-[450px]" src={data?.img} alt="" />
+              <img className="xl:mr-auto w-[480px]" src={data?.img} alt="" />
               <div className="text-left mt-10">
                 <h4 className="text-3xl">{data?.title}</h4>
                 <p>{data?.type}</p>
@@ -52,7 +52,7 @@ const Timeline = () => {
                   {data?.logline}
                 </p>
               </div>
-              <img className="xl:ml-auto w-[450px]" src={data?.img} alt="" />
+              <img className="xl:ml-auto w-[480px]" src={data?.img} alt="" />
             </div>
           </Bounce>
         ))}
@@ -60,10 +60,10 @@ const Timeline = () => {
         {timelineData.slice(2, 3).map((data) => (
           <Bounce left>
             {" "}
-            <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16   pt-16">
-              <img className="w-[450px]" src={data?.img} alt="" />
-              <div className="text-left mt-10">
-                <h4 className="text-3xl">{data?.title}</h4>
+            <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2   pt-16">
+              <img className="w-[480px]" src={data?.img} alt="" />
+              <div className="text-left mt-3">
+                <h4 className="text-3xl mb-3">{data?.title}</h4>
                 <p>{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
@@ -77,7 +77,7 @@ const Timeline = () => {
         ))}
         <PhotoGalaryWrapper>
           {" "}
-          <button className="mt-16 mx-auto desktop-btn">
+          <button className="mt-24 mb-8 mx-auto desktop-btn">
             <Link to="/work-timeline">see more</Link>
           </button>
         </PhotoGalaryWrapper>

@@ -8,13 +8,13 @@ import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 
 function Contact() {
   return (
-    <ContactWrapper className=" py-6">
+    <ContactWrapper className="pt-2 h-screen">
       <h1 className="contact-part text-center">Pitch Us </h1>
       <p className="contact-part-p text-center">
         Bring your ideas and stories to us and make it happen Send us your ideas
         or stories(Logline-Synopsis or Script) by mail along with your CV
       </p>
-      <form className=" lg:flex md:flex hidden justify-around items-center  ">
+      <form className=" lg:flex md:flex hidden justify-around items-center">
         <div className="max-w-md contact-content">
           <h3>How to get in contact </h3>
           <div className="text-left ">
@@ -76,7 +76,7 @@ function Contact() {
         </div>
         <div>
           <img
-            className="w-[482px] h-[512px]"
+            className="w-[392px] h-[412px]"
             src={contactImg}
             alt="logo-of-site"
           />
@@ -208,8 +208,8 @@ export const ContactWrapper = styled.div`
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 38px;
+    line-height: 15px;
     margin-bottom: 40px;
     color: #fff8f8;
     text-align: left;
