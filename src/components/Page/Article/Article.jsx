@@ -44,13 +44,12 @@ const Article = () => {
           </p>
           <p className="project-description"> Language: Bangla</p>
           <p className="project-description"> Writer: Jaynto Kumar Kundu</p>
-          <p className="project-description w-[400px]"> 
-          A small-town struggling woman searches for her missing
-            brother who guided and implemented confidence within herself to be
-            independent. While revolving around her she learns about the complex
+          <p className="project-description lg:w-[500px]  w-[300px]">
+            A small-town struggling woman searches for her missing brother who
+            guided and implemented confidence within herself to be independent.
+            While revolving around her she learns about the complex
             socio-political instances and the substantial uncertainty in it.
           </p>
-          
         </div>
         <div className="lg:block md:hidden hidden my-auto">
           <img

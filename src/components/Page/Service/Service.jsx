@@ -37,7 +37,7 @@ const Service = () => {
 
   return (
     <div id="service" className="relative">
-      <div className="lg:mx-24 mx-8 md:mx-16 my-8 lg:block hidden md:block">
+      <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
         <Headline content="service" lastWord="s" />
         <div className="grid  xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
           {servicesData.map((data) => (

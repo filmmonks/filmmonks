@@ -24,6 +24,10 @@ import img4 from "../../../Assets/MonksGalary/AllPhotos/images/4.png";
 import img5 from "../../../Assets/MonksGalary/AllPhotos/images/5.png";
 import img6 from "../../../Assets/MonksGalary/AllPhotos/images/6.png";
 import img7 from "../../../Assets/MonksGalary/AllPhotos/images/7.png";
+import { Link } from "react-router-dom";
+
+import { SiFacebook } from "react-icons/si";
+import { FaInstagramSquare } from "react-icons/fa";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +42,7 @@ const Team = () => {
   });
 
   return (
-    <TeamWrapper id="team" className="relative">
+    <TeamWrapper id="team" className="relative ">
       <div
         className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[60vh]
     pt-12 lg:block hidden "
@@ -80,19 +84,68 @@ const Team = () => {
             }}
           >
             {teamData.map((data) => (
+              
               <SwiperSlide key={data._id}>
-                <img
-                  className="w-[250px] mx-auto mb-5 hover:brightness-50 relative z-10"
-                  src={data?.img}
-                  alt=""
-                />
-                <div className="absolute top-0 left-0 z-20 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <div style={{ display: "flex", flexDirection: "column" }}>
-                    <FaFacebook size={30} className="text-white mt-5" />
-                    <FaFacebook size={30} className="text-white mt-5" />
-                    <FaFacebook size={30} className="text-white mt-5" />
+                <>
+                  <img
+                    className="w-[250px] mx-auto mb-5 hover:brightness-50 relative z-10"
+                    src={data?.img}
+                    alt=""
+                  />
+                  <div className="absolute top-0 left-0 z-20 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <FaFacebook size={30} className="text-white mt-5" />
+                      <FaFacebook size={30} className="text-white mt-5" />
+                      <FaFacebook size={30} className="text-white mt-5" />
+                    </div>
                   </div>
-                </div>
+                </>
+
+                {/* <div
+                      class="relative block h-80 group"
+                      href="##"
+                    >
+                      <div>
+                        {" "}
+                        <img
+                          className="hover:brightness-50 absolute inset-0 
+   group-hover:brightness-50  "
+                          src={data.img}
+                          alt=""
+                        />
+                       
+                      </div>
+
+                      <div class="relative p-10">
+                        <div class="mt-2">
+                          <div
+                            class="transition-all duration-500 transform  translate-y-8 opacity-0 
+                group-hover:opacity-100 
+                group-hover:translate-y-0"
+                          >
+                            <div class="p-2">
+                              <div className="text-center">
+                                {" "}
+                                <Link to={data.fb_link}>
+                                  <button
+                                    class="px-4 py-2 text-lg 
+                            text-white"
+                                  >
+                                    <SiFacebook />
+                                  </button>
+                                </Link>
+                                <button
+                                  class="px-4 py-2 text-lg
+                            text-white"
+                                >
+                                  <FaInstagramSquare />
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div> */}
                 <h5 className="name">{data?.name}</h5>
                 <p className="title">{data?.title}</p>
               </SwiperSlide>

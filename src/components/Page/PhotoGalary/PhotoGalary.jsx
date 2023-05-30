@@ -15,7 +15,7 @@ const PhotoGalary = () => {
   return (
     <div id="monks-gallery">
       <PhotoGalaryWrapper>
-        <div className="mt-32 mb-12">
+        <div className="lg:pt-8 mb-12">
           <Headline content=" Monks Galler" lastWord="y" />
           <div className="hidden lg:block md:hidden">
             {" "}
@@ -29,7 +29,7 @@ const PhotoGalary = () => {
                 ))}
               </div>
               <button className="mt-16 mx-auto desktop-btn">
-                <Link to="/monks-galary">see more</Link>
+                <Link to="/monks-galary"  className="hover:no-underline">see more</Link>
               </button>
             </div>
           </div>
@@ -43,7 +43,7 @@ const PhotoGalary = () => {
           <div className="lg:hidden block mx-auto mb-6">
             <img className="mt-6 w-[380px] mx-auto" src={img1} alt="" />
             <button className="mt-6">
-              <Link to="/monks-galary">
+              <Link to="/monks-galary" className="hover:no-underline">
                 {" "}
                 <span>see more</span>
               </Link>

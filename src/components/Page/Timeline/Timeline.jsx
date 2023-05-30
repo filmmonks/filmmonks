@@ -78,7 +78,7 @@ const Timeline = () => {
         <PhotoGalaryWrapper>
           {" "}
           <button className="mt-24 mb-8 mx-auto desktop-btn">
-            <Link to="/work-timeline">see more</Link>
+            <Link to="/work-timeline" className="hover:no-underline ">see more</Link>
           </button>
         </PhotoGalaryWrapper>
       </div>
