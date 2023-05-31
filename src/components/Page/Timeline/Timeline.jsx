@@ -78,7 +78,9 @@ const Timeline = () => {
         <PhotoGalaryWrapper>
           {" "}
           <button className="mt-24 mb-8 mx-auto desktop-btn">
-            <Link to="/work-timeline" className="hover:no-underline ">see more</Link>
+            <Link to="/work-timeline" className="hover:no-underline ">
+              see more
+            </Link>
           </button>
         </PhotoGalaryWrapper>
       </div>
@@ -107,7 +109,16 @@ const Timeline = () => {
             </div>
           </Link>
         ))}
+        <PhotoGalaryWrapper>
+        <button className="mt-6">
+              <Link to="/monks-galary" className="hover:no-underline">
+                {" "}
+                <span>see more</span>
+              </Link>
+            </button>
+        </PhotoGalaryWrapper>
       </div>
+
       <div
         style={{
           top: "30%",

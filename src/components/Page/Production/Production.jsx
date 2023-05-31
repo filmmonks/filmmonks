@@ -129,7 +129,7 @@ const productionData = [
   },
   {
     id: 4,
-    title: "PreShooting",
+    title: "PreShooting/Production",
     img: "https://i.ibb.co/Bgp7PPX/production-2.png",
   },
   {
@@ -248,11 +248,11 @@ const Production = () => {
                 <p className="title mb-6">{data?.title}</p>
                 <div
                   style={{
-                    width: "185px",
+                    width: "210px",
                   }}
                   className="text-left mx-auto text-white"
                 >
-                  {data?.list?.slice(0, 3).map((l) => (
+                  {data?.list?.slice(0, 2).map((l) => (
                     <div>
                       -
                       <p
@@ -288,7 +288,7 @@ const Production = () => {
                   alt=""
                 />
                 <div>
-                  {data?.list?.slice(0, 3).map((l) => (
+                  {data?.list?.slice(0, 2).map((l) => (
                     <div
                       style={{
                         width: "185px",
