@@ -25,9 +25,10 @@ import img5 from "../../../Assets/MonksGalary/AllPhotos/images/5.png";
 import img6 from "../../../Assets/MonksGalary/AllPhotos/images/6.png";
 import img7 from "../../../Assets/MonksGalary/AllPhotos/images/7.png";
 import { Link } from "react-router-dom";
+import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
+import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
+import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
 
-import { SiFacebook } from "react-icons/si";
-import { FaInstagramSquare } from "react-icons/fa";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -84,19 +85,28 @@ const Team = () => {
             }}
           >
             {teamData.map((data) => (
-              
               <SwiperSlide key={data._id}>
                 <>
                   <img
-                    className="w-[250px] mx-auto mb-5 hover:brightness-50 relative z-10"
+                    className="w-[250px] mx-auto mb-5 hover:brightness-50"
                     src={data?.img}
                     alt=""
                   />
-                  <div className="absolute top-0 left-0 z-20 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                      <FaFacebook size={30} className="text-white mt-5" />
-                      <FaFacebook size={30} className="text-white mt-5" />
-                      <FaFacebook size={30} className="text-white mt-5" />
+                      <Link to={data.fb_link}  target="_blank">
+                        {" "}
+                        <img className="text-white -mt-5 w-[30px]" src={fb} alt="" />
+                      </Link>
+                      <Link to={data.email}  target="_blank">
+                        {" "}
+                        <img className="text-white mt-5 w-[30px]" src={mail} alt="" />
+                      </Link>
+                      <Link to={data.linkedin}  target="_blank">
+                        {" "}
+                        <img className="text-white mt-5 w-[30px]" src={linkedin} alt="" />
+                      </Link>
+                  
                     </div>
                   </div>
                 </>

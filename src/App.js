@@ -23,7 +23,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 9000);
   }, []);
   return (
     <>
@@ -38,7 +38,7 @@ function App() {
           }}
         >
           <div className="flex flex-col justify-center items-center">
-            {/* <video src={video} autoPlay loop muted /> */}
+            <video src={video} autoPlay loop muted />
           </div>
         </div>
       ) : (
