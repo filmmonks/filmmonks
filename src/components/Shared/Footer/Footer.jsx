@@ -3,9 +3,12 @@ import Iframe from "react-iframe";
 import { MdEmail } from "react-icons/md";
 import img from "../../../Assets/Footer/footer.png";
 import { BsTelephoneFill } from "react-icons/bs";
-import SocialMedia from "../SocialMedia/SocialMedia";
+import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
+import youtube from "../../../Assets/SocialMedia/2559760_media_social_video_youtube_icon 2.png";
+import instagram from "../../../Assets/SocialMedia/7693314_instagram_social media_logo_apps_icon 2.png";
 
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -55,7 +58,37 @@ const Footer = () => {
               <p className="link link-hover font-bold text-left lg:text-xl md:text-lg text-base">
                 Follow Us
               </p>
-              <SocialMedia style={{ display: "flex" }} />
+
+              <div style={{ display: "flex" }}>
+                <p className="link link-hover text-xl my-5 mx-2">
+                  <Link
+                    to="https://www.facebook.com/filmmonksarthouse"
+                    target="_blank"
+                  >
+                    {" "}
+                    <img src={fb} alt="" />
+                  </Link>
+                </p>
+                <p className="link link-hover text-xl my-5 mx-2">
+                  <Link
+                    to="https://www.youtube.com/channel/filmmonks"
+                    target="_blank"
+                  >
+                    {" "}
+                    <img src={youtube} alt="" />
+                  </Link>
+                </p>
+
+                <p className="link link-hover text-xl my-5 mx-2">
+                  <Link
+                    to="https://www.linkedin.com/company/91148823/admin/"
+                    target="_blank"
+                  >
+                    {" "}
+                    <img src={instagram} alt="" />
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
