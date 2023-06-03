@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Headline from "../../TextComponents/Headline";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import "./Team.module.css";
+import "./Team.css";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 import { FaFacebook } from "react-icons/fa";
@@ -54,7 +54,7 @@ const Team = () => {
           lastWord="m"
         />
 
-        <div className="mx-auto w-[70%] mt-20">
+        <div className="mx-auto w-[70%] mt-14">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -86,32 +86,22 @@ const Team = () => {
           >
             {teamData.map((data) => (
               <SwiperSlide key={data._id}>
-                <>
+                <div className="relatives group">
                   <img
-                    className="w-[250px] mx-auto mb-5 hover:brightness-50"
+                    className="w-[250px] mx-auto mb-5"
                     src={data?.img}
                     alt=""
                   />
-                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       <Link to={data.fb_link} target="_blank">
-                        {" "}
                         <img
                           className="text-white -mt-5 w-[30px]"
                           src={fb}
                           alt=""
                         />
                       </Link>
-                      {/* <Link to={data.email} target="_blank">
-                        {" "}
-                        <img
-                          className="text-white mt-5 w-[30px]"
-                          src={mail}
-                          alt=""
-                        />
-                      </Link> */}
                       <Link to={data.linkedin} target="_blank">
-                        {" "}
                         <img
                           className="text-white mt-5 w-[30px]"
                           src={linkedin}
@@ -120,58 +110,12 @@ const Team = () => {
                       </Link>
                     </div>
                   </div>
-                </>
+                </div>
 
-                {/* <div
-                      class="relative block h-80 group"
-                      href="##"
-                    >
-                      <div>
-                        {" "}
-                        <img
-                          className="hover:brightness-50 absolute inset-0 
-   group-hover:brightness-50  "
-                          src={data.img}
-                          alt=""
-                        />
-                       
-                      </div>
-
-                      <div class="relative p-10">
-                        <div class="mt-2">
-                          <div
-                            class="transition-all duration-500 transform  translate-y-8 opacity-0 
-                group-hover:opacity-100 
-                group-hover:translate-y-0"
-                          >
-                            <div class="p-2">
-                              <div className="text-center">
-                                {" "}
-                                <Link to={data.fb_link}>
-                                  <button
-                                    class="px-4 py-2 text-lg 
-                            text-white"
-                                  >
-                                    <SiFacebook />
-                                  </button>
-                                </Link>
-                                <button
-                                  class="px-4 py-2 text-lg
-                            text-white"
-                                >
-                                  <FaInstagramSquare />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
                 <h5 className="name">{data?.name}</h5>
                 <p className="title">{data?.title}</p>
 
                 <p className="title">
-                  {" "}
                   <CiMail
                     className="mr-1"
                     style={{ display: "inline-block" }}
@@ -192,18 +136,87 @@ const Team = () => {
           className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[50vh]
     pt-24 block lg:hidden mt-6"
         >
-          <div className="navigation-wrapper  relative mt-8">
+          <div className="navigation-wrapper  relative mt-10">
             <div ref={sliderRef} className="keen-slider">
               {teamData.map((data) => (
                 <div key={data._id} className="keen-slider__slide">
-                  <img
-                    className="w-[250px] mx-auto mb-5"
-                    src={data?.img}
-                    alt=""
-                  />
+                  <div className="relatives group">
+                    <img
+                      className="w-[250px] mx-auto mb-5"
+                      src={data?.img}
+                      alt=""
+                    />
+                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <Link to={data.fb_link} target="_blank">
+                          <img
+                            className="text-white -mt-5 w-[30px]"
+                            src={fb}
+                            alt=""
+                          />
+                        </Link>
+                        <Link to={data.linkedin} target="_blank">
+                          <img
+                            className="text-white mt-5 w-[30px]"
+                            src={linkedin}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                   <h5 className="name">{data?.name}</h5>
                   <p className="title">{data?.title}</p>
+                  <p className="title">
+                    {" "}
+                    <CiMail
+                      className="mr-1"
+                      style={{ display: "inline-block" }}
+                    />
+                    {data?.email}
+                  </p>
                 </div>
+              ))}
+
+              {teamData.map((data) => (
+                <SwiperSlide key={data._id}>
+                  <div className="relatives group">
+                    <img
+                      className="w-[250px] mx-auto mb-5"
+                      src={data?.img}
+                      alt=""
+                    />
+                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <Link to={data.fb_link} target="_blank">
+                          <img
+                            className="text-white -mt-5 w-[30px]"
+                            src={fb}
+                            alt=""
+                          />
+                        </Link>
+                        <Link to={data.linkedin} target="_blank">
+                          <img
+                            className="text-white mt-5 w-[30px]"
+                            src={linkedin}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h5 className="name">{data?.name}</h5>
+                  <p className="title">{data?.title}</p>
+
+                  <p className="title">
+                    <CiMail
+                      className="mr-1"
+                      style={{ display: "inline-block" }}
+                    />
+                    {data?.email}
+                  </p>
+                </SwiperSlide>
               ))}
             </div>
             {loaded && instanceRef.current && (
@@ -358,7 +371,7 @@ const teamData = [
     title: "PR Executive",
     email: "sudiptadtoma@gmail.com",
     fb_link: "https://www.facebook.com/sudipta.debnath.148",
-    linkedin: "https://www.linkedin.com/in/ebsan-zaman-96b687275/",
+    linkedin: "https://www.linkedin.com/in/debnath-sudipta",
     img: img4,
   },
   {
