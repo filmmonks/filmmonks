@@ -74,8 +74,9 @@ export const ArticleWrapper = styled.div`
     line-height: 36px;
     margin-bottom: 9px;
     @media screen and (max-width: 440px) {
+      width: 345px;
       font-size: 16px;
-      height: 26px;
+     
       line-height: 19px;
       margin-bottom: 0px;
     }

@@ -4,11 +4,17 @@ import styled from "styled-components";
 import contactImg from "../../../Assets/Contact/FILM MONKS logo sign only png (1) 20.png";
 
 import { Link } from "react-router-dom";
-import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
-
+import {
+  BsFacebook,
+  BsInstagram,
+  BsYoutube,
+  BsTelephoneFill,
+  BsLinkedin,
+} from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 function Contact() {
   return (
-    <ContactWrapper className="pt-2 h-screen">
+    <ContactWrapper className="pt-2 lg:h-screen md:h-screen ">
       <h1 className="contact-part text-center">Pitch Us </h1>
       <p className="contact-part-p text-center">
         Bring your ideas and stories to us and make it happen Send us your ideas
@@ -17,7 +23,7 @@ function Contact() {
       <form className=" lg:flex md:flex hidden justify-around items-center">
         <div className="max-w-md contact-content">
           <h3>How to get in contact </h3>
-          <div className="text-left ">
+          {/* <div className="text-left ">
             <label
               className=" text-gray-700 font-bold mb-2 text-start"
               htmlFor="name"
@@ -43,35 +49,70 @@ function Contact() {
               placeholder="01705099380"
             />
 
-            <div className="flex justify-evenly">
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link
-                  to="https://www.facebook.com/filmmonksarthouse"
-                  target="_blank"
-                >
-                  {" "}
-                  <BsFacebook />
-                </Link>
-              </p>
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link
-                  to="https://www.instagram.com/filmmonksarthouse/"
-                  target="_blank"
-                >
-                  {" "}
-                  <BsInstagram />
-                </Link>
-              </p>
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link
-                  to="https://www.youtube.com/channel/filmmonks"
-                  target="_blank"
-                >
-                  {" "}
-                  <BsYoutube />
-                </Link>
-              </p>
-            </div>
+            
+          </div> */}
+
+          <div className=" text-left ">
+            <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
+              Connect Us
+            </p>
+            <p className="link link-hover text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
+              Office Address: House 12,
+              <br /> Block C, Future Town <br /> Housing, Mohammadpur,
+              <br /> Dhaka-1207
+            </p>
+            <p className="link link-hover text-[#B19B9B] flex items-center my-2">
+              <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />
+              <span className="lg:text-lg md:text-lg text-base">
+                {" "}
+                officialfilmmonks@gmail.com
+              </span>
+            </p>
+            <p className="link link-hover text-[#B19B98] flex items-center">
+              <BsTelephoneFill className="mr-3 text-[#fff] lg:text-lg md:text-lg text-base" />
+              <span className="lg:text-lg md:text-lg text-base">
+                {" "}
+                +8801327114855
+              </span>
+            </p>{" "}
+          </div>
+          <p className="link link-hover font-bold mt-10  text-left lg:text-xl md:text-xl text-lg">
+            Follow Us
+          </p>
+          <div className="flex justify-between  items-center mt-2 w-[200px]">
+            <p className="link link-hover text-xl my-3 mx-2">
+              <Link
+                to="https://www.facebook.com/filmmonksarthouse"
+                target="_blank"
+              >
+                {" "}
+                <BsFacebook />
+              </Link>
+            </p>
+            <p className="link link-hover text-xl my-3 mx-2">
+              <Link
+                to="https://www.instagram.com/filmmonksarthouse/"
+                target="_blank"
+              >
+                {" "}
+                <BsInstagram />
+              </Link>
+            </p>
+            <p className="link link-hover text-xl my-3 mx-2">
+              <Link to="https://www.youtube.com/@filmmonks" target="_blank">
+                {" "}
+                <BsYoutube />
+              </Link>
+            </p>
+            <p className="link link-hover text-xl my-5 mx-2">
+              <Link
+                to="https://www.linkedin.com/company/91148823/admin/"
+                target="_blank"
+              >
+                {" "}
+                <BsLinkedin />
+              </Link>
+            </p>
           </div>
         </div>
         <div>
@@ -82,7 +123,8 @@ function Contact() {
           />
         </div>
       </form>
-      <form className=" block lg:hidden md:hidden">
+      {/* //mobile device */}
+      <form className=" block lg:hidden md:hidden h-screen">
         <div>
           <img
             className="w-[124px] h-[154px] mx-auto mt-5"
@@ -93,7 +135,7 @@ function Contact() {
         <div className="max-w-md contact-content">
           <h3>How to get in contact </h3>
           <div className="text-left content ">
-            <label className="" htmlFor="name">
+            {/* <label className="" htmlFor="name">
               Drop us an email
             </label>
             <input
@@ -113,9 +155,35 @@ function Contact() {
               id="email"
               name="phone"
               placeholder="01705099380"
-            />
-
-            <div className="flex justify-evenly">
+            /> */}
+            <div className=" text-left ">
+              <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
+                Connect Us
+              </p>
+              <p className="link link-hover text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
+                Office Address: House 12,
+                <br /> Block C, Future Town <br /> Housing, Mohammadpur,
+                <br /> Dhaka-1207
+              </p>
+              <p className="link link-hover text-[#B19B9B] flex items-center my-2">
+                <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />
+                <span className="lg:text-lg md:text-lg text-base">
+                  {" "}
+                  officialfilmmonks@gmail.com
+                </span>
+              </p>
+              <p className="link link-hover text-[#B19B98] flex items-center">
+                <BsTelephoneFill className="mr-3 text-[#fff] lg:text-lg md:text-lg text-base" />
+                <span className="lg:text-lg md:text-lg text-base">
+                  {" "}
+                  +8801327114855
+                </span>
+              </p>{" "}
+            </div>
+            <p className="link link-hover font-bold mt-12  text-left lg:text-xl md:text-xl text-lg">
+              Follow Us
+            </p>
+            <div className="flex items-center justify-between">
               <p className="link link-hover text-xl my-3 mx-2">
                 <Link
                   to="https://www.facebook.com/filmmonksarthouse"
@@ -135,12 +203,18 @@ function Contact() {
                 </Link>
               </p>
               <p className="link link-hover text-xl my-3 mx-2">
+                <Link to="https://www.youtube.com/@filmmonks" target="_blank">
+                  {" "}
+                  <BsYoutube />
+                </Link>
+              </p>
+              <p className="link link-hover text-xl my-3 mx-2">
                 <Link
-                  to="https://www.youtube.com/channel/filmmonks"
+                  to="https://www.linkedin.com/company/91148823/admin"
                   target="_blank"
                 >
                   {" "}
-                  <BsYoutube />
+                  <BsLinkedin />
                 </Link>
               </p>
             </div>

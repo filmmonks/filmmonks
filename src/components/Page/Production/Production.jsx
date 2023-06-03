@@ -3,7 +3,6 @@ import Headline from "../../TextComponents/Headline";
 import Content from "../../TextComponents/Content";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
-import "./Production.module.css";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,8 +16,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 import styled from "styled-components";
-import Dropdown from "./Dropdown";
-import { FaAddressBook } from "react-icons/fa";
+import "./Production.css";
 
 const productionData = [
   {
@@ -274,7 +272,13 @@ const Production = () => {
                           src="https://i.ibb.co/8sQmfKL/211688-forward-arrow-icon-1-1.png"
                           alt="arrow"
                         />
-                        <div className="absolute bg-white text-[#F45656] w-40 h-30 top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
+                        <div
+                          style={{
+                            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                            borderRadius: "6px",
+                          }}
+                          className="z-20 bg-[#FCFCFC] text-[#F45656] w-52 top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 -mt-4 mx-auto"
+                        >
                           {/* Dropdown Content */}
                           <div className="p-4">
                             {/* Dropdown Items */}
@@ -282,7 +286,7 @@ const Production = () => {
                               {data?.list?.slice(2, 6).map((l) => (
                                 <li
                                   title={l?.description}
-                                  className="hover:cursor-pointer text-base "
+                                  className="hover:cursor-pointer text-base"
                                 >
                                   {l?.description}
                                 </li>
@@ -307,7 +311,7 @@ const Production = () => {
           Six Individual Phases of A Production
         </p>
 
-        <div className="navigation-wrapper  relative">
+        <div className="navigation-wrapper">
           <div ref={sliderRef} className="keen-slider">
             {productionData.map((data) => (
               <div key={data._id} className="keen-slider__slide">
@@ -317,13 +321,14 @@ const Production = () => {
                   src={data?.img}
                   alt=""
                 />
-                <div>
+                <div className="mb-12">
                   {data?.list?.slice(0, 2).map((l) => (
                     <div
                       style={{
-                        width: "185px",
+                        width: "240px",
                         marginLeft: "auto",
                         marginRight: "auto",
+                        
                       }}
                       className="flex items-center "
                     >
@@ -333,7 +338,7 @@ const Production = () => {
                         alt=""
                         srcset=""
                       />
-                      <div>
+                      <div className="">
                         <p
                           title={l?.description}
                           className="hover:cursor-pointer text-base subtitle"
@@ -348,26 +353,23 @@ const Production = () => {
             ))}
           </div>
           {loaded && instanceRef.current && (
-            <>
-              {/* <Arrow
-                left
-                onClick={(e) =>
-                  e.stopPropagation() || instanceRef.current?.prev()
-                }
-                disabled={currentSlide === 0}
-              /> */}
-
-              <Arrow
-                style={{ fill: "#8d1313" }}
-                onClick={(e) =>
-                  e.stopPropagation() || instanceRef.current?.next()
-                }
-                disabled={
-                  currentSlide ===
-                  instanceRef.current.track.details.slides.length - 1
-                }
-              />
-            </>
+            <div className="dots">
+              {[
+                ...Array(
+                  instanceRef.current.track.details.slides.length
+                ).keys(),
+              ].map((idx) => {
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      instanceRef.current?.moveToIdx(idx);
+                    }}
+                    className={"dot" + (currentSlide === idx ? " active" : "")}
+                  ></button>
+                );
+              })}
+            </div>
           )}
         </div>
       </div>
@@ -375,26 +377,6 @@ const Production = () => {
   );
 };
 
-function Arrow(props) {
-  const disabeld = props.disabled ? " arrow--disabled" : "";
-  return (
-    <svg
-      onClick={props.onClick}
-      className={`arrow ${
-        props.left ? "arrow--left" : "arrow--right"
-      } ${disabeld}`}
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-    >
-      {props.left && (
-        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
-      )}
-      {!props.left && (
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      )}
-    </svg>
-  );
-}
 const ProductionWrapper = styled.div`
   :root {
     --swiper-navigation-size: 20px !important;

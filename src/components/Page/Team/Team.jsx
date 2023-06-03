@@ -28,7 +28,7 @@ import { Link } from "react-router-dom";
 import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
 import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
 import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
-
+import { CiMail } from "react-icons/ci";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -94,19 +94,30 @@ const Team = () => {
                   />
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                      <Link to={data.fb_link}  target="_blank">
+                      <Link to={data.fb_link} target="_blank">
                         {" "}
-                        <img className="text-white -mt-5 w-[30px]" src={fb} alt="" />
+                        <img
+                          className="text-white -mt-5 w-[30px]"
+                          src={fb}
+                          alt=""
+                        />
                       </Link>
-                      <Link to={data.email}  target="_blank">
+                      {/* <Link to={data.email} target="_blank">
                         {" "}
-                        <img className="text-white mt-5 w-[30px]" src={mail} alt="" />
-                      </Link>
-                      <Link to={data.linkedin}  target="_blank">
+                        <img
+                          className="text-white mt-5 w-[30px]"
+                          src={mail}
+                          alt=""
+                        />
+                      </Link> */}
+                      <Link to={data.linkedin} target="_blank">
                         {" "}
-                        <img className="text-white mt-5 w-[30px]" src={linkedin} alt="" />
+                        <img
+                          className="text-white mt-5 w-[30px]"
+                          src={linkedin}
+                          alt=""
+                        />
                       </Link>
-                  
                     </div>
                   </div>
                 </>
@@ -158,6 +169,15 @@ const Team = () => {
                     </div> */}
                 <h5 className="name">{data?.name}</h5>
                 <p className="title">{data?.title}</p>
+
+                <p className="title">
+                  {" "}
+                  <CiMail
+                    className="mr-1"
+                    style={{ display: "inline-block" }}
+                  />
+                  {data?.email}
+                </p>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -335,10 +355,10 @@ const teamData = [
   {
     id: 5,
     name: "SUDIPTA DEBNATH",
-    title: "Brand Manager",
-    email: "shibly209@gmail.com",
-    fb_link: "https://www.facebook.com/shiblysadik.sifat",
-    linkedin: "https://www.linkedin.com/in/shithe-debnath-b19465271",
+    title: "PR Executive",
+    email: "sudiptadtoma@gmail.com",
+    fb_link: "https://www.facebook.com/sudipta.debnath.148",
+    linkedin: "https://www.linkedin.com/in/ebsan-zaman-96b687275/",
     img: img4,
   },
   {

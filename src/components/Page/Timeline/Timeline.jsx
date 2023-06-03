@@ -93,9 +93,31 @@ const Timeline = () => {
 
       {/* // mobile device */}
       <div className="lg:hidden block md:hidden mb-10">
-        {timelineData.map((data) => (
+        {/* {timelineData.map((data) => (
           <Link
-            to="/article"
+            to="/article25"
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
+          >
+            <img
+              className="xl:ml-auto w-[450px] timeline-image"
+              src={data?.img}
+              alt=""
+            />
+            <div className="text-left mt-10">
+              <h4>{data?.title}</h4>
+              <p>{data?.type}</p>
+              <p
+                style={{ textAlign: "justify" }}
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+              >
+                {data?.logline}
+              </p>
+            </div>
+          </Link>
+        ))} */}
+        {timelineData.slice(0, 1).map((data) => (
+          <Link
+            to="/article25"
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
           >
             <img
@@ -115,6 +137,54 @@ const Timeline = () => {
             </div>
           </Link>
         ))}
+        {timelineData.slice(1, 2).map((data) => (
+          <Link
+            to="/balancing-art"
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
+          >
+            <img
+              className="xl:ml-auto w-[450px] timeline-image"
+              src={data?.img}
+              alt=""
+            />
+            <div className="text-left mt-10">
+              <h4>{data?.title}</h4>
+              <p>{data?.type}</p>
+              <p
+                style={{ textAlign: "justify" }}
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+              >
+                {data?.logline}
+              </p>
+            </div>
+          </Link>
+        ))}
+        {timelineData.slice(2, 3).map((data) => (
+          <Link
+            to="/silver-jublie"
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
+          >
+            <img
+              className="xl:ml-auto w-[450px] timeline-image"
+              src={data?.img}
+              alt=""
+            />
+            <div className="text-left mt-10">
+              <h4>{data?.title}</h4>
+              <p>{data?.type}</p>
+              <p
+                style={{ textAlign: "justify" }}
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+              >
+                {data?.logline}
+              </p>
+            </div>
+          </Link>
+        ))}
+
+
+
+
         <PhotoGalaryWrapper>
           <button className="mt-6">
             <Link to="/monks-galary" className="hover:no-underline">
