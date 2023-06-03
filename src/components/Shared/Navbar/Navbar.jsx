@@ -70,7 +70,9 @@ const Navbar = () => {
             }`}
           >
             {location.pathname === "/contact" ||
-            location.pathname === "/article" ||
+            location.pathname === "/article25" ||
+            location.pathname === "/balancing-art" ||
+            location.pathname === "/silver-jublie" ||
             location.pathname === "/monks-galary" ||
             location.pathname === "/work-timeline" ? (
               <>

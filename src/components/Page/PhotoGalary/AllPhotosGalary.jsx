@@ -1,5 +1,5 @@
 import React from "react";
-import { galleryData } from "./PhotoGalary";
+
 import img1 from "../../../Assets/MonksGalary/AllPhotos/images/8.png";
 import img2 from "../../../Assets/MonksGalary/AllPhotos/images/9.png";
 import img3 from "../../../Assets/MonksGalary/AllPhotos/images/10.png";
@@ -28,16 +28,16 @@ import img25 from "../../../Assets/MonksGalary/AllPhotos/images/32.png";
 import img26 from "../../../Assets/MonksGalary/AllPhotos/images/33.png";
 import img27 from "../../../Assets/MonksGalary/AllPhotos/images/34.png";
 import img28 from "../../../Assets/MonksGalary/AllPhotos/images/35.png";
-import img29 from "../../../Assets/MonksGalary/AllPhotos/images/36.png";
-import img30 from "../../../Assets/MonksGalary/AllPhotos/images/37.png";
+// import img29 from "../../../Assets/MonksGalary/AllPhotos/images/36.png";
+// import img30 from "../../../Assets/MonksGalary/AllPhotos/images/37.png";
 import img31 from "../../../Assets/MonksGalary/AllPhotos/images/38.png";
 import img32 from "../../../Assets/MonksGalary/AllPhotos/images/39.png";
 import img33 from "../../../Assets/MonksGalary/AllPhotos/images/40.png";
 import img34 from "../../../Assets/MonksGalary/AllPhotos/images/41.png";
 import img35 from "../../../Assets/MonksGalary/AllPhotos/images/42.png";
-import img36 from "../../../Assets/MonksGalary/AllPhotos/images/43.png";
+// import img36 from "../../../Assets/MonksGalary/AllPhotos/images/43.png";
 import img37 from "../../../Assets/MonksGalary/AllPhotos/images/44.png";
-import img38 from "../../../Assets/MonksGalary/AllPhotos/images/45.png";
+// import img38 from "../../../Assets/MonksGalary/AllPhotos/images/45.png";
 import img39 from "../../../Assets/MonksGalary/AllPhotos/images/46.png";
 import img40 from "../../../Assets/MonksGalary/AllPhotos/images/47.png";
 import img41 from "../../../Assets/MonksGalary/AllPhotos/images/48.png";
@@ -46,7 +46,7 @@ import img43 from "../../../Assets/MonksGalary/AllPhotos/images/50.png";
 import img44 from "../../../Assets/MonksGalary/AllPhotos/images/51.png";
 import img45 from "../../../Assets/MonksGalary/AllPhotos/images/52.png";
 import img46 from "../../../Assets/MonksGalary/AllPhotos/images/53.png";
-import img47 from "../../../Assets/MonksGalary/AllPhotos/images/54.png";
+// import img47 from "../../../Assets/MonksGalary/AllPhotos/images/54.png";
 const imageData = [
   { id: 1, img: img1 },
   { id: 2, img: img2 },

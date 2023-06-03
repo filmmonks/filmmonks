@@ -5,7 +5,6 @@ import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import "./Production.module.css";
 
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -40,6 +39,7 @@ const productionData = [
         description: "Research File",
       },
     ],
+    showImage: true,
   },
   {
     id: 2,
@@ -55,6 +55,7 @@ const productionData = [
         description: "Public Relation (PR) Design",
       },
     ],
+    showImage: false,
   },
   {
     id: 3,
@@ -124,11 +125,13 @@ const productionData = [
         description: "3rd PPM",
       },
     ],
+    showImage: true,
   },
   {
     id: 4,
     title: "Shooting/Production",
     img: "https://i.ibb.co/z2VWVrj/shooting.png",
+    showImage: false,
   },
   {
     id: 5,
@@ -169,11 +172,13 @@ const productionData = [
         description: "Project Submission",
       },
     ],
+    showImage: false,
   },
   {
     id: 6,
     title: "Delivery",
     img: "https://i.ibb.co/VVRPXXD/delivery.png",
+    showImage: false,
   },
 ];
 
@@ -201,7 +206,7 @@ const Production = () => {
   });
 
   return (
-    <ProductionWrapper>
+    <ProductionWrapper className="relative">
       <div id="production" className="lg:block md:block hidden ">
         <Headline content="Production Proces" lastWord="s" />
         <Content content="Six Individual Phases of A Production" />
@@ -261,6 +266,33 @@ const Production = () => {
                       </p>
                     </div>
                   ))}
+                  <div>
+                    {data.showImage === true && (
+                      <div className="relative">
+                        <img
+                          className="w-12 mx-auto mt-4"
+                          src="https://i.ibb.co/8sQmfKL/211688-forward-arrow-icon-1-1.png"
+                          alt="arrow"
+                        />
+                        <div className="absolute bg-white text-[#F45656] w-40 h-30 top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100">
+                          {/* Dropdown Content */}
+                          <div className="p-4">
+                            {/* Dropdown Items */}
+                            <ul>
+                              {data?.list?.slice(2, 6).map((l) => (
+                                <li
+                                  title={l?.description}
+                                  className="hover:cursor-pointer text-base "
+                                >
+                                  {l?.description}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}

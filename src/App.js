@@ -16,6 +16,9 @@ import Article from "./components/Page/Article/Article";
 import AllPhotosGalary from "./components/Page/PhotoGalary/AllPhotosGalary";
 import AllWorkTimeline from "./components/Page/Timeline/AllWorkTimeline";
 
+import SliverJublie from "./components/Page/Article/SliverJublie";
+import BalanceArt from "./components/Page/Article/BalanceArt";
+
 function App() {
   const location = useLocation();
   let [loading, setLoading] = useState(true);
@@ -50,14 +53,18 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/article" element={<Article />}></Route>
+            <Route path="/article25" element={<Article />}></Route>
+            <Route path="/balancing-art" element={<BalanceArt />}></Route>
+            <Route path="/silver-jublie" element={<SliverJublie />}></Route>
             <Route path="/monks-galary" element={<AllPhotosGalary />}></Route>
             <Route path="/work-timeline" element={<AllWorkTimeline />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
           {location.pathname !== "/contact" &&
-            location.pathname !== "/article" &&
+            location.pathname !== "/article25" &&
+            location.pathname !== "/balancing-art" &&
+            location.pathname !== "/silver-jublie" &&
             location.pathname !== "/monks-galary" &&
             location.pathname !== "/work-timeline" && <Footer />}
         </div>

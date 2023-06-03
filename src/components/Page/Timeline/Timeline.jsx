@@ -21,7 +21,7 @@ const Timeline = () => {
         {timelineData.slice(0, 1).map((data) => (
           <Bounce delay={500} left>
             <Link
-              to="/article"
+              to="/article25"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2 hover:no-underline border-b-2 border-red-50 "
             >
               <img className="xl:mr-auto w-[480px]" src={data?.img} alt="" />
@@ -42,7 +42,7 @@ const Timeline = () => {
         {timelineData.slice(1, 2).map((data) => (
           <Bounce delay={500} right>
             <Link
-              to="/article"
+              to="/balancing-art"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16"
             >
               <div className="text-left mt-10">
@@ -64,7 +64,7 @@ const Timeline = () => {
           <Bounce delay={500} left>
             {" "}
             <Link
-              to="/article"
+              to="/silver-jublie"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
             >
               <img className="w-[480px]" src={data?.img} alt="" />

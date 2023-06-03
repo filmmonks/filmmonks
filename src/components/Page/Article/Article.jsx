@@ -36,14 +36,14 @@ const Article = () => {
               allowfullscreen
             ></iframe>
           </div>
-          <p className="project-description">Director : Jaynto Kumar Kundu</p>
+          <p className="project-description">Director : Jaynto Kundu</p>
           <p className="project-description">year : 2023</p>
           <p className="project-description"> Project Type: Short Film</p>
           <p className="project-description">
-            Producers: Shithe Debnath, Jannatul Yasmin Songita
+            Producers: Shithe Debnath
           </p>
           <p className="project-description"> Language: Bangla</p>
-          <p className="project-description"> Writer: Jaynto Kumar Kundu</p>
+          <p className="project-description"> Writer: Jaynto Kundu</p>
           <p className="project-description lg:w-[500px]  w-[300px]">
             A small-town struggling woman searches for her missing brother who
             guided and implemented confidence within herself to be independent.
@@ -62,11 +62,11 @@ const Article = () => {
     </ArticleWrapper>
   );
 };
-const ArticleWrapper = styled.div`
+export const ArticleWrapper = styled.div`
   background: white;
   .article {
-    width: 145px;
-    height: 36px;
+    width: 645px;
+    
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
