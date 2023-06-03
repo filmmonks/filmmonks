@@ -63,10 +63,11 @@ const Service = () => {
                 className="text-white"
                 style={{
                   position: "absolute",
-                  top: "50%",
+                  top: "45%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
                   transition: "opacity 0.3s ease",
+                  fontSize: "29px",
                 }}
               >
                 {data?.title}
@@ -104,18 +105,20 @@ const Service = () => {
                   alt=""
                 />
                 <div
-                  className="text-white hover:cursor-pointer"
+                  className="text-white  text-3xl hover:cursor-pointer"
                   style={{
                     position: "absolute",
-                    top: "50%",
+                    top: "40%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     transition: "opacity 0.3s ease",
+                    fontSize: "26px",
                   }}
                 >
                   {data?.title}
-                  <p className="text-xs hover:cursor-pointer">
-                    {hoveredId === data._id && data.content}
+                
+                  <p className="text-xs hover:cursor-pointer mt-3">
+                  {data.content}
                   </p>
                 </div>
               </div>
@@ -190,10 +193,10 @@ const servicesData = [
   {
     _id: 3,
     image: img3,
-    title: "MUSIC VIDEO",
+    title: "MUSIC VIDEO ",
     icon: <BiVideoRecording />,
     content:
-      "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life and produce impactful music videos that stand out in the industry",
+      "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life ",
   },
   {
     _id: 4,

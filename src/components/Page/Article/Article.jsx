@@ -22,14 +22,14 @@ const Article = () => {
     <ArticleWrapper>
       <div className="flex flex-wrap justify-between items-center mb-8">
         <div className="mt-28 text-left lg:mx-24 md:mx-16 mx-12">
-          <h2 className="article">Article</h2>
+          <h2 className="article">Article 25</h2>
           <p className="project-description">project description</p>
           <p className="border mt-2 border-b-[#F25659] w-14"></p>
           <div>
             {" "}
             <iframe
               className="video"
-              src="https://www.youtube.com/embed/AazzbXZuu3g"
+              src="https://www.youtube.com/embed/hjBNiA3_1t8"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

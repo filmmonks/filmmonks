@@ -76,7 +76,7 @@ const Navbar = () => {
               <>
                 <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                   <Link
-                    className="hover:text-red-500 text-white font-normal"
+                    className=" text-white font-normal"
                     to="/home"
                     onClick={handleContactClick}
                   >
@@ -109,7 +109,7 @@ const Navbar = () => {
             {location.pathname !== "/contact" && (
               <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                 <Link
-                  className="text-red-500 font-normal hover:no-underline"
+                  className="text-[#f45656] font-normal hover:no-underline"
                   to="/contact"
                   onClick={handleContactClick}
                 >

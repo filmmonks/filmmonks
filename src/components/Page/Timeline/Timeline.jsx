@@ -22,7 +22,7 @@ const Timeline = () => {
           <Bounce delay={500} left>
             <Link
               to="/article"
-              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2  border-b-2 border-red-50 "
+              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2 hover:no-underline border-b-2 border-red-50 "
             >
               <img className="xl:mr-auto w-[480px]" src={data?.img} alt="" />
               <div className="text-left mt-10">
@@ -41,7 +41,10 @@ const Timeline = () => {
 
         {timelineData.slice(1, 2).map((data) => (
           <Bounce delay={500} right>
-            <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16  border-b-2 border-[#FFF8F8] pt-16">
+            <Link
+              to="/article"
+              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16"
+            >
               <div className="text-left mt-10">
                 <h4 className="text-3xl">{data?.title}</h4>
                 <p>{data?.type}</p>
@@ -53,14 +56,17 @@ const Timeline = () => {
                 </p>
               </div>
               <img className="xl:ml-auto w-[480px]" src={data?.img} alt="" />
-            </div>
+            </Link>
           </Bounce>
         ))}
 
         {timelineData.slice(2, 3).map((data) => (
           <Bounce delay={500} left>
             {" "}
-            <div className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2   pt-16">
+            <Link
+              to="/article"
+              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
+            >
               <img className="w-[480px]" src={data?.img} alt="" />
               <div className="text-left mt-3">
                 <h4 className="text-3xl mb-3">{data?.title}</h4>
@@ -72,7 +78,7 @@ const Timeline = () => {
                   {data?.logline}
                 </p>
               </div>
-            </div>
+            </Link>
           </Bounce>
         ))}
         <PhotoGalaryWrapper>
@@ -90,7 +96,7 @@ const Timeline = () => {
         {timelineData.map((data) => (
           <Link
             to="/article"
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16   border-red-50 "
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
@@ -110,12 +116,12 @@ const Timeline = () => {
           </Link>
         ))}
         <PhotoGalaryWrapper>
-        <button className="mt-6">
-              <Link to="/monks-galary" className="hover:no-underline">
-                {" "}
-                <span>see more</span>
-              </Link>
-            </button>
+          <button className="mt-6">
+            <Link to="/monks-galary" className="hover:no-underline">
+              {" "}
+              <span>see more</span>
+            </Link>
+          </button>
         </PhotoGalaryWrapper>
       </div>
 

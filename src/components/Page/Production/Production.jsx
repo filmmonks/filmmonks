@@ -4,10 +4,7 @@ import Content from "../../TextComponents/Content";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
 import "./Production.module.css";
-import research from "../../../Assets/production/research.png";
-import production from "../../../Assets/production/production (2).png";
-import preproduction from "../../../Assets/production/pre-production.png";
-import postroduction from "../../../Assets/production/Post Production 1.png";
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,11 +20,12 @@ import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 import styled from "styled-components";
 import Dropdown from "./Dropdown";
 import { FaAddressBook } from "react-icons/fa";
+
 const productionData = [
   {
     id: 1,
     title: "Research",
-    img: "https://i.ibb.co/yY1GT8B/research.png",
+    img: "https://i.ibb.co/bH5fPb0/research.png",
     list: [
       {
         id: 1,
@@ -46,7 +44,7 @@ const productionData = [
   {
     id: 2,
     title: "Project Development",
-    img: "https://i.ibb.co/yY1GT8B/research.png",
+    img: "https://i.ibb.co/gZNXjdx/projectdevelopment.png",
     list: [
       {
         id: 1,
@@ -61,7 +59,7 @@ const productionData = [
   {
     id: 3,
     title: "Pre Production",
-    img: "https://i.ibb.co/MBNrMP6/pre-production.png",
+    img: "https://i.ibb.co/9ZMkhmv/preproduction.png",
 
     list: [
       {
@@ -129,13 +127,13 @@ const productionData = [
   },
   {
     id: 4,
-    title: "PreShooting/Production",
-    img: "https://i.ibb.co/Bgp7PPX/production-2.png",
+    title: "Shooting/Production",
+    img: "https://i.ibb.co/z2VWVrj/shooting.png",
   },
   {
     id: 5,
     title: "Post Production",
-    img: "https://i.ibb.co/NKTfPzQ/Post-Production-1.png",
+    img: "https://i.ibb.co/jgQ5m12/Post-Production.png",
     list: [
       {
         id: 1,
@@ -175,7 +173,7 @@ const productionData = [
   {
     id: 6,
     title: "Delivery",
-    img: "https://i.ibb.co/NKTfPzQ/Post-Production-1.png",
+    img: "https://i.ibb.co/VVRPXXD/delivery.png",
   },
 ];
 
