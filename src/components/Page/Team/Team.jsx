@@ -5,7 +5,7 @@ import "keen-slider/keen-slider.min.css";
 import "./Team.css";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaFacebookF } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -29,6 +29,7 @@ import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_ic
 import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
 import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
 import { CiMail } from "react-icons/ci";
+import { FaLinkedinIn } from "react-icons/fa";
 import { useEffect } from "react";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -66,7 +67,6 @@ const Team = () => {
         />
 
         <div className="mx-auto w-[70%] mt-14">
-          
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -154,34 +154,10 @@ const Team = () => {
                 <div key={data._id} className="keen-slider__slide">
                   <div className="relative group">
                     <img
-                      className={`w-[250px] mx-auto mb-5 ${
-                        showIcons ? "brightness-50" : ""
-                      }`}
+                      className="w-[250px] mx-auto mb-5"
                       src={data?.img}
                       alt=""
                     />
-                    {showIcons && (
-                      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-100">
-                        <div
-                          style={{ display: "flex", flexDirection: "column" }}
-                        >
-                          <Link to={data.fb_link} target="_blank">
-                            <img
-                              className="text-white -mt-5 w-[30px]"
-                              src={fb}
-                              alt=""
-                            />
-                          </Link>
-                          <Link to={data.linkedin} target="_blank">
-                            <img
-                              className="text-white mt-5 w-[30px]"
-                              src={linkedin}
-                              alt=""
-                            />
-                          </Link>
-                        </div>
-                      </div>
-                    )}
                   </div>
                   <h5 className="name">{data?.name}</h5>
                   <p className="title">{data?.title}</p>
@@ -193,6 +169,27 @@ const Team = () => {
                     />
                     {data?.email}
                   </p>
+                  <p className="title">
+                    {" "}
+                    <Link to={data.fb_link} target="_blank">
+                      <FaFacebookF
+                        className="mr-1"
+                        style={{ display: "inline-block" }}
+                      />
+                    </Link>
+                  </p>
+                  <p className="title">
+                    {" "}
+                    <Link to={data.linkedin} target="_blank">
+                      <FaLinkedinIn
+                        className="mr-1"
+                        style={{ display: "inline-block" }}
+                      />
+                    </Link>
+                  </p>
+                  <div
+                    style={{ display: "flex", flexDirection: "column" }}
+                  ></div>
                 </div>
               ))}
             </div>

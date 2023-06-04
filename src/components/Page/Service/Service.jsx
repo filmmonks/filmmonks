@@ -108,11 +108,11 @@ const Service = () => {
                   className="text-white  text-3xl hover:cursor-pointer"
                   style={{
                     position: "absolute",
-                    top: "40%",
+                    top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     transition: "opacity 0.3s ease",
-                    fontSize: "26px",
+                    fontSize: "24px",
                   }}
                 >
                   {data?.title}
