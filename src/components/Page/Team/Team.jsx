@@ -5,7 +5,7 @@ import "keen-slider/keen-slider.min.css";
 import "./Team.css";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
-import { FaFacebook, FaFacebookF } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -26,11 +26,11 @@ import img6 from "../../../Assets/MonksGalary/AllPhotos/images/6.png";
 import img7 from "../../../Assets/MonksGalary/AllPhotos/images/7.png";
 import { Link } from "react-router-dom";
 import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
-import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
+// import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
 import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
 import { CiMail } from "react-icons/ci";
 import { FaLinkedinIn } from "react-icons/fa";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -43,16 +43,6 @@ const Team = () => {
       setLoaded(true);
     },
   });
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [showIcons, setShowIcons] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowIcons(true);
-    }, 2000);
-
-    return () => clearTimeout(timeout);
-  }, [activeSlide]);
 
   return (
     <TeamWrapper id="team" className="relative ">
