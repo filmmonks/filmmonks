@@ -169,27 +169,27 @@ const Team = () => {
                     />
                     {data?.email}
                   </p>
-                  <p className="title">
-                    {" "}
-                    <Link to={data.fb_link} target="_blank">
-                      <FaFacebookF
-                        className="mr-1"
-                        style={{ display: "inline-block" }}
-                      />
-                    </Link>
-                  </p>
-                  <p className="title">
-                    {" "}
-                    <Link to={data.linkedin} target="_blank">
-                      <FaLinkedinIn
-                        className="mr-1"
-                        style={{ display: "inline-block" }}
-                      />
-                    </Link>
-                  </p>
-                  <div
-                    style={{ display: "flex", flexDirection: "column" }}
-                  ></div>
+
+                  <div className="w-4 mx-auto" style={{ display: "flex" }}>
+                    <p className="title">
+                      {" "}
+                      <Link to={data.fb_link} target="_blank">
+                        <FaFacebookF
+                          className="mr-1"
+                          style={{ display: "inline-block" }}
+                        />
+                      </Link>
+                    </p>
+                    <p className="title">
+                      {" "}
+                      <Link to={data.linkedin} target="_blank">
+                        <FaLinkedinIn
+                          className="mr-1"
+                          style={{ display: "inline-block" }}
+                        />
+                      </Link>
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
