@@ -170,7 +170,7 @@ const productionData = [
         description: "Project Submission",
       },
     ],
-    showImage: false,
+    showImage: true,
   },
   {
     id: 6,
@@ -283,7 +283,7 @@ const Production = () => {
                           <div className="p-4">
                             {/* Dropdown Items */}
                             <ul>
-                              {data?.list?.slice(2, 6).map((l) => (
+                              {data?.list?.slice(2, 16).map((l) => (
                                 <li
                                   title={l?.description}
                                   className="hover:cursor-pointer text-base"
@@ -322,7 +322,7 @@ const Production = () => {
                   alt=""
                 />
                 <div className="mb-12">
-                  {data?.list?.slice(0, 2).map((l) => (
+                  {data?.list?.slice(0, 8).map((l) => (
                     <div
                       style={{
                         width: "240px",
