@@ -17,7 +17,11 @@ import "swiper/css/pagination";
 import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 import styled from "styled-components";
 import "./Production.css";
-
+import {
+  BiAccessibility,
+  BiDownArrow,
+  BiSolidDownArrowCircle,
+} from "react-icons/bi";
 const productionData = [
   {
     id: 1,
@@ -202,6 +206,7 @@ const Production = () => {
     },
     slides: { perView: 1 },
   });
+  const [dropdownHeight, setDropdownHeight] = useState("h-0");
 
   return (
     <ProductionWrapper className="relative">
@@ -321,14 +326,13 @@ const Production = () => {
                   src={data?.img}
                   alt=""
                 />
-                <div className="mb-12">
-                  {data?.list?.slice(0, 8).map((l) => (
+                <div className="mb-5">
+                  {data?.list?.slice(0, 2).map((l) => (
                     <div
                       style={{
                         width: "240px",
                         marginLeft: "auto",
                         marginRight: "auto",
-                        
                       }}
                       className="flex items-center "
                     >
@@ -348,6 +352,56 @@ const Production = () => {
                       </div>
                     </div>
                   ))}
+                  {data.showImage === true ? (
+                    <div className="">
+                      <BiDownArrow className="w-12  ml-auto mr-20 -mt-4 animate-bounce animation-duration-1000 animation-timing-linear" />
+                      <div
+                        className={`text-[#F45656] w-[275px] top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 -mt-1 mx-auto ${dropdownHeight}`}
+                        onClick={() =>
+                          setDropdownHeight(dropdownHeight === "h-0" ? "h-40" : "h-0")
+                        }
+                      >
+                        {/* Dropdown Content */}
+                        <div className="p-4">
+                          {/* Dropdown Items */}
+                          <ul>
+                            {data?.list?.slice(2, 16).map((l) => (
+                              // <li
+                              //   title={l?.description}
+                              //   className="hover:cursor-pointer text-base subtitle"
+                              // >
+                              //   {l?.description}
+                              // </li>
+                              <div
+                                style={{
+                                  marginLeft: "auto",
+                                  marginRight: "auto",
+                                }}
+                                className="flex items-center "
+                              >
+                                <img
+                                  className="mr-3"
+                                  src="https://i.ibb.co/rb2nHDR/Exclude.png"
+                                  alt=""
+                                  srcset=""
+                                />
+                                <div className="">
+                                  <p
+                                    title={l?.description}
+                                    className="hover:cursor-pointer text-base subtitle"
+                                  >
+                                    {l?.description}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="h-0"></div>
+                  )}
                 </div>
               </div>
             ))}
