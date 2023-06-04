@@ -41,7 +41,7 @@ const PhotoGalary = () => {
             We capture our moments and showcase them here.
           </p>
           <div className="lg:hidden block mx-auto mb-6">
-            <img className="mt-6 w-[380px] mx-auto" src={img1} alt="" />
+            <img className="mt-6 w-[320px] mx-auto" src={img1} alt="" />
             <button className="mt-6">
               <Link to="/monks-galary" className="hover:no-underline">
                 {" "}
