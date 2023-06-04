@@ -209,7 +209,7 @@ const Production = () => {
         <Headline content="Production Proces" lastWord="s" />
         <Content content="Six Individual Phases of A Production" />
 
-        <div className=" pt-24 bg-[#F45656] h-[700px] ">
+        <div className=" pt-24 bg-[#F45656] h-[750px] ">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -277,7 +277,7 @@ const Production = () => {
                             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                             borderRadius: "6px",
                           }}
-                          className="z-20 bg-[#FCFCFC] text-[#F45656] w-52 top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 -mt-4 mx-auto"
+                          className="z-20  bg-[#FCFCFC] text-[#F45656] w-52 top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 -mt-3 mx-auto"
                         >
                           {/* Dropdown Content */}
                           <div className="p-4">

@@ -29,6 +29,7 @@ import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_ic
 import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
 import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
 import { CiMail } from "react-icons/ci";
+import { useEffect } from "react";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -41,6 +42,16 @@ const Team = () => {
       setLoaded(true);
     },
   });
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [showIcons, setShowIcons] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowIcons(true);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, [activeSlide]);
 
   return (
     <TeamWrapper id="team" className="relative ">
@@ -55,6 +66,7 @@ const Team = () => {
         />
 
         <div className="mx-auto w-[70%] mt-14">
+          
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -92,7 +104,7 @@ const Team = () => {
                     src={data?.img}
                     alt=""
                   />
-                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+                  <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 hover:brightness-200   transition-opacity duration-600 ease-in-out">
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       <Link to={data.fb_link} target="_blank">
                         <img
@@ -140,30 +152,36 @@ const Team = () => {
             <div ref={sliderRef} className="keen-slider">
               {teamData.map((data) => (
                 <div key={data._id} className="keen-slider__slide">
-                  <div className="relatives group">
+                  <div className="relative group">
                     <img
-                      className="w-[250px] mx-auto mb-5"
+                      className={`w-[250px] mx-auto mb-5 ${
+                        showIcons ? "brightness-50" : ""
+                      }`}
                       src={data?.img}
                       alt=""
                     />
-                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-                      <div style={{ display: "flex", flexDirection: "column" }}>
-                        <Link to={data.fb_link} target="_blank">
-                          <img
-                            className="text-white -mt-5 w-[30px]"
-                            src={fb}
-                            alt=""
-                          />
-                        </Link>
-                        <Link to={data.linkedin} target="_blank">
-                          <img
-                            className="text-white mt-5 w-[30px]"
-                            src={linkedin}
-                            alt=""
-                          />
-                        </Link>
+                    {showIcons && (
+                      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-100">
+                        <div
+                          style={{ display: "flex", flexDirection: "column" }}
+                        >
+                          <Link to={data.fb_link} target="_blank">
+                            <img
+                              className="text-white -mt-5 w-[30px]"
+                              src={fb}
+                              alt=""
+                            />
+                          </Link>
+                          <Link to={data.linkedin} target="_blank">
+                            <img
+                              className="text-white mt-5 w-[30px]"
+                              src={linkedin}
+                              alt=""
+                            />
+                          </Link>
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                   <h5 className="name">{data?.name}</h5>
                   <p className="title">{data?.title}</p>
@@ -176,47 +194,6 @@ const Team = () => {
                     {data?.email}
                   </p>
                 </div>
-              ))}
-
-              {teamData.map((data) => (
-                <SwiperSlide key={data._id}>
-                  <div className="relatives group">
-                    <img
-                      className="w-[250px] mx-auto mb-5"
-                      src={data?.img}
-                      alt=""
-                    />
-                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
-                      <div style={{ display: "flex", flexDirection: "column" }}>
-                        <Link to={data.fb_link} target="_blank">
-                          <img
-                            className="text-white -mt-5 w-[30px]"
-                            src={fb}
-                            alt=""
-                          />
-                        </Link>
-                        <Link to={data.linkedin} target="_blank">
-                          <img
-                            className="text-white mt-5 w-[30px]"
-                            src={linkedin}
-                            alt=""
-                          />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  <h5 className="name">{data?.name}</h5>
-                  <p className="title">{data?.title}</p>
-
-                  <p className="title">
-                    <CiMail
-                      className="mr-1"
-                      style={{ display: "inline-block" }}
-                    />
-                    {data?.email}
-                  </p>
-                </SwiperSlide>
               ))}
             </div>
             {loaded && instanceRef.current && (
