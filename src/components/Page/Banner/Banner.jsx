@@ -13,7 +13,7 @@ const Banner = () => {
           alt="banner"
         />
         <img
-          className=" h-screen w-[100%] lg:hidden block"
+          className=" h-[70vh] w-[100%] lg:hidden block"
           src={mobileBannar}
           alt="banner"
         />

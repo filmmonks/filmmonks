@@ -187,7 +187,7 @@ const Timeline = () => {
 
         <PhotoGalaryWrapper>
           <button className="mt-6">
-            <Link to="/monks-galary" className="hover:no-underline">
+            <Link to="/work-timeline" className="hover:no-underline">
               {" "}
               <span>see more</span>
             </Link>
