@@ -54,7 +54,10 @@ const Navbar = () => {
         <div className="md:flex items-center justify-between lg:bg-transparent md:bg-transparent bg-black py-8 lg:px-16 md:px-10 px-7">
           <div className="text-2xl cursor-pointer flex items-center font-[Poppins] text-white">
             <span className="text-3xl text-indigo-600 mr-1 pt-2"></span>
-            <img className="w-44" src={logo} alt="logo" />
+            <a href="/home">
+              {" "}
+              <img className="w-44" src={logo} alt="logo" />
+            </a>
           </div>
 
           <div
