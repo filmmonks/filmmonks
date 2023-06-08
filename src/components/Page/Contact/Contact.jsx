@@ -15,14 +15,9 @@ import { MdEmail } from "react-icons/md";
 function Contact() {
   return (
     <ContactWrapper className="pt-2 lg:h-screen md:h-screen ">
-      <h1 className="contact-part text-center">Pitch Us </h1>
-      <p className="contact-part-p text-center">
-        Bring your ideas and stories to us and make it happen Send us your ideas
-        or stories(Logline-Synopsis or Script) by mail along with your CV
-      </p>
       <form className=" lg:flex md:flex hidden justify-around items-center">
         <div className="max-w-md contact-content">
-          <h3>How to get in contact </h3>
+          {/* <h3>How to get in contact </h3> */}
           {/* <div className="text-left ">
             <label
               className=" text-gray-700 font-bold mb-2 text-start"
@@ -53,6 +48,12 @@ function Contact() {
           </div> */}
 
           <div className=" text-left ">
+            <h1 className="contact-part text-center">Pitch Us </h1>
+            <p className="contact-part-p text-center p-6">
+              Bring your ideas and stories to us and make it happen Send us your
+              ideas or stories(Logline-Synopsis or Script) by mail along with
+              your CV
+            </p>
             <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
               Connect Us
             </p>
@@ -77,7 +78,7 @@ function Contact() {
             </p>{" "}
           </div>
           <p className="link link-hover font-bold mt-10  text-left lg:text-xl md:text-xl text-lg">
-            Follow Us
+            Follow Us On
           </p>
           <div className="flex justify-between  items-center mt-2 w-[200px]">
             <p className="link link-hover text-xl my-3 mx-2">
@@ -123,17 +124,18 @@ function Contact() {
           />
         </div>
       </form>
+
       {/* //mobile device */}
-      <form className=" block lg:hidden md:hidden h-screen">
+      <form className=" block lg:hidden md:hidden ">
         <div>
-          <img
-            className="w-[124px] h-[154px] mx-auto mt-5"
+          {/* <img
+            className="w-[124px]  mx-auto mt-28"
             src={contactImg}
             alt="logo-of-site"
-          />
+          /> */}
         </div>
-        <div className="max-w-md contact-content">
-          <h3>How to get in contact </h3>
+        <div className="max-w-md contact-content ">
+          {/* <h3>How to get in contact </h3> */}
           <div className="text-left content ">
             {/* <label className="" htmlFor="name">
               Drop us an email
@@ -156,7 +158,13 @@ function Contact() {
               name="phone"
               placeholder="01705099380"
             /> */}
-            <div className=" text-left ">
+            <div className=" text-left mt-24">
+              <h1 className="contact-part text-center mt-0">Pitch Us </h1>
+              <p className="contact-part-p text-center p-6">
+                Bring your ideas and stories to us and make it happen Send us
+                your ideas or stories(Logline-Synopsis or Script) by mail along
+                with your CV
+              </p>
               <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
                 Connect Us
               </p>
@@ -181,7 +189,7 @@ function Contact() {
               </p>{" "}
             </div>
             <p className="link link-hover font-bold mt-12  text-left lg:text-xl md:text-xl text-lg">
-              Follow Us
+              Follow Us On
             </p>
             <div className="flex items-center justify-between">
               <p className="link link-hover text-xl my-3 mx-2">
@@ -235,12 +243,10 @@ export const ContactWrapper = styled.div`
     display: none;
   }
   .contact-part {
-    width: 162px;
+    width: 175px;
     height: 48px;
     left: 882px;
     top: 162px;
-    margin-left: auto;
-    margin-right: auto;
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
@@ -249,16 +255,20 @@ export const ContactWrapper = styled.div`
     margin-bottom: 30px;
     color: #fff8f8;
     @media screen and (max-width: 440px) {
+      width: 80px;
       font-size: 18px;
       line-height: 22px;
       margin-bottom: 0px;
+      // margin-left: auto;
+      // margin-right: auto;
     }
   }
   .contact-part-p {
-    width: 671px;
-    height: 72px;
+    width: 650px;
+
     left: 628px;
     top: 240px;
+
     margin-left: auto;
     margin-right: auto;
     font-family: "Inter";
@@ -266,13 +276,15 @@ export const ContactWrapper = styled.div`
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    text-align: center;
-
+    text-align: justify;
+    border: 1px solid white;
+    border-bottom: 10px solid white;
+    border-radius: 3px 24px 3px 24px;
     color: #f45558;
 
     @media screen and (max-width: 440px) {
-      width: 305px;
-      height: 70px;
+      margin-top: 0px;
+      width: 240px;
       font-size: 16px;
       line-height: 19px;
       text-align: center;

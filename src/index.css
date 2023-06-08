@@ -18,7 +18,6 @@ html {
   height: 280px;
 }
 @layer utilities {
-  
   .content-1 {
     font-size: 20px;
     line-height: 28px;
@@ -28,7 +27,7 @@ html {
     font-size: 18px;
     line-height: 26px;
     font-weight: 400;
-    text-align: left;
+    text-align: justify;
   }
   .content-md {
     font-size: 16px;

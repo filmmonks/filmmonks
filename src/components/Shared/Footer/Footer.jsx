@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
             <div className="lg:mx-10 mx-7 my-8 flex flex-col lg:items-center">
               <p className="link link-hover font-bold text-left lg:text-xl md:text-lg text-base">
-                Follow Us
+                Follow Us On
               </p>
 
               <div style={{ display: "flex" }}>
