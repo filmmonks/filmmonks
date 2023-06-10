@@ -36,19 +36,36 @@ const Article = () => {
               allowfullscreen
             ></iframe>
           </div>
-          <p className="project-description">Director : Jaynto Kundu</p>
-          <p className="project-description">year : 2023</p>
-          <p className="project-description"> Project Type: Short Film</p>
           <p className="project-description">
-            Producers: Shithe Debnath
+            Director : <span> Jaynto Kundu</span>
           </p>
-          <p className="project-description"> Language: Bangla</p>
-          <p className="project-description"> Writer: Jaynto Kundu</p>
+          <p className="project-description">
+            Year : <span>2023</span>
+          </p>
+          <p className="project-description">
+            {" "}
+            Project Type: <span>Short Film</span>
+          </p>
+          <p className="project-description">
+            Producer: <span>Shithe Debnath</span>
+          </p>
+          <p className="project-description">
+            {" "}
+            Language: <span>Bangla</span>
+          </p>
+          <p className="project-description">
+            {" "}
+            Writer: <span>Jaynto Kundu</span>
+          </p>
           <p className="project-description lg:w-[500px]  w-[300px]">
-            A small-town struggling woman searches for her missing brother who
-            guided and implemented confidence within herself to be independent.
-            While revolving around her she learns about the complex
-            socio-political instances and the substantial uncertainty in it.
+            Logline :{" "}
+            <span className="">
+              A small-town struggling woman searches for her missing brother who
+              guided and implemented confidence within herself to be
+              independent. While revolving around her she learns about the
+              complex socio-political instances and the substantial uncertainty
+              in it.
+            </span>
           </p>
         </div>
         <div className="lg:block md:hidden hidden my-auto">
@@ -66,7 +83,7 @@ export const ArticleWrapper = styled.div`
   background: white;
   .article {
     width: 645px;
-    
+
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
@@ -76,12 +93,25 @@ export const ArticleWrapper = styled.div`
     @media screen and (max-width: 440px) {
       width: 345px;
       font-size: 16px;
-     
+
       line-height: 19px;
       margin-bottom: 0px;
     }
   }
   .project-description {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 6px;
+    color: #5a5a5a;
+    @media screen and (max-width: 440px) {
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.04em;
+      margin-bottom: 0px;
+    }
+  }
+  .project-description > span {
     font-weight: 300;
     font-size: 16px;
     line-height: 19px;

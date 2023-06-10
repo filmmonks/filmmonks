@@ -41,7 +41,7 @@ const productionData = [
         description: "Research File",
       },
     ],
-    showImage: true,
+    showImage: false,
   },
   {
     id: 2,
@@ -258,7 +258,7 @@ const Production = () => {
                   }}
                   className="text-left mx-auto text-white"
                 >
-                  {data?.list?.slice(0, 2).map((l) => (
+                  {data?.list?.slice(0, 3).map((l) => (
                     <div>
                       -
                       <p
@@ -288,7 +288,7 @@ const Production = () => {
                           <div className="p-4">
                             {/* Dropdown Items */}
                             <ul>
-                              {data?.list?.slice(2, 16).map((l) => (
+                              {data?.list?.slice(3, 16).map((l) => (
                                 <li
                                   title={l?.description}
                                   className="hover:cursor-pointer text-base"
@@ -327,7 +327,7 @@ const Production = () => {
                   alt=""
                 />
                 <div className="mb-5">
-                  {data?.list?.slice(0, 2).map((l) => (
+                  {data?.list?.slice(0, 3).map((l) => (
                     <div
                       style={{
                         width: "240px",
@@ -365,7 +365,7 @@ const Production = () => {
                         <div className="p-4">
                           {/* Dropdown Items */}
                           <ul>
-                            {data?.list?.slice(2, 16).map((l) => (
+                            {data?.list?.slice(3, 16).map((l) => (
                               // <li
                               //   title={l?.description}
                               //   className="hover:cursor-pointer text-base subtitle"

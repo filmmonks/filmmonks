@@ -32,7 +32,7 @@ const SliverJublie = () => {
           </p>
           <p className="project-description">Producers: Shithe Debnath</p>
           <p className="project-description"> Language: Bangla</p>
-          <p className="project-description"> Writer: Jaynto Kundu</p>
+         
           <p className="project-description lg:w-[500px]  w-[300px]">
             A compiled project of promotional video, documentary and event
             documentation video for the Department of Fisheries of Dhaka

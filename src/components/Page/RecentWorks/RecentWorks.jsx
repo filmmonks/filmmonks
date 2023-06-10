@@ -37,6 +37,17 @@ const Wrapper = styled.div`
       width: 280px;
       height: 215px;
     }
+    @media only screen and (max-width: 1026px) and (min-width: 765px) {
+      width: auto;
+    }
+    @media screen and (max-width: 440px) {
+      width: 320px;
+      height: 215px;
+    }
+    @media screen and (max-width: 376px) {
+      width: 280px;
+      height: 215px;
+    }
     @media screen and (max-width: 321px) {
       width: 230px;
       height: 215px;

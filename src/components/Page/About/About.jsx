@@ -6,7 +6,7 @@ import styled from "styled-components";
 import img1 from "../../../Assets/About/about1.png";
 import img2 from "../../../Assets/About/about2.jpg";
 import img3 from "../../../Assets/About/about3.jpg";
-import img4 from "../../../Assets/About/about4.jpg";
+import img4 from "../../../Assets/About/about4.png";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia"; // Import your SocialMedia component
 
 const About = () => {
@@ -14,7 +14,7 @@ const About = () => {
     <>
       <div
         id="about"
-        className="bg-[#0F100B] lg:flex md:block block justify-between items-center lg:gap-4 md:gap-4 lg:h-screen py-4 lg:py-0 "
+        className="bg-[#0F100B] lg:flex  md:block block justify-between items-center lg:gap-4 md:gap-4 lg:h-screen py-4 lg:py-0 "
       >
         <Wrapper className="lg:w-[50%] w-[100%]">
           <div className="lg:mx-24 mx-8 md:mx-16 my-8 text-[#FFF8F8] ">
@@ -30,14 +30,14 @@ const About = () => {
                 development and production of a wide range of visual mediums,
                 including fiction and non-fiction cinema online video content,
                 television commercials event videography and photography, music
-                videos, and promotional materials
+                videos, and promotional materials.
               </p>
-              <p className="lg:content-2 md:content-md content-sm xs:content-xs">
+              <p className="lg:content-2 md:content-md content-sm xs:content-xs capitalize">
                 we place an emphasis on contemporary storylines and story
                 telling with a focus on aesthetics. We strive to create
                 cinematic experiences that entertain and provoke thought while
                 keeping in mind the emotions, arguments, traditions nature, and
-                crises that are university accessible to our audiences. We aim
+                crises that are universally accessible to our audiences. We aim
                 to produce visually stunning and impactful content for our
                 clients.
               </p>
@@ -49,7 +49,7 @@ const About = () => {
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
-              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2  gap-x-10 gap-y-5"
+              className="lg:mx-24 mx-8 md:mx-16 my-8 grid md:grid-cols-2 grid-cols-2  gap-x-10 gap-y-5"
             >
               {itemData.map((item) => (
                 <img
@@ -70,17 +70,17 @@ const About = () => {
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
-              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2"
+              className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2 gap-7"
             >
               {itemData1.map((item) => (
                 <img
-                  style={{
-                    width: `${item.width}`,
-                    height: `${item.height}`,
-                    marginLeft: `${item.marginLeft}`,
-                    marginTop: `${item.marginTop}`,
-                    zIndex: `${item.zIndex}`,
-                  }}
+                  // style={{
+                  //   width: `${item.width}`,
+                  //   height: `${item.height}`,
+                  //   marginLeft: `${item.marginLeft}`,
+                  //   marginTop: `${item.marginTop}`,
+                  //   zIndex: `${item.zIndex}`,
+                  // }}
                   key={item.title}
                   src={item.img}
                   alt=""
@@ -99,9 +99,7 @@ const About = () => {
   );
 };
 
-const Wrapper = styled.div`
-
-`;
+const Wrapper = styled.div``;
 
 export default About;
 
@@ -109,7 +107,7 @@ const itemData = [
   {
     img: img1,
     title: "1",
-    width: "235px",
+    width: "300px",
   },
   {
     img: img2,
@@ -124,8 +122,7 @@ const itemData = [
   {
     img: img4,
     title: "2",
-    width: "235px",
-    marginTop: "25px",
+    width: "300px",
   },
 ];
 
@@ -133,25 +130,25 @@ const itemData1 = [
   {
     img: img1,
     title: "1",
-    width: "116px",
+    width: "200px",
   },
   {
     img: img2,
     title: "2",
-    width: "130px",
-    marginLeft: "10px"
+    width: "200px",
+    marginLeft: "10px",
   },
   {
     img: img3,
     title: "1",
-    width: "130px",
+    width: "200px",
     marginTop: "10px",
   },
   {
     img: img4,
     title: "2",
-    width: "116px",
-    marginTop: "30px",
-    marginLeft: "25px",
+    width: "200px",
+    marginTop: "10px",
+    marginLeft: "10px",
   },
 ];

@@ -17,7 +17,7 @@ const Timeline = () => {
         lastWord="e"
       />
 
-      <div className="lg:block hidden md:block">
+      <div className="lg:block hidden md:hidden">
         {timelineData.slice(0, 1).map((data) => (
           <Bounce delay={500} left>
             <Link
@@ -182,9 +182,6 @@ const Timeline = () => {
           </Link>
         ))}
 
-
-
-
         <PhotoGalaryWrapper>
           <button className="mt-6">
             <Link to="/work-timeline" className="hover:no-underline">
@@ -251,7 +248,7 @@ const timelineData = [
   },
   {
     id: 2,
-    title: "Balancing Acts:",
+    title: "Balancing Acts",
     type: "Documentary",
     logline:
       "A portrayal of how women from different professions and social classes balance their lives between professions and other activities in our society.",

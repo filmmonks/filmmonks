@@ -27,7 +27,7 @@ const BalanceArt = () => {
             Producers: Shithe Debnath
           </p>
           <p className="project-description"> Language: Bangla</p>
-          <p className="project-description"> Writer: Jaynto Kundu</p>
+         
           <p className="project-description lg:w-[500px]  w-[300px]">
             A portrayal of how women from different professions and social
             classes balance their lives between professions and other activities

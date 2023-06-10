@@ -47,7 +47,7 @@ const Team = () => {
   return (
     <TeamWrapper id="team" className="relative ">
       <div
-        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[60vh]
+        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center xl:h-[420px] lg:h-[350px]
     pt-12 lg:block hidden "
       >
         <Headline
@@ -135,13 +135,13 @@ const Team = () => {
         <Headline content="Meet The Tea" lastWord="m" />
         <div
           id="team"
-          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[50vh]
+          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[280px]
     pt-24 block lg:hidden mt-6"
         >
           <div className="navigation-wrapper  relative mt-10">
             <div ref={sliderRef} className="keen-slider">
               {teamData.map((data) => (
-                <div key={data._id} className="keen-slider__slide">
+                <div key={data._id} className="keen-slider__slide  mb-10">
                   <div className="relative group">
                     <img
                       className="w-[250px] mx-auto mb-5"

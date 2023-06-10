@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Headline from "../../TextComponents/Headline";
 import { BiVideoRecording } from "react-icons/bi";
-import img1 from "../../../Assets/services/1. Cinema.jpg";
-import img2 from "../../../Assets/services/2. Documentary.jpg";
-import img3 from "../../../Assets/services/3. Music Video.jpg";
-import img4 from "../../../Assets/services/4. TVC.jpg";
-import img5 from "../../../Assets/services/5. OVC.jpg";
-import img6 from "../../../Assets/services/6. Event Documentation.jpg";
-import img7 from "../../../Assets/services/7. Promotional Content.jpg";
-import img8 from "../../../Assets/services/8. Collaboration.jpg";
+import img1 from "../../../Assets/services/1. Cinema.png";
+import img2 from "../../../Assets/services/2. Documentary.png";
+import img3 from "../../../Assets/services/3. Music Video.png";
+import img4 from "../../../Assets/services/4. TVC.png";
+import img5 from "../../../Assets/services/5. OVC.png";
+import img6 from "../../../Assets/services/6.Event Documentation.png";
+import img7 from "../../../Assets/services/7. Promotional Content.png";
+import img8 from "../../../Assets/services/8. Collaboration.png";
 import { useKeenSlider } from "keen-slider/react";
 import "./Service.css";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
@@ -39,7 +39,7 @@ const Service = () => {
     <div id="service" className="relative">
       <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
         <Headline content="service" lastWord="s" />
-        <div className="grid  xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
+        <div className="grid 2xl:grid-cols-4  xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
           {servicesData.map((data) => (
             <div
               key={data._id}
@@ -51,7 +51,6 @@ const Service = () => {
               <img
                 className=""
                 style={{
-                  filter: "brightness(14%)",
                   width: "409px",
                   height: "231px",
                   background: "transparent", // Set the background to transparent
@@ -71,7 +70,7 @@ const Service = () => {
                 }}
               >
                 {data?.title}
-                <p className="text-xs ">
+                <p className="text-xs text-white text-justify">
                   {hoveredId === data._id && data.content}
                 </p>
               </div>
@@ -96,7 +95,6 @@ const Service = () => {
                 <img
                   className=""
                   style={{
-                    filter: "brightness(14%)",
                     width: "100%",
                     height: "231px",
                     background: "transparent", // Set the background to transparent
@@ -116,9 +114,9 @@ const Service = () => {
                   }}
                 >
                   {data?.title}
-                
-                  <p className="text-xs hover:cursor-pointer mt-3">
-                  {data.content}
+
+                  <p className="text-xs hover:cursor-pointer mt-3  text-white text-justify">
+                    {data.content}
                   </p>
                 </div>
               </div>
@@ -179,7 +177,7 @@ const servicesData = [
       </p>
     ),
     content:
-      "Cinema means something special to us, We believe that we are born to make cinema We prioritiz aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
+      "Cinema means something special to us, We believe that we are born to make cinema We prioritize aesthetic senses and the narrative style to make ful package of senses, story and social needs.",
   },
   {
     _id: 2,
@@ -187,7 +185,7 @@ const servicesData = [
     title: "DOCUMENTARY",
     icon: <BiVideoRecording />,
     content:
-      "We at Film Monks are dedicated to producing visually stunning, impactful documentary films. Our team of filmmakers and fine-art photographers bring meaningful stories to the big screen.",
+      "We at Film Monks are dedicated to produce visually stunning, impactful documentary films. Our team of filmmakers and fine-art photographers bring meaningful stories to the big screen.",
   },
 
   {
@@ -196,7 +194,7 @@ const servicesData = [
     title: "MUSIC VIDEO ",
     icon: <BiVideoRecording />,
     content:
-      "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life ",
+      "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life. ",
   },
   {
     _id: 4,
@@ -204,12 +202,12 @@ const servicesData = [
     title: "TVC",
     icon: <BiVideoRecording />,
     content:
-      "As a full-service video production studio, Film Monks offers a wide range of services for Television Commercial productions, bringing their unique perspective and artistic skills to every project.",
+      "As a full-service video production studio, Film Monks offers a wide range of services for Television Commercial productions, bringing their unique perspective and artistic skills to every project production company.",
   },
   {
     _id: 5,
     image: img5,
-    title: "OVC",
+    title: "Online Video Commercials ",
     icon: <BiVideoRecording />,
     content:
       "Film Monks is a full-service video the production company that offers a wide range of services for online video commercials.",
@@ -228,7 +226,7 @@ const servicesData = [
     title: "PROMOTIONAL CONTENT",
     icon: <BiVideoRecording />,
     content:
-      "Every kind of promotional video that perfectly promote the subject with proper image, we are ready to make.",
+      "Every kind of promotional video that perfectly promote the subject with visuals, we are ready to make.",
   },
   {
     _id: 8,
@@ -236,7 +234,7 @@ const servicesData = [
     title: "COLLABORATION",
     icon: <BiVideoRecording />,
     content:
-      "We, the Film Monks team could collaborate with any other teams to lead a video project.",
+      "We, the Film Monks team could collaborate with any other teams to lead a audio-visual production.",
   },
 ];
 

@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col lg:flex-row justify-center bg-[#000] lg:px-[200px] px-5 text-[#fff] lg:py-7 py-1">
           <p className="mr-40 hidden lg:block">Dhaka, Bangladesh </p>
-          <p>&copy; 2023 Film monks. All Rights Reserved </p>
+          <p>&copy; 2023 Film Monks. All Rights Reserved </p>
         </div>
       </footer>
     </FooterWrapper>

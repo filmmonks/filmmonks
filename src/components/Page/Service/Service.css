@@ -15,9 +15,11 @@
 
 .arrow--left {
   left: 5px;
+  top: 50%;
 }
 
 .arrow--right {
   left: auto;
   right: 5px;
+  top: 50%;
 }
