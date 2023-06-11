@@ -12,6 +12,7 @@ import img8 from "../../../Assets/services/8. Collaboration.png";
 import { useKeenSlider } from "keen-slider/react";
 import "./Service.css";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
+import styled from "styled-components";
 const Service = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -36,136 +37,229 @@ const Service = () => {
   });
 
   return (
-    <div id="service" className="relative">
-      <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
-        <Headline content="service" lastWord="s" />
-        <div className="grid 2xl:grid-cols-4  xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
-          {servicesData.map((data) => (
-            <div
-              key={data._id}
-              className=""
-              style={{ position: "relative" }}
-              onMouseEnter={() => handleMouseEnter(data._id)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <img
-                className=""
-                style={{
-                  width: "409px",
-                  height: "231px",
-                  background: "transparent", // Set the background to transparent
-                }}
-                src={data.image}
-                alt=""
-              />
-              <div
-                className="text-white"
-                style={{
-                  position: "absolute",
-                  top: "45%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  transition: "opacity 0.3s ease",
-                  fontSize: "29px",
-                }}
-              >
-                {data?.title}
-                <p className="text-xs text-white text-justify">
-                  {hoveredId === data._id && data.content}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* //for mobile device */}
-      <div className="lg:mx-24 mx-8 md:mx-16 my-8 lg:hidden block md:hidden">
-        <Headline content="service" lastWord="s" />
-        <div className="navigation-wrapper">
-          <div ref={sliderRef} className="keen-slider">
+    <ServiceWrapper>
+      {" "}
+      <div id="service" className="relative">
+        <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
+          <Headline content="service" lastWord="s" />
+          <div className="grid 2xl:grid-cols-4  xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
+            {/* {servicesData.map((data) => (
+       <div
+         key={data._id}
+         className=""
+         style={{ position: "relative" }}
+         onMouseEnter={() => handleMouseEnter(data._id)}
+         onMouseLeave={handleMouseLeave}
+       >
+         <img
+           className=""
+           style={{
+             width: "409px",
+             height: "231px",
+           }}
+           src={data.image}
+           alt=""
+         />
+         <div
+           className="text-white"
+           style={{
+             position: "absolute",
+             top: "45%",
+             left: "50%",
+             transform: "translate(-50%, -50%)",
+             transition: "opacity 0.3s ease",
+             fontSize: "29px",
+           }}
+         >
+           {data?.title}
+           <p className="text-xs text-white text-justify">
+             {hoveredId === data._id && data.content}
+           </p>
+         </div>
+       </div>
+     ))} */}
             {servicesData.map((data) => (
               <div
                 key={data._id}
-                className="keen-slider__slide"
+                className=""
                 style={{ position: "relative" }}
                 onMouseEnter={() => handleMouseEnter(data._id)}
                 onMouseLeave={handleMouseLeave}
               >
-                <img
-                  className=""
-                  style={{
-                    width: "100%",
-                    height: "231px",
-                    background: "transparent", // Set the background to transparent
-                  }}
-                  src={data.image}
-                  alt=""
-                />
-                <div
-                  className="text-white  text-3xl hover:cursor-pointer"
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    transition: "opacity 0.3s ease",
-                    fontSize: "24px",
-                  }}
-                >
-                  {data?.title}
+                {hoveredId === data._id ? (
+                  <div
+                    className="hovered-img service-image"
+                    style={{
+                      height: "231px",
+                      background: "#f45656",
+                      position: "relative",
+                      border: "1px solid black",
+                    }}
+                  >
+                    <img
+                      className=""
+                      style={{
+                        width: "310px",
+                        height: "231px",
+                        opacity: 0,
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        transition: "opacity 0.3s ease",
+                      }}
+                      src={data.image}
+                      alt=""
+                    />
+                    <div
+                      className="text-white font"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        transition: "opacity 0.3s ease",
 
-                  <p className="text-xs hover:cursor-pointer mt-3  text-white text-justify">
-                    {data.content}
-                  </p>
-                </div>
+                        textAlign: "center",
+                      }}
+                    >
+                      {data.title}
+                      <p className="text-xs text-white text-justify">
+                        {data.content}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    key={data._id}
+                    className=""
+                    style={{ position: "relative" }}
+                    onMouseEnter={() => handleMouseEnter(data._id)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <img
+                      className=""
+                      style={{
+                        width: "310",
+                        height: "231px",
+                      }}
+                      src={data.image}
+                      alt=""
+                    />
+                    <div
+                      className="text-white font"
+                      style={{
+                        position: "absolute",
+                        top: "45%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                        transition: "opacity 0.3s ease",
+                      }}
+                    >
+                      {data?.title}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-          {loaded && instanceRef.current && (
-            <>
-              <Arrow
-                left
-                onClick={(e) =>
-                  e.stopPropagation() || instanceRef.current?.prev()
-                }
-                disabled={currentSlide === 0}
-              />
+        </div>
 
-              <Arrow
-                onClick={(e) =>
-                  e.stopPropagation() || instanceRef.current?.next()
-                }
-                disabled={
-                  currentSlide ===
-                  instanceRef.current.track.details.slides.length - 1
-                }
-              />
-            </>
-          )}
+        {/* //for mobile device */}
+        <div className="lg:mx-24 mx-8 md:mx-16 my-8 lg:hidden block md:hidden">
+          <Headline content="service" lastWord="s" />
+          <div className="navigation-wrapper">
+            <div ref={sliderRef} className="keen-slider">
+              {servicesData.map((data) => (
+                <div
+                  key={data._id}
+                  className="keen-slider__slide"
+                  style={{ position: "relative" }}
+                  onMouseEnter={() => handleMouseEnter(data._id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img
+                    className=""
+                    style={{
+                      width: "auto",
+                      height: "231px",
+                      background: "transparent", // Set the background to transparent
+                    }}
+                    src={data.image}
+                    alt=""
+                  />
+                  <div
+                    className="text-white  text-3xl hover:cursor-pointer "
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      transition: "opacity 0.3s ease",
+                      fontSize: "24px",
+                    }}
+                  >
+                    {data?.title}
+
+                    <p className="text-xs hover:cursor-pointer mt-3  text-white text-justify">
+                      {data.content}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {loaded && instanceRef.current && (
+              <>
+                <Arrow
+                  left
+                  onClick={(e) =>
+                    e.stopPropagation() || instanceRef.current?.prev()
+                  }
+                  disabled={currentSlide === 0}
+                />
+
+                <Arrow
+                  onClick={(e) =>
+                    e.stopPropagation() || instanceRef.current?.next()
+                  }
+                  disabled={
+                    currentSlide ===
+                    instanceRef.current.track.details.slides.length - 1
+                  }
+                />
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* social media */}
+        <div
+          style={{
+            top: "45%",
+            right: "0%",
+            width: "65px",
+            height: "247px",
+            background: " #F45656",
+            clipPath: "polygon(10% 0, 100% 13%, 100% 85%, 9% 90%)",
+          }}
+          className="absolute hidden lg:flex md:hidden items-center justify-center"
+        >
+          <SocialMedia />
         </div>
       </div>
-
-      {/* social media */}
-      <div
-        style={{
-          top: "45%",
-          right: "0%",
-          width: "65px",
-          height: "247px",
-          background: " #F45656",
-          clipPath: "polygon(10% 0, 100% 13%, 100% 85%, 9% 90%)",
-        }}
-        className="absolute hidden lg:flex md:hidden items-center justify-center"
-      >
-        <SocialMedia />
-      </div>
-    </div>
+    </ServiceWrapper>
   );
 };
 
 export default Service;
 
+const ServiceWrapper = styled.div`
+  .font {
+    font-size: 29px;
+    @media screen and (min-width: 1024px) and (max-width: 1330px) {
+      font-size: 23px;
+    }
+  }
+`;
 const servicesData = [
   {
     _id: 1,
@@ -191,7 +285,7 @@ const servicesData = [
   {
     _id: 3,
     image: img3,
-    title: "MUSIC VIDEO ",
+    title: "MUSIC+VIDEO ",
     icon: <BiVideoRecording />,
     content:
       "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life. ",

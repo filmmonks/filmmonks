@@ -14,7 +14,7 @@ import {
 import { MdEmail } from "react-icons/md";
 function Contact() {
   return (
-    <ContactWrapper className="pt-2 lg:h-screen md:h-screen ">
+    <ContactWrapper className="pt-2 ">
       <form className=" lg:flex md:flex hidden justify-around items-center">
         <div className="max-w-md contact-content">
           {/* <h3>How to get in contact </h3> */}
@@ -49,7 +49,7 @@ function Contact() {
 
           <div className=" text-left ">
             <h1 className="contact-part text-center">Pitch Us </h1>
-            <p className="contact-part-p text-center p-6">
+            <p className="contact-part-p text-center p-6 my-6">
               Bring your ideas and stories to us and make it happen Send us your
               ideas or stories(Logline-Synopsis or Script) by mail along with
               your CV
@@ -77,10 +77,10 @@ function Contact() {
               </span>
             </p>{" "}
           </div>
-          <p className="link link-hover font-bold mt-10  text-left lg:text-xl md:text-xl text-lg">
+          <p className="link link-hover font-bold mt-4  text-left lg:text-xl md:text-xl text-lg">
             Follow Us On
           </p>
-          <div className="flex justify-between  items-center mt-2 w-[200px]">
+          <div className="flex justify-between  items-center mt-0 w-[200px]">
             <p className="link link-hover text-xl my-3 mx-2">
               <Link
                 to="https://www.facebook.com/filmmonksarthouse"
@@ -118,7 +118,7 @@ function Contact() {
         </div>
         <div>
           <img
-            className="w-[392px] h-[412px]"
+            className="w-[392px] h-[412px] mt-48"
             src={contactImg}
             alt="logo-of-site"
           />
@@ -126,7 +126,7 @@ function Contact() {
       </form>
 
       {/* //mobile device */}
-      <form className=" block lg:hidden md:hidden ">
+      <form className=" block lg:hidden md:hidden h-[100vh] ">
         <div>
           {/* <img
             className="w-[124px]  mx-auto mt-28"
@@ -160,7 +160,7 @@ function Contact() {
             /> */}
             <div className=" text-left mt-24">
               <h1 className="contact-part text-center mt-0">Pitch Us </h1>
-              <p className="contact-part-p text-center p-6">
+              <p className="contact-part-p text-center p-6 my-6">
                 Bring your ideas and stories to us and make it happen Send us
                 your ideas or stories(Logline-Synopsis or Script) by mail along
                 with your CV

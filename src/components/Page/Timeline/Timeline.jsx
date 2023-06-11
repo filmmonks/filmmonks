@@ -24,9 +24,9 @@ const Timeline = () => {
               to="/article25"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2 hover:no-underline border-b-2 border-red-50 "
             >
-              <img className="xl:mr-auto w-[480px]" src={data?.img} alt="" />
+              <img className="xl:mr-auto image-width" src={data?.img} alt="" />
               <div className="text-left mt-10">
-                <h4 className="text-3xl">{data?.title}</h4>
+                <h4 className="">{data?.title}</h4>
                 <p>{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
@@ -55,7 +55,7 @@ const Timeline = () => {
                   {data?.logline}
                 </p>
               </div>
-              <img className="xl:ml-auto w-[480px]" src={data?.img} alt="" />
+              <img className="xl:ml-auto image-width" src={data?.img} alt="" />
             </Link>
           </Bounce>
         ))}
@@ -67,7 +67,7 @@ const Timeline = () => {
               to="/silver-jublie"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
             >
-              <img className="w-[480px]" src={data?.img} alt="" />
+              <img className="image-width " src={data?.img} alt="" />
               <div className="text-left mt-3">
                 <h4 className="text-3xl mb-3">{data?.title}</h4>
                 <p>{data?.type}</p>
@@ -236,6 +236,30 @@ export const WrapperTimeLine = styled.div`
       margin-top: 0px;
     }
   }
+
+  .image-width {
+    width: 480px;
+    @media only screen and (min-width: 1140px) and (max-width: 1300px) {
+      width: 400px;
+    }
+    @media only screen and (min-width: 1299px) and (max-width: 1260px) {
+      width: 350px;
+    }
+  }
+
+  // h4 {
+  //   font-size: 30px;
+
+  //   @media only screen and (min-width: 1140px) and (max-width: 1412px) {
+  //     font-size: 25px;
+  //   }
+  // }
+  // p {
+  //   font-size: 18px;
+  //   @media only screen and (min-width: 1140px) and (max-width: 1412px) {
+  //     font-size: 14px;
+  //   }
+  // }
 `;
 const timelineData = [
   {
