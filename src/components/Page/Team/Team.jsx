@@ -28,7 +28,7 @@ import { Link } from "react-router-dom";
 import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
 // import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
 import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
-import { CiMail } from "react-icons/ci";
+import { MdEmail } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io";
 // import { useEffect } from "react";
@@ -111,7 +111,7 @@ const Team = () => {
                 <p className="title">{data?.title}</p>
 
                 <p className="title">
-                  <CiMail
+                  <MdEmail
                     className="mr-1"
                     style={{ display: "inline-block" }}
                   />
@@ -146,8 +146,8 @@ const Team = () => {
                   <p className="title">{data?.title}</p>
                   <p className="title">
                     {" "}
-                    <CiMail
-                      className="mr-1"
+                    <MdEmail
+                      className="mr-1 font-extrabold"
                       style={{ display: "inline-block" }}
                     />
                     {data?.email}
@@ -248,7 +248,7 @@ const TeamWrapper = styled.div`
     margin-top: 10px;
     font-family: "Inter";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 12px;
     line-height: 15px;
   }
