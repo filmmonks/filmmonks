@@ -28,7 +28,7 @@ const Footer = () => {
             />
           </div>
           <div className="flex flex-wrap lg:px-12 px-5">
-            <div className="lg:mx-10 mx-7">
+            <div className="lg:mx-10">
               <h3 className="text-[#F45656] font-bold lg:text-2xl md:text-lg text-lg  text-left">
                 Office
               </h3>
