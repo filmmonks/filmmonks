@@ -206,17 +206,12 @@ const Production = () => {
     },
     slides: { perView: 1 },
   });
-  const [showDropdown, setShowDropdown] = useState(false);
 
-  // const toggleDropdown = () => {
-  //   setShowDropdown(!showDropdown);
-  // };
   const [dropdownHeight, setDropdownHeight] = useState("h-0");
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleDropdown = (id) => {
     setActiveDropdown(activeDropdown === id ? null : id);
-    console.log(activeDropdown);
   };
   return (
     <ProductionWrapper className="relative">

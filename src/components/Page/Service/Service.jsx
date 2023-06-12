@@ -239,7 +239,7 @@ const Service = () => {
             right: "0%",
             width: "65px",
             height: "247px",
-            background: " #F45656",
+            background: "rgba(15, 16, 11, 0.81)",
             clipPath: "polygon(10% 0, 100% 13%, 100% 85%, 9% 90%)",
           }}
           className="absolute hidden lg:flex md:hidden items-center justify-center"
