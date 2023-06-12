@@ -88,7 +88,7 @@ const Footer = () => {
                 </p>
                 <p className="link link-hover text-xl my-5 mx-2">
                   <Link
-                    to="https://www.instagram.com/filmmonksarthouse/"
+                    to="https://www.instagram.com/filmmonksofficial/"
                     target="_blank"
                   >
                     {" "}

@@ -32,8 +32,8 @@ const About = () => {
                 television commercials event videography and photography, music
                 videos, and promotional materials.
               </p>
-              <p className="lg:content-2 md:content-md content-sm xs:content-xs capitalize">
-                we place an emphasis on contemporary storylines and story
+              <p className="lg:content-2 md:content-md content-sm xs:content-xs ">
+                We place an emphasis on contemporary storylines and story
                 telling with a focus on aesthetics. We strive to create
                 cinematic experiences that entertain and provoke thought while
                 keeping in mind the emotions, arguments, traditions nature, and

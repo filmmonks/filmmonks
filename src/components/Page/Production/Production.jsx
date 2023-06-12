@@ -179,7 +179,7 @@ const productionData = [
   {
     id: 6,
     title: "Delivery",
-    img: "https://i.ibb.co/VVRPXXD/delivery.png",
+    img: "https://i.ibb.co/C06FQh4/Post-Production-5.png",
     showImage: false,
   },
 ];
@@ -327,7 +327,7 @@ const Production = () => {
       <div id="production" className="block md:hidden lg:hidden mt-12">
         <Headline content="Production Proces" lastWord="s" />
         <p className="-mt-4 mb-2 text-[#B19B9B]" style={{ fontSize: "12px" }}>
-          Six Individual Phases of A Production
+          Six Individual Phases of a Production
         </p>
 
         <div className="navigation-wrapper">
