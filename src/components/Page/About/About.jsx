@@ -14,10 +14,10 @@ const About = () => {
     <>
       <div
         id="about"
-        className="bg-[#0F100B] lg:flex  md:block block justify-between items-center lg:gap-4 md:gap-4 lg:h-screen py-4 lg:py-0 "
+        className="bg-[#0F100B] xl:flex lg:block md:block block justify-between items-center lg:gap-4 md:gap-4 xl:h-screen py-4 xl:py-0 "
       >
-        <Wrapper className="lg:w-[50%] w-[100%]">
-          <div className="lg:mx-24 mx-8 md:mx-16 my-8 text-[#FFF8F8] ">
+        <Wrapper className="xl:w-[70%] lg:w-[100%] md:w-[100%] w-[100%]">
+          <div className="xl:mx-24 lg:mx-16 mx-8 md:mx-16 my-8 text-[#FFF8F8] ">
             <Headline
               style={{ color: "white", textAlign: "left" }}
               content="about u"
@@ -45,7 +45,7 @@ const About = () => {
           </div>
         </Wrapper>
 
-        <div className="xl:block lg:block hidden lg:w-[50%] mt-44">
+        <div className="xl:block lg:block hidden lg:w-[50%] mt-44 mx-auto">
           <Fade right>
             <div
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
@@ -91,7 +91,10 @@ const About = () => {
         </div>
 
         {/* Add SocialMedia component */}
-        <div className="hidden lg:flex md:hidden items-center justify-center pr-5">
+        <div
+          style={{ width: "5%" }}
+          className="hidden xl:flex lg:hidden md:hidden items-center justify-center pr-5"
+        >
           <SocialMedia />
         </div>
       </div>

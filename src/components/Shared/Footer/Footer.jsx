@@ -14,14 +14,14 @@ const Footer = () => {
   return (
     <FooterWrapper className="lg:mt-72 md:mt-72 mt-48">
       <footer style={{ background: `url(${img})`, backgroundSize: "cover" }}>
-        <div className="flex flex-wrap mx-auto lg:p-28 text-[#fff]">
-          <div className="lg:pl-24 mx-auto">
+        <div className="flex flex-wrap mx-auto lg:py-28 py-12 px-8 text-[#fff]">
+          <div className=" mx-auto">
             <Iframe
               url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8461568244334!2d90.34635957501477!3d23.752864878668586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bfeab55c7a9b%3A0x861f0388bf993bce!2sFilm%20Monks%20Art%20House!5e0!3m2!1sen!2sbd!4v1685782334781!5m2!1sen!2sbd"
               // width="509px"
               // height="316px"
               id=""
-              className="xl:w-[509px] lg:h-[316px] h-[190px] mx-auto my-10 rounded-md"
+              className="xl:w-[509px] xl:h-[316px] lg:h-[auto] h-[auto] w-[250px] mx-auto my-10 rounded-md"
               display="block"
               position="relative"
               loading="lazy"
@@ -55,7 +55,7 @@ const Footer = () => {
                 </span>
               </p>{" "}
             </div>
-            <div className="lg:mx-10 mx-7 my-8 flex flex-col lg:items-center">
+            <div className="lg:mx-10 my-8 flex flex-col lg:items-center">
               <p className="link link-hover font-bold text-left lg:text-xl md:text-lg text-base">
                 Follow Us On
               </p>
@@ -71,10 +71,7 @@ const Footer = () => {
                   </Link>
                 </p>
                 <p className="link link-hover text-xl my-5 mx-2">
-                  <Link
-                    to="https://www.youtube.com/@filmmonks"
-                    target="_blank"
-                  >
+                  <Link to="https://www.youtube.com/@filmmonks" target="_blank">
                     {" "}
                     <img src={youtube} alt="" />
                   </Link>

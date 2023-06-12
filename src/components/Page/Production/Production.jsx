@@ -131,7 +131,7 @@ const productionData = [
   },
   {
     id: 4,
-    title: "Shooting/Production",
+    title: "Shooting Or Production",
     img: "https://i.ibb.co/z2VWVrj/shooting.png",
     showImage: false,
   },
@@ -206,15 +206,25 @@ const Production = () => {
     },
     slides: { perView: 1 },
   });
-  const [dropdownHeight, setDropdownHeight] = useState("h-0");
+  const [showDropdown, setShowDropdown] = useState(false);
 
+  // const toggleDropdown = () => {
+  //   setShowDropdown(!showDropdown);
+  // };
+  const [dropdownHeight, setDropdownHeight] = useState("h-0");
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  const toggleDropdown = (id) => {
+    setActiveDropdown(activeDropdown === id ? null : id);
+    console.log(activeDropdown);
+  };
   return (
     <ProductionWrapper className="relative">
       <div id="production" className="lg:block md:block hidden ">
         <Headline content="Production Proces" lastWord="s" />
         <Content content="Six Individual Phases of A Production" />
 
-        <div className=" pt-24 bg-[#F45656] h-[750px] ">
+        <div className=" pt-24 bg-[#F45656] h-[650px] ">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -246,61 +256,65 @@ const Production = () => {
           >
             {productionData.map((data) => (
               <SwiperSlide key={data._id}>
-                <img
-                  className="w-[310px] mx-auto mb-5"
-                  src={data?.img}
-                  alt=""
-                />
-                <p className="title mb-6">{data?.title}</p>
-                <div
-                  style={{
-                    width: "210px",
-                  }}
-                  className="text-left mx-auto text-white"
-                >
-                  {data?.list?.slice(0, 3).map((l) => (
-                    <div>
-                      -
-                      <p
-                        title={l?.description}
-                        className="hover:cursor-pointer text-base  subtitle"
-                      >
-                        {l?.description}
-                      </p>
-                    </div>
-                  ))}
-                  <div>
-                    {data.showImage === true && (
-                      <div className="relative">
-                        <img
-                          className="w-12 mx-auto mt-4"
-                          src="https://i.ibb.co/8sQmfKL/211688-forward-arrow-icon-1-1.png"
-                          alt="arrow"
-                        />
-                        <div
-                          style={{
-                            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                            borderRadius: "6px",
-                          }}
-                          className="z-20  bg-[#FCFCFC] text-[#F45656] w-52 top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 -mt-3 mx-auto"
+                <div className="">
+                  <img
+                    className="w-[220px] mx-auto mb-5"
+                    src={data?.img}
+                    alt=""
+                  />
+                  <p className="title mb-6">{data?.title}</p>
+                  <div
+                    style={{
+                      width: "210px",
+                    }}
+                    className="text-left mx-auto text-white"
+                  >
+                    {data?.list?.slice(0, 3).map((l) => (
+                      <div>
+                        -
+                        <p
+                          style={{ width: "230px" }}
+                          title={l?.description}
+                          className="hover:cursor-pointer text-base  subtitle"
                         >
-                          {/* Dropdown Content */}
-                          <div className="p-4">
-                            {/* Dropdown Items */}
-                            <ul>
-                              {data?.list?.slice(3, 16).map((l) => (
-                                <li
-                                  title={l?.description}
-                                  className="hover:cursor-pointer text-base"
-                                >
-                                  {l?.description}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
+                          {l?.description}
+                        </p>
                       </div>
-                    )}
+                    ))}
+                    <div>
+                      {data.showImage === true && (
+                        <div>
+                          <img
+                            className="w-8 animate-bounce mx-auto mt-4 cursor-pointer"
+                            src="https://i.ibb.co/8sQmfKL/211688-forward-arrow-icon-1-1.png"
+                            alt="arrow"
+                            onClick={() => toggleDropdown(data.id)}
+                          />
+                          {activeDropdown === data.id && (
+                            <div
+                              style={{
+                                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                                borderRadius: "6px",
+                              }}
+                              className="p-4 bg-[#FCFCFC] text-[#F45656] w-52 top-0 left-0 mx-auto"
+                            >
+                              {/* Dropdown Items */}
+                              <ul>
+                                {data?.list?.slice(3, 16).map((l) => (
+                                  <li
+                                    key={l?.description}
+                                    title={l?.description}
+                                    className="hover:cursor-pointer text-base"
+                                  >
+                                    <div>-{l?.description}</div>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -358,7 +372,9 @@ const Production = () => {
                       <div
                         className={`text-[#F45656] w-[275px] top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out hover:opacity-100 -mt-1 mx-auto ${dropdownHeight}`}
                         onClick={() =>
-                          setDropdownHeight(dropdownHeight === "h-0" ? "h-40" : "h-0")
+                          setDropdownHeight(
+                            dropdownHeight === "h-0" ? "h-40" : "h-0"
+                          )
                         }
                       >
                         {/* Dropdown Content */}
@@ -478,9 +494,16 @@ const ProductionWrapper = styled.div`
     font-size: 24px;
     line-height: 36px;
     color: rgba(15, 16, 11, 0.8);
+    text-align: left;
+    width: 200px;
+    margin: auto;
+    height: 72px;
+    font-weight: 600;
     @media only screen and (max-width: 440px) {
       font-size: 14px;
       color: #0f100b;
+      text-align: center;
+      margin: auto;
     }
   }
   .subtitle {
@@ -491,7 +514,7 @@ const ProductionWrapper = styled.div`
     font-size: 14px;
     line-height: 22px;
     color: #ffffff;
-    @media only screen and (max-width: 440px) {
+    @media only screen and (max-width: 768px) {
       font-size: 12px;
       color: #5a5a5a;
     }

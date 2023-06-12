@@ -5,9 +5,9 @@ import "keen-slider/keen-slider.min.css";
 import "./Team.css";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { SiFacebook } from "react-icons/si";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css";
@@ -30,6 +30,7 @@ import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_ic
 import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
 import { CiMail } from "react-icons/ci";
 import { FaLinkedinIn } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io";
 // import { useEffect } from "react";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -47,7 +48,7 @@ const Team = () => {
   return (
     <TeamWrapper id="team" className="relative ">
       <div
-        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center xl:h-[420px] lg:h-[350px]
+        className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center xl:h-[420px] lg:h-[420px]
     pt-12 lg:block hidden "
       >
         <Headline
@@ -56,7 +57,7 @@ const Team = () => {
           lastWord="m"
         />
 
-        <div className="mx-auto w-[70%] mt-14">
+        <div className="mx-auto xl:w-[70%] lg:w-[80%] mt-14">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -97,18 +98,10 @@ const Team = () => {
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 hover:brightness-200   transition-opacity duration-600 ease-in-out">
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       <Link to={data.fb_link} target="_blank">
-                        <img
-                          className="text-white -mt-5 w-[30px]"
-                          src={fb}
-                          alt=""
-                        />
+                        <SiFacebook className="text-3xl  xl:-mt-10 lg:-mt-20 " />
                       </Link>
                       <Link to={data.linkedin} target="_blank">
-                        <img
-                          className="text-white mt-5 w-[30px]"
-                          src={linkedin}
-                          alt=""
-                        />
+                        <IoLogoLinkedin className="text-3xl  xl:mt-3 lg:-mt-9 " />
                       </Link>
                     </div>
                   </div>
@@ -131,11 +124,11 @@ const Team = () => {
       </div>
 
       {/* mobile device */}
-      <div className="block lg:hidden">
+      <div className="block lg:hidden md:block">
         <Headline content="Meet The Tea" lastWord="m" />
         <div
           id="team"
-          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[280px]
+          className="bg-[url('https://i.ibb.co/d4ndNdd/Rectangle-79.png')] bg-cover bg-center h-[400px]
     pt-24 block lg:hidden mt-6"
         >
           <div className="navigation-wrapper  relative mt-10">
@@ -164,8 +157,8 @@ const Team = () => {
                     <p className="title">
                       {" "}
                       <Link to={data.fb_link} target="_blank">
-                        <FaFacebookF
-                          className="mr-1"
+                        <FaFacebook
+                          className="-ml-3"
                           style={{ display: "inline-block" }}
                         />
                       </Link>
@@ -174,7 +167,7 @@ const Team = () => {
                       {" "}
                       <Link to={data.linkedin} target="_blank">
                         <FaLinkedinIn
-                          className="mr-1"
+                          className="ml-3"
                           style={{ display: "inline-block" }}
                         />
                       </Link>
@@ -244,6 +237,7 @@ const TeamWrapper = styled.div`
     filter: brightness(50%);
   }
   .name {
+    margin-top: 36px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 600;

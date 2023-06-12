@@ -21,9 +21,9 @@ const PhotoGalary = () => {
             {" "}
             <Content content="We capture our moments and showcase them here." />
             <div className="">
-              <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 grid-cols-1  xl:gap-10 lg:gap-5 xl:mx-40 lg:mx-32 ">
+              <div className="grid xl:grid-cols-3 lg:grid-cols-3  md:grid-cols-2 grid-cols-1  xl:gap-10 lg:gap-5 xl:mx-40 lg:mx-20 ">
                 {galleryData.map((data) => (
-                  <div className="w-[380px] mx-auto">
+                  <div className="xl:w-[320px] lg:w-auto mx-auto">
                     <img src={data?.image} alt="" />
                   </div>
                 ))}

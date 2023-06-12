@@ -99,9 +99,9 @@ const imageData = [
 
 const AllPhotosGalary = () => {
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  lg:mx-36 lg:gap-10 md:gap-10 gap-10 mx-auto pt-36 pb-12">
+    <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  xl:mx-36 lg:mx-16 md:mx-8 xl:gap-10 lg:gap-10 md:gap-10 gap-10 mx-auto pt-36 pb-12">
       {imageData.map((data) => (
-        <div className="lg:w-[380px] w-[300px] mx-auto">
+        <div className="lg:w-[320px] w-[300px] mx-auto">
           <img src={data?.img} alt="" />
         </div>
       ))}

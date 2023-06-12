@@ -5,7 +5,8 @@ import img1 from "../../../Assets/services/1. Cinema.png";
 import img2 from "../../../Assets/services/2. Documentary.png";
 import img3 from "../../../Assets/services/3. Music Video.png";
 import img4 from "../../../Assets/services/4. TVC.png";
-import img5 from "../../../Assets/services/5. OVC.png";
+// import img5 from "../../../Assets/services/5. OVC.png";
+import img5 from "../../../Assets/services/Group 111.png";
 import img6 from "../../../Assets/services/6.Event Documentation.png";
 import img7 from "../../../Assets/services/7. Promotional Content.png";
 import img8 from "../../../Assets/services/8. Collaboration.png";
@@ -42,7 +43,7 @@ const Service = () => {
       <div id="service" className="relative">
         <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
           <Headline content="service" lastWord="s" />
-          <div className="grid 2xl:grid-cols-4  xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
+          <div className="grid 2xl:grid-cols-4  xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
             {/* {servicesData.map((data) => (
        <div
          key={data._id}
@@ -72,7 +73,7 @@ const Service = () => {
            }}
          >
            {data?.title}
-           <p className="text-xs text-white text-justify">
+           <p className="text-xs text-white text-center">
              {hoveredId === data._id && data.content}
            </p>
          </div>
@@ -123,7 +124,7 @@ const Service = () => {
                       }}
                     >
                       {data.title}
-                      <p className="text-xs text-white text-justify">
+                      <p className="text-xs text-white text-center">
                         {data.content}
                       </p>
                     </div>
@@ -200,7 +201,7 @@ const Service = () => {
                   >
                     {data?.title}
 
-                    <p className="text-xs hover:cursor-pointer mt-3  text-white text-justify">
+                    <p className="text-xs hover:cursor-pointer mt-3  text-white text-center">
                       {data.content}
                     </p>
                   </div>
@@ -285,7 +286,7 @@ const servicesData = [
   {
     _id: 3,
     image: img3,
-    title: "MUSIC+VIDEO ",
+    title: "MUSIC/VIDEO ",
     icon: <BiVideoRecording />,
     content:
       "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life. ",
@@ -301,7 +302,7 @@ const servicesData = [
   {
     _id: 5,
     image: img5,
-    title: "Online Video Commercials ",
+    title: "OVC",
     icon: <BiVideoRecording />,
     content:
       "Film Monks is a full-service video the production company that offers a wide range of services for online video commercials.",

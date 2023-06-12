@@ -26,9 +26,14 @@ const RecentWorks = () => {
 
 const Wrapper = styled.div`
   .video-size {
-    width: 400px;
-    height: 315px;
-
+    width: 320px;
+    height: 215px;
+    @media only screen and (max-width: 1199px) and (min-width: 1027px) {
+      width: 250px;
+    }
+    @media only screen and (min-width: 765px) and (max-width: 1026px) {
+      width: auto;
+    }
     @media screen and (max-width: 440px) {
       width: 320px;
       height: 215px;
@@ -37,9 +42,7 @@ const Wrapper = styled.div`
       width: 280px;
       height: 215px;
     }
-    @media only screen and (max-width: 1026px) and (min-width: 765px) {
-      width: auto;
-    }
+
     @media screen and (max-width: 440px) {
       width: 320px;
       height: 215px;

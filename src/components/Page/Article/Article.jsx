@@ -20,8 +20,8 @@ const aricleData = [
 const Article = () => {
   return (
     <ArticleWrapper>
-      <div className="flex flex-wrap justify-between items-center mb-8">
-        <div className="mt-28 text-left lg:mx-24 md:mx-16 mx-12">
+      <div className="flex  justify-between items-center mb-8">
+        <div className="mt-28 text-left xl:mx-24 lg:mx-12 md:mx-12 mx-12">
           <h2 className="article">Article 25</h2>
           <p className="project-description">project description</p>
           <p className="border mt-2 border-b-[#F25659] w-14"></p>
@@ -57,20 +57,22 @@ const Article = () => {
             {" "}
             Writer: <span>Jaynto Kundu</span>
           </p>
-          <p className="project-description lg:w-[500px]  w-[300px]">
-            Logline :{" "}
-            <span className="">
-              A small-town struggling woman searches for her missing brother who
-              guided and implemented confidence within herself to be
-              independent. While revolving around her she learns about the
-              complex socio-political instances and the substantial uncertainty
-              in it.
-            </span>
-          </p>
+          <div className="text-justify">
+            <p className="project-description lg:w-[500px] md:w-[500px]  ">
+              Logline :{" "}
+              <span className="">
+                A small-town struggling woman searches for her missing brother
+                who guided and implemented confidence within herself to be
+                independent. While revolving around her she learns about the
+                complex socio-political instances and the substantial
+                uncertainty in it.
+              </span>
+            </p>
+          </div>
         </div>
         <div className="lg:block md:hidden hidden my-auto">
           <img
-            className="w-[595.67px] h-[595px] mt-20"
+            className="xl:w-[595.67px] xl:h-[595px] lg:w-[395px] lg:h-[395px] mt-20"
             src="https://i.ibb.co/9qpqzRJ/FILM-MONKS-logo-sign-only-png-1-20-1.png"
             alt=""
           />
@@ -90,6 +92,13 @@ export const ArticleWrapper = styled.div`
     font-size: 30px;
     line-height: 36px;
     margin-bottom: 9px;
+
+    @media screen and (min-width: 1240px) and (max-width: 1440px) {
+      width: 545px;
+    }
+    @media screen and (min-width: 1000px) and (max-width: 1239px) {
+      width: 445px;
+    }
     @media screen and (max-width: 440px) {
       width: 345px;
       font-size: 16px;
@@ -104,17 +113,21 @@ export const ArticleWrapper = styled.div`
     line-height: 19px;
     margin-bottom: 6px;
     color: #5a5a5a;
+    @media screen and (min-width: 441px) and (max-width: 765px) {
+      width: 600px;
+    }
     @media screen and (max-width: 440px) {
       font-size: 12px;
       line-height: 15px;
       letter-spacing: 0.04em;
       margin-bottom: 0px;
+      width: 300px;
     }
   }
   .project-description > span {
     font-weight: 300;
     font-size: 16px;
-    line-height: 19px;
+    line-height: 22px;
     margin-bottom: 6px;
     color: #5a5a5a;
     @media screen and (max-width: 440px) {
@@ -122,6 +135,7 @@ export const ArticleWrapper = styled.div`
       line-height: 15px;
       letter-spacing: 0.04em;
       margin-bottom: 0px;
+      width: 300px;
     }
   }
   .video {
@@ -129,6 +143,15 @@ export const ArticleWrapper = styled.div`
     height: 300px;
     margin-top: 30px;
     margin-bottom: 50px;
+
+    @media screen and (min-width: 1240px) and (max-width: 1440px) {
+      width: 500px;
+      height: 300px;
+    }
+    @media screen and (min-width: 1000px) and (max-width: 1239px) {
+      width: 400px;
+      height: 250px;
+    }
     @media screen and (max-width: 440px) {
       width: 290px;
       height: 180px;

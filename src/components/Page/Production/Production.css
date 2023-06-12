@@ -54,17 +54,15 @@ body {
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  fill: #f45656;
+  fill: #fef8f8;
   cursor: pointer;
 }
 
 .arrow--left {
   left: 5px;
-  top: 35%;
 }
 
 .arrow--right {
-  top: 35%;
   left: auto;
   right: 5px;
 }

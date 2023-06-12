@@ -26,11 +26,11 @@ const Timeline = () => {
             >
               <img className="xl:mr-auto image-width" src={data?.img} alt="" />
               <div className="text-left mt-10">
-                <h4 className="">{data?.title}</h4>
-                <p>{data?.type}</p>
+                <h4 className="margin-left-h4 ">{data?.title}</h4>
+                <p className="margin-left-h4">{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
-                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
                 >
                   {data?.logline}
                 </p>
@@ -46,11 +46,11 @@ const Timeline = () => {
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16"
             >
               <div className="text-left mt-10">
-                <h4 className="text-3xl">{data?.title}</h4>
+                <h4 className="text-3xl ">{data?.title}</h4>
                 <p>{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
-                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
                 >
                   {data?.logline}
                 </p>
@@ -69,11 +69,11 @@ const Timeline = () => {
             >
               <img className="image-width " src={data?.img} alt="" />
               <div className="text-left mt-3">
-                <h4 className="text-3xl mb-3">{data?.title}</h4>
-                <p>{data?.type}</p>
+                <h4 className="text-3xl mb-3 margin-left-h4 ">{data?.title}</h4>
+                <p className="margin-left-h4">{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
-                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
                 >
                   {data?.logline}
                 </p>
@@ -212,6 +212,10 @@ export const WrapperTimeLine = styled.div`
     font-size: 30px;
     color: #fff8f8;
     margin-bottom: 27px;
+    @media only screen and (min-width: 1280px) and (max-width: 1400px) {
+      font-size: 24px;
+    }
+
     @media only screen and (max-width: 440px) {
       font-family: "Inter";
       font-style: normal;
@@ -223,7 +227,9 @@ export const WrapperTimeLine = styled.div`
   }
   p {
     margin-bottom: 10px;
-
+    @media only screen and (min-width: 1280px) and (max-width: 1400px) {
+      font-size: 14px;
+    }
     @media only screen and (max-width: 440px) {
       font-style: normal;
       font-weight: 400;
@@ -239,27 +245,18 @@ export const WrapperTimeLine = styled.div`
 
   .image-width {
     width: 480px;
-    @media only screen and (min-width: 1140px) and (max-width: 1300px) {
-      width: 400px;
-    }
-    @media only screen and (min-width: 1299px) and (max-width: 1260px) {
-      width: 350px;
+  }
+  .logline {
+    width: auto;
+    @media only screen and (min-width: 1280px) and (max-width: 1400px) {
+      width: 410px;
     }
   }
-
-  // h4 {
-  //   font-size: 30px;
-
-  //   @media only screen and (min-width: 1140px) and (max-width: 1412px) {
-  //     font-size: 25px;
-  //   }
-  // }
-  // p {
-  //   font-size: 18px;
-  //   @media only screen and (min-width: 1140px) and (max-width: 1412px) {
-  //     font-size: 14px;
-  //   }
-  // }
+  .margin-left-h4 {
+    @media only screen and (min-width: 1280px) and (max-width: 1400px) {
+      margin-left: 40px;
+    }
+  }
 `;
 const timelineData = [
   {
