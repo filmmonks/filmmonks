@@ -32,6 +32,10 @@ import { MdEmail } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io";
 // import { useEffect } from "react";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -41,6 +45,7 @@ const Team = () => {
   const handleCopyEmail = (email) => {
     navigator.clipboard.writeText(email);
     setCopiedEmail(email);
+    notify();
   };
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
@@ -51,7 +56,7 @@ const Team = () => {
       setLoaded(true);
     },
   });
-
+  const notify = () => toast("email is copied");
   return (
     <TeamWrapper id="team" className="relative ">
       <div
@@ -64,7 +69,7 @@ const Team = () => {
           lastWord="m"
         />
 
-        <div className="mx-auto xl:w-[70%] lg:w-[80%] mt-14">
+        <div className="mx-auto xl:w-[70%] lg:w-[80%] mt-10">
           <Swiper
             slidesPerView={3}
             spaceBetween={30}
@@ -96,7 +101,7 @@ const Team = () => {
           >
             {teamData.map((data) => (
               <SwiperSlide key={data._id}>
-                <div className="relatives group">
+                <div className="relatives group ">
                   <img
                     className="w-[250px] mx-auto mb-5"
                     src={data?.img}
@@ -118,18 +123,15 @@ const Team = () => {
                 <p className="title">{data?.title}</p>
 
                 <p
-                  className="title"
+                  className="title absolute"
                   onClick={() => handleCopyEmail(data?.email)}
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: "pointer", left: "10%" }}
                 >
                   <MdEmail
                     className="mr-1"
                     style={{ display: "inline-block" }}
                   />
                   {data?.email}
-                  {copiedEmail === data?.email && (
-                    <span style={{ marginLeft: "0.5rem" }}>Copied!</span>
-                  )}
                 </p>
               </SwiperSlide>
             ))}
@@ -158,10 +160,13 @@ const Team = () => {
                   </div>
                   <h5 className="name">{data?.name}</h5>
                   <p className="title">{data?.title}</p>
-                  <p className="title">
-                    {" "}
+                  <p
+                    className="title "
+                    onClick={() => handleCopyEmail(data?.email)}
+                    style={{ cursor: "pointer", left: "10%" }}
+                  >
                     <MdEmail
-                      className="mr-1 font-extrabold"
+                      className="mr-1"
                       style={{ display: "inline-block" }}
                     />
                     {data?.email}
@@ -223,6 +228,7 @@ const Team = () => {
       >
         <SocialMedia />
       </div>
+      <ToastContainer />
     </TeamWrapper>
   );
 };
@@ -272,6 +278,7 @@ const TeamWrapper = styled.div`
   }
   .swiper,
   swiper-container {
+    height: 365px;
     padding-left: 96px !important;
     padding-right: 96px !important;
   }

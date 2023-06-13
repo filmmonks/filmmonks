@@ -290,7 +290,7 @@ const servicesData = [
     title: "MUSIC VIDEO ",
     icon: <BiVideoRecording />,
     content:
-      "Film Monks brings a unique and visually stunning  approach to music video production. Our team of  filmmakers and fine-art photographers work close with artists to bring their creative vision to life. ",
+      "We brings a unique and visually stunning approach to music video production. Our team work closely with artists to bring their creative vision to life.",
   },
   {
     _id: 4,

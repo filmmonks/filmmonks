@@ -219,7 +219,7 @@ const Production = () => {
     <ProductionWrapper className="relative">
       <div id="production" className="lg:block md:block hidden ">
         <Headline content="Production Proces" lastWord="s" />
-        <Content content="Six Individual Phases of A Production" />
+        <Content content="Six Individual Phases of a Production" />
 
         <div className=" pt-24 bg-[#F45656] h-[650px] ">
           <Swiper
