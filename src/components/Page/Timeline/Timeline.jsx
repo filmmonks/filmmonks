@@ -24,8 +24,8 @@ const Timeline = () => {
               to="/article25"
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2 hover:no-underline border-b-2 border-red-50 "
             >
-              <img className="xl:mr-auto image-width" src={data?.img} alt="" />
-              <div className="text-left mt-10">
+              <img className="xl:mr-auto image-width mt-16" src={data?.img} alt="" />
+              <div className="text-left mt-24">
                 <h4 className="margin-left-h4 ">{data?.title}</h4>
                 <p className="margin-left-h4">{data?.type}</p>
                 <p
@@ -43,7 +43,7 @@ const Timeline = () => {
           <Bounce delay={500} right>
             <Link
               to="/balancing-art"
-              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16"
+              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16 "
             >
               <div className="text-left mt-10">
                 <h4 className="text-3xl ">{data?.title}</h4>
@@ -118,10 +118,10 @@ const Timeline = () => {
         {timelineData.slice(0, 1).map((data) => (
           <Link
             to="/article25"
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] "
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] mb-10"
           >
             <img
-              className="xl:ml-auto w-[450px] timeline-image"
+              className="xl:ml-auto w-[450px] timeline-image "
               src={data?.img}
               alt=""
             />
@@ -165,7 +165,7 @@ const Timeline = () => {
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
           >
             <img
-              className="xl:ml-auto w-[450px] timeline-image"
+              className="xl:ml-auto w-[450px]  timeline-image"
               src={data?.img}
               alt=""
             />

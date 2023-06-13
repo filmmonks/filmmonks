@@ -72,7 +72,7 @@ const Article = () => {
         </div>
         <div className="lg:block md:hidden hidden my-auto">
           <img
-            className="xl:w-[595.67px] xl:h-[595px] lg:w-[395px] lg:h-[395px] mt-20"
+            className="xl:w-[495.67px] xl:h-[495px] lg:w-[395px] lg:h-[395px] mt-20"
             src="https://i.ibb.co/9qpqzRJ/FILM-MONKS-logo-sign-only-png-1-20-1.png"
             alt=""
           />

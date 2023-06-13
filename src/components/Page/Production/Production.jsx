@@ -210,9 +210,11 @@ const Production = () => {
   const [dropdownHeight, setDropdownHeight] = useState("h-0");
   const [activeDropdown, setActiveDropdown] = useState(null);
 
+  console.log("clicked", dropdownHeight);
   const toggleDropdown = (id) => {
     setActiveDropdown(activeDropdown === id ? null : id);
   };
+
   return (
     <ProductionWrapper className="relative">
       <div id="production" className="lg:block md:block hidden ">

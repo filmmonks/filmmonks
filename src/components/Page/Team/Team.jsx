@@ -35,6 +35,13 @@ import { IoLogoLinkedin } from "react-icons/io";
 const Team = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+
+  const [copiedEmail, setCopiedEmail] = useState("");
+
+  const handleCopyEmail = (email) => {
+    navigator.clipboard.writeText(email);
+    setCopiedEmail(email);
+  };
   const [sliderRef, instanceRef] = useKeenSlider({
     initial: 0,
     slideChanged(slider) {
@@ -110,12 +117,19 @@ const Team = () => {
                 <h5 className="name">{data?.name}</h5>
                 <p className="title">{data?.title}</p>
 
-                <p className="title">
+                <p
+                  className="title"
+                  onClick={() => handleCopyEmail(data?.email)}
+                  style={{ cursor: "pointer" }}
+                >
                   <MdEmail
                     className="mr-1"
                     style={{ display: "inline-block" }}
                   />
                   {data?.email}
+                  {copiedEmail === data?.email && (
+                    <span style={{ marginLeft: "0.5rem" }}>Copied!</span>
+                  )}
                 </p>
               </SwiperSlide>
             ))}
