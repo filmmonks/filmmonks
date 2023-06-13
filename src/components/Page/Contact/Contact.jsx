@@ -57,10 +57,13 @@ function Contact() {
             <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
               Connect Us
             </p>
-            <p className="link link-hover text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
-              Office Address: House 12,
-              <br /> Block C, Future Town <br /> Housing, Mohammadpur,
-              <br /> Dhaka-1207
+            <p className=" text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
+              Office Address:{" "}
+              <span className="link link-hover">
+                House 12,
+                <br /> Block C, Future Town <br /> Housing, Mohammadpur,
+                <br /> Dhaka-1207
+              </span>
             </p>
             <p className="link link-hover text-[#B19B9B] flex items-center my-2">
               <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />

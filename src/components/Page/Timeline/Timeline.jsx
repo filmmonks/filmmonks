@@ -92,7 +92,7 @@ const Timeline = () => {
       </div>
 
       {/* // mobile device */}
-      <div className="lg:hidden block md:hidden mb-10">
+      <div className="lg:hidden block md:block mb-10">
         {/* {timelineData.map((data) => (
           <Link
             to="/article25"
@@ -118,7 +118,7 @@ const Timeline = () => {
         {timelineData.slice(0, 1).map((data) => (
           <Link
             to="/article25"
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] "
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
@@ -130,7 +130,7 @@ const Timeline = () => {
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
               >
                 {data?.logline}
               </p>
@@ -140,7 +140,7 @@ const Timeline = () => {
         {timelineData.slice(1, 2).map((data) => (
           <Link
             to="/balancing-art"
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-b-2 border-[#FFF8F8]  "
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
@@ -152,7 +152,7 @@ const Timeline = () => {
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-12 logline"
               >
                 {data?.logline}
               </p>
@@ -174,7 +174,7 @@ const Timeline = () => {
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
               >
                 {data?.logline}
               </p>
@@ -230,6 +230,7 @@ export const WrapperTimeLine = styled.div`
     @media only screen and (min-width: 1280px) and (max-width: 1400px) {
       font-size: 14px;
     }
+
     @media only screen and (max-width: 440px) {
       font-style: normal;
       font-weight: 400;
@@ -237,9 +238,17 @@ export const WrapperTimeLine = styled.div`
       line-height: 27px;
     }
   }
+  .logline {
+    @media only screen and (max-width: 1023px) {
+      margin-bottom: 32px;
+    }
+  }
   .timeline-image {
     @media only screen and (max-width: 440px) {
       margin-top: 0px;
+    }
+    @media only screen and (max-width: 440px) {
+      margin-bottom: 32px;
     }
   }
 

@@ -494,7 +494,7 @@ const ProductionWrapper = styled.div`
     margin: auto;
     height: 72px;
     font-weight: 600;
-    @media only screen and (max-width: 440px) {
+    @media only screen and (max-width: 767px) {
       font-size: 14px;
       color: #0f100b;
       text-align: center;
@@ -509,7 +509,7 @@ const ProductionWrapper = styled.div`
     font-size: 14px;
     line-height: 22px;
     color: #ffffff;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       font-size: 12px;
       color: #5a5a5a;
     }

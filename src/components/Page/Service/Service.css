@@ -12,6 +12,11 @@
   fill: #f45656;
   cursor: pointer;
 }
+@media screen and (min-width: 440px) and (max-width: 767px) {
+  .arrow {
+    fill: #f45656 !important;
+  }
+}
 
 .arrow--left {
   left: 5px;

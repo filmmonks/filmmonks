@@ -182,6 +182,7 @@ const Service = () => {
                     className=""
                     style={{
                       width: "auto",
+                      margin: "auto",
                       height: "231px",
                       background: "transparent", // Set the background to transparent
                     }}

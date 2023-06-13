@@ -1,6 +1,7 @@
 import React from "react";
 import banner from "../../../Assets/Banner/final hero section.png";
 import mobileBannar from "../../../Assets/Banner/mobileBannar.png";
+import tabBanner from "../../../Assets/Banner/hero section.png";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 
 const Banner = () => {
@@ -13,7 +14,12 @@ const Banner = () => {
           alt="banner"
         />
         <img
-          className=" h-[60vh] w-[100%] lg:hidden block"
+          className=" h-screen w-[100%] hidden md:block lg:hidden "
+          src={tabBanner}
+          alt="banner"
+        />
+        <img
+          className=" h-[60vh] w-[100%] lg:hidden md:hidden block"
           src={mobileBannar}
           alt="banner"
         />
