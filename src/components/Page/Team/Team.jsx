@@ -56,7 +56,7 @@ const Team = () => {
       setLoaded(true);
     },
   });
-  const notify = () => toast("email is copied");
+  const notify = () => toast("Email is copied");
   return (
     <TeamWrapper id="team" className="relative ">
       <div
@@ -125,12 +125,8 @@ const Team = () => {
                 <p
                   className="title absolute"
                   onClick={() => handleCopyEmail(data?.email)}
-                  style={{ cursor: "pointer", left: "10%" }}
+                  style={{ cursor: "pointer", left: "20%" }}
                 >
-                  <MdEmail
-                    className="mr-1"
-                    style={{ display: "inline-block" }}
-                  />
                   {data?.email}
                 </p>
               </SwiperSlide>
