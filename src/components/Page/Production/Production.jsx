@@ -3,6 +3,12 @@ import Headline from "../../TextComponents/Headline";
 import Content from "../../TextComponents/Content";
 import { useKeenSlider } from "keen-slider/react";
 import { useState } from "react";
+import research from "../../../Assets/production/research.png";
+import projectdevelopment from "../../../Assets/production/projectdevelopment.png";
+import preproduction from "../../../Assets/production/preproduction.png";
+import shooting from "../../../Assets/production/shooting.png";
+import postproduction from "../../../Assets/production/postproduction.png";
+import delivery from "../../../Assets/production/delivery.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -26,7 +32,7 @@ const productionData = [
   {
     id: 1,
     title: "Research",
-    img: "https://i.ibb.co/bH5fPb0/research.png",
+    img: research,
     list: [
       {
         id: 1,
@@ -46,7 +52,7 @@ const productionData = [
   {
     id: 2,
     title: "Project Development",
-    img: "https://i.ibb.co/gZNXjdx/projectdevelopment.png",
+    img: projectdevelopment,
     list: [
       {
         id: 1,
@@ -62,7 +68,7 @@ const productionData = [
   {
     id: 3,
     title: "Pre Production",
-    img: "https://i.ibb.co/9ZMkhmv/preproduction.png",
+    img: preproduction,
 
     list: [
       {
@@ -131,14 +137,14 @@ const productionData = [
   },
   {
     id: 4,
-    title: "Shooting Or Production",
-    img: "https://i.ibb.co/z2VWVrj/shooting.png",
+    title: "Shooting or Production",
+    img: shooting,
     showImage: false,
   },
   {
     id: 5,
     title: "Post Production",
-    img: "https://i.ibb.co/jgQ5m12/Post-Production.png",
+    img: postproduction,
     list: [
       {
         id: 1,
@@ -179,7 +185,7 @@ const productionData = [
   {
     id: 6,
     title: "Delivery",
-    img: "https://i.ibb.co/C06FQh4/Post-Production-5.png",
+    img: delivery,
     showImage: false,
   },
 ];
