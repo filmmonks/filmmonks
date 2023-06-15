@@ -311,7 +311,7 @@ const servicesData = [
   {
     _id: 6,
     image: img6,
-    title: "EVENTS DOCUMENTATION",
+    title: "EVENT DOCUMENTATION",
     icon: <BiVideoRecording />,
     content:
       "Our team members are ready to catch any event with a different polished view and proper technical support. ",
