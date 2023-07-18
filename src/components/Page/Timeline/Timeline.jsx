@@ -275,6 +275,13 @@ const timelineData = [
     logline:
       "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
     img: "https://i.ibb.co/BqLC7Bk/Rectangle-267-1.png",
+    dataType:"",
+    director:"",
+    year:"",
+    producer:"",
+    language:"",
+    writer:"",
+    videoLink:""
   },
   {
     id: 2,
