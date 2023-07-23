@@ -52,8 +52,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/work-timeline/:id" element={<Article />} />
             <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/article25" element={<Article />}></Route>
+            {/* <Route path="/article25" element={<Article />}></Route> */}
             <Route path="/balancing-art" element={<BalanceArt />}></Route>
             <Route path="/silver-jublie" element={<SliverJublie />}></Route>
             <Route path="/monks-galary" element={<AllPhotosGalary />}></Route>

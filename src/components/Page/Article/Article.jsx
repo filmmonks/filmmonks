@@ -1,23 +1,106 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
-const aricleData = [
-  {
-    id: 1,
-    title: "Article 25",
-    director: "Jaynto Kumar Kundu",
-    year: 2023,
-    producers: ["Shithe Debnath", "Jannatul Yasmin  Songita"],
+// const aricleData = [
+//   {
+//     _id: "64b2f49a49a1ee17939f3aa8",
+//     image: "1689446846969-Rectangle 268.png",
+//     headline: "Balancing Acts",
+//     content:
+//       "A portrayal of how women from different professions and social classes balance their lives between professions and other activities in our society.",
+//     type: "Documentary",
+//     director: "Jaynto Kundu",
+//     year: "2023",
+//     producer: "Shithe Debnath",
+//     language: "Bangla",
+//     writer: "undefined",
+//     videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
+//   },
+//   {
+//     _id: "64b2f49a49a1ee17939f3aa9",
+//     image: "1689446723858-Rectangle 267.png",
+//     headline: "Article 25",
+//     content:
+//       "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
+//     type: "Short Film",
+//     director: "Jaynto Kundu",
+//     year: "2023",
+//     producer: "Shithe Debnath",
+//     language: "undefined",
+//     writer: "undefined",
+//     videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
+//   },
+//   {
+//     _id: "64b2f49a49a1ee17939f3aa7",
+//     image: "1689446910144-Rectangle 269.png",
+//     headline: "Silver Jubilee Events",
+//     content:
+//       "A compiled project of promotional video, documentary and event documentation video for the Department of Fisheries of Dhaka University on their Silver Jubilee events.",
+//     type: "Compiled Project (Promotional video, documentary & event documentation)",
+//     director: "Jaynto Kundu",
+//     year: "2022",
+//     producer: "Shithe Debnath",
+//     language: "Bangla",
+//     writer: "undefined",
+//     videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
+//   },
+//   {
+//     _id: "64b6d73f74d3bc2b7edf725c",
+//     image: "1689704255805-Rectangle 267.png",
+//     headline: "‘Hollow Man’ Clothing Photography",
+//     content:
+//       'A "Packshot photoshoot" using the hollow man photography technique was done with Greenbomb\'s various cloth types. \r\n',
+//     type: "Packshot Photoshoot",
+//     director: "undefined",
+//     year: "2023",
+//     producer: "Shithe Debnath",
+//     language: "undefined",
+//     writer: "undefined",
+//     videoLink: "undefined",
+//   },
+//   {
+//     _id: "64b6d78674d3bc2b7edf725d",
+//     image: "1689704326229-Rectangle 267.png",
+//     headline: "FBCCI Election Campaign and Promotional Video",
+//     content:
+//       "A project involving a promotional video and photoshoot session that was carried out within a studio setup under the FBCCI election campaign.\r\n",
+//     type: "Studio Photoshoot and Promotional Video",
+//     director: "undefined",
+//     year: "2023",
+//     producer: "Shithe Debnath",
+//     language: "undefined",
+//     writer: "undefined",
+//     videoLink: "undefined",
+//   },
+//   {
+//     _id: "64b6d80074d3bc2b7edf725e",
+//     image: "1689704448443-Rectangle 267.png",
+//     headline: "IFDC Event Documentation and Broadcasting",
+//     content:
+//       ": A compiled project of event photography, documentation, and broadcasting of a two-day-long event organised by IFDC",
+//     type: "Event Documentation and Broadcasting",
+//     director: "undefined",
+//     year: "2023",
+//     producer: "Shithe Debnath",
+//     language: "undefined",
+//     writer: "undefined",
+//     videoLink: "https://www.youtube.com/watch?v=TTsB2T00gJ4 ",
+//   },
+// ];
 
-    language: "Bangla",
-
-    writer: "Jaynto Kumar Kundu",
-
-    type: "Short Film",
-    videoLink: "",
-  },
-];
 const Article = () => {
+  const articleId = useParams();
+  const [aricleData, setAricleData] = useState();
+  useEffect(() => {
+    fetch(
+      `https://filmmonks-server.onrender.com/api/work-timeline/${articleId.id}`
+    )
+      .then((res) => res.json())
+      .then((data) => setAricleData(data));
+  }, []);
+
+
   return (
     <ArticleWrapper>
       <div className="flex  justify-between items-center mb-8">
