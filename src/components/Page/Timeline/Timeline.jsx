@@ -5,7 +5,31 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 import { PhotoGalaryWrapper } from "../PhotoGalary/PhotoGalary";
+import useGet from "../../../hooks/useGet";
 const Timeline = () => {
+  const url = "http://localhost:5000/api/work-timeline";
+  const { dataSource, loading, error } = useGet(url);
+
+  function reverseArray(arr) {
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start < end) {
+      // Swap elements at start and end positions
+      let temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+
+      // Move the pointers towards the center
+      start++;
+      end--;
+    }
+
+    return arr;
+  }
+  const dataSourceArray =[...dataSource]
+  const reversedArray = reverseArray(dataSourceArray);
+  console.log(reversedArray);
   return (
     <WrapperTimeLine
       id="work"
@@ -18,7 +42,7 @@ const Timeline = () => {
       />
 
       <div className="lg:block hidden md:hidden">
-        {aricleData.slice(0, 1).map((data) => (
+        {dataSourceArray.slice(0, 1).map((data) => (
           <Bounce delay={500} left>
             <Link
               to={`/work-timeline/${data?._id}`}
@@ -26,7 +50,7 @@ const Timeline = () => {
             >
               <img
                 className="xl:mr-auto image-width mt-16"
-                src={data?.image}
+                src={`http://localhost:5000/timeline/` + data?.image}
                 alt=""
               />
               <div className="text-left mt-24">
@@ -43,43 +67,53 @@ const Timeline = () => {
           </Bounce>
         ))}
 
-        {timelineData.slice(1, 2).map((data) => (
+        {dataSourceArray.slice(1, 2).map((data) => (
           <Bounce delay={500} right>
             <Link
               to={`/work-timeline/${data?.title}`}
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16 "
             >
               <div className="text-left mt-10">
-                <h4 className="text-3xl ">{data?.title}</h4>
+                <h4 className="text-3xl ">{data?.headline}</h4>
                 <p>{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
                   className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
                 >
-                  {data?.logline}
+                  {data?.content}
                 </p>
               </div>
-              <img className="xl:ml-auto image-width" src={data?.img} alt="" />
+              <img
+                className="xl:ml-auto image-width"
+                src={`http://localhost:5000/timeline/` + data?.image}
+                alt=""
+              />
             </Link>
           </Bounce>
         ))}
 
-        {timelineData.slice(2, 3).map((data) => (
+        {dataSourceArray.slice(2, 3).map((data) => (
           <Bounce delay={500} left>
             {" "}
             <Link
               to={`/work-timeline/${data?.title}`}
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
             >
-              <img className="image-width " src={data?.img} alt="" />
+              <img
+                className="image-width "
+                src={`http://localhost:5000/timeline/` + data?.image}
+                alt=""
+              />
               <div className="text-left mt-3">
-                <h4 className="text-3xl mb-3 margin-left-h4 ">{data?.title}</h4>
+                <h4 className="text-3xl mb-3 margin-left-h4 ">
+                  {data?.headline}
+                </h4>
                 <p className="margin-left-h4">{data?.type}</p>
                 <p
                   style={{ textAlign: "justify" }}
                   className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
                 >
-                  {data?.logline}
+                  {data?.content}
                 </p>
               </div>
             </Link>
@@ -97,68 +131,90 @@ const Timeline = () => {
 
       {/* // mobile device */}
       <div className="lg:hidden block md:block mb-10">
-        {timelineData.slice(0, 1).map((data) => (
+        {/* {timelineData.map((data) => (
+          <Link
+            to="/article25"
+            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
+          >
+            <img
+              className="xl:ml-auto w-[450px] timeline-image"
+              src={`http://localhost:5000/timeline/` + data?.image}
+              alt=""
+            />
+            <div className="text-left mt-10">
+              <h4>{data?.title}</h4>
+              <p>{data?.type}</p>
+              <p
+                style={{ textAlign: "justify" }}
+                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8"
+              >
+                {data?.logline}
+              </p>
+            </div>
+          </Link>
+        ))} */}
+        {dataSourceArray.slice(0, 1).map((data) => (
           <Link
             to={`/work-timeline/${data?.title}`}
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] mb-10"
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image "
-              src={data?.img}
+              src={`http://localhost:5000/timeline/` + data?.image}
               alt=""
             />
             <div className="text-left mt-10">
-              <h4>{data?.title}</h4>
+              <h4>{data?.headline}</h4>
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
                 className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
               >
-                {data?.logline}
+                {data?.content}
               </p>
             </div>
           </Link>
         ))}
-        {timelineData.slice(1, 2).map((data) => (
+        {dataSourceArray.slice(1, 2).map((data) => (
           <Link
             to={`/work-timeline/${data?.title}`}
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-b-2 border-[#FFF8F8]  "
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
-              src={data?.img}
+              src={`http://localhost:5000/timeline/` + data?.image}
               alt=""
             />
             <div className="text-left mt-10">
-              <h4>{data?.title}</h4>
+              <h4>{data?.headline}</h4>
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
                 className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-12 logline"
               >
-                {data?.logline}
+                {data?.content}
               </p>
             </div>
           </Link>
         ))}
-        {timelineData.slice(2, 3).map((data) => (
+        {dataSourceArray.slice(2, 3).map((data) => (
           <Link
             to={`/work-timeline/${data?.title}`}
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
           >
             <img
               className="xl:ml-auto w-[450px]  timeline-image"
-              src={data?.img}
+              src={`http://localhost:5000/timeline/` + data?.image}
               alt=""
             />
             <div className="text-left mt-10">
-              <h4>{data?.title}</h4>
+              <h4>{data?.headline}</h4>
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
                 className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
               >
-                {data?.logline}
+                {data?.content}
               </p>
             </div>
           </Link>
@@ -236,6 +292,7 @@ export const WrapperTimeLine = styled.div`
 
   .image-width {
     width: 480px;
+    height: 280px;
   }
   .logline {
     width: auto;
@@ -281,6 +338,13 @@ const timelineData = [
     logline:
       "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
     img: "https://i.ibb.co/BqLC7Bk/Rectangle-267-1.png",
+    dataType: "",
+    director: "",
+    year: "",
+    producer: "",
+    language: "",
+    writer: "",
+    videoLink: "",
   },
   {
     id: 2,

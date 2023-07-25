@@ -11,7 +11,12 @@ import "./PhotoGalary.css";
 import styled from "styled-components";
 import Content from "../../TextComponents/Content";
 import { Link } from "react-router-dom";
+import useGet from "../../../hooks/useGet";
 const PhotoGalary = () => {
+  const url = "http://localhost:5000/api/monks-galary";
+  const { dataSource, loading, error } = useGet(url);
+  console.log(dataSource);
+
   return (
     <div id="monks-gallery">
       <PhotoGalaryWrapper>
@@ -22,14 +27,19 @@ const PhotoGalary = () => {
             <Content content="We capture our moments and showcase them here." />
             <div className="">
               <div className="grid xl:grid-cols-3 lg:grid-cols-3  md:grid-cols-2 grid-cols-1  xl:gap-10 lg:gap-5 xl:mx-40 lg:mx-20 ">
-                {galleryData.map((data) => (
+                {dataSource.slice(0, 6).map((data) => (
                   <div className="xl:w-[320px] lg:w-auto mx-auto">
-                    <img src={data?.image} alt="" />
+                    <img
+                      src={`http://localhost:5000/monks/` + data?.image}
+                      alt=""
+                    />
                   </div>
                 ))}
               </div>
               <button className="mt-16 mx-auto desktop-btn">
-                <Link to="/monks-galary"  className="hover:no-underline">see more</Link>
+                <Link to="/monks-galary" className="hover:no-underline">
+                  see more
+                </Link>
               </button>
             </div>
           </div>
@@ -41,7 +51,14 @@ const PhotoGalary = () => {
             We capture our moments and showcase them here.
           </p>
           <div className="lg:hidden block mx-auto mb-6">
-            <img className="mt-6 w-[320px] mx-auto" src={img1} alt="" />
+            {dataSource.slice(0, 1).map((data) => (
+              <img
+                className="mt-6 w-[320px] mx-auto"
+                src={`http://localhost:5000/monks/` + data?.image}
+                alt=""
+              />
+            ))}
+
             <button className="mt-6">
               <Link to="/monks-galary" className="hover:no-underline">
                 {" "}

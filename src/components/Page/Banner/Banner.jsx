@@ -38,3 +38,6 @@ const Banner = () => {
   );
 };
 export default Banner;
+const data = [
+
+];

@@ -35,8 +35,13 @@ import { IoLogoLinkedin } from "react-icons/io";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useGet from "../../../hooks/useGet";
 
 const Team = () => {
+  const url = "http://localhost:5000/api/teams";
+  const { dataSource, loading, error } = useGet(url);
+  console.log(dataSource);
+  console.log(teamData);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -99,12 +104,12 @@ const Team = () => {
               },
             }}
           >
-            {teamData.map((data) => (
+            {dataSource.map((data) => (
               <SwiperSlide key={data._id}>
                 <div className="relatives group ">
                   <img
                     className="w-[250px] mx-auto mb-5"
-                    src={data?.img}
+                    src={`http://localhost:5000/team/` + data?.image}
                     alt=""
                   />
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 hover:brightness-200   transition-opacity duration-600 ease-in-out">
@@ -145,12 +150,12 @@ const Team = () => {
         >
           <div className="navigation-wrapper  relative mt-10">
             <div ref={sliderRef} className="keen-slider">
-              {teamData.map((data) => (
+              {dataSource.map((data) => (
                 <div key={data._id} className="keen-slider__slide  mb-10">
                   <div className="relative group">
                     <img
                       className="w-[250px] mx-auto mb-5"
-                      src={data?.img}
+                      src={`http://localhost:5000/team/` + data?.image}
                       alt=""
                     />
                   </div>
@@ -205,10 +210,10 @@ const Team = () => {
                   onClick={(e) =>
                     e.stopPropagation() || instanceRef.current?.next()
                   }
-                  disabled={
-                    currentSlide ===
-                    instanceRef.current.track.details.slides.length - 1
-                  }
+                  // disabled={
+                  //   currentSlide ===
+                  //   instanceRef.current.track.details.slides.length - 1
+                  // }
                 />
               </>
             )}
@@ -253,6 +258,7 @@ const TeamWrapper = styled.div`
     filter: brightness(50%);
   }
   .name {
+    text-transform: uppercase;
     margin-top: 36px;
     font-family: "Inter";
     font-style: normal;
@@ -261,6 +267,7 @@ const TeamWrapper = styled.div`
     line-height: 17px;
   }
   .title {
+    text-transform: capitalize;
     margin-top: 10px;
     font-family: "Inter";
     font-style: normal;
