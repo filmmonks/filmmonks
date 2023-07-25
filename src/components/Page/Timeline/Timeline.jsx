@@ -6,9 +6,19 @@ import styled from "styled-components";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 import { PhotoGalaryWrapper } from "../PhotoGalary/PhotoGalary";
 import useGet from "../../../hooks/useGet";
+import Loading from "../../Shared/Loading/Loading";
+import { useEffect } from "react";
 const Timeline = () => {
+  let [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   const url = "https://filmmonks-server.onrender.com/api/work-timeline";
-  const { dataSource, loading, error } = useGet(url);
+  const { dataSource } = useGet(url);
 
   function reverseArray(arr) {
     let start = 0;
@@ -31,116 +41,121 @@ const Timeline = () => {
   const reversedArray = reverseArray(dataSourceArray);
 
   return (
-    <WrapperTimeLine
-      id="work"
-      className="bg-[#000000] lg:pt-8 lg:pb-16 py-3 md:py-6 relative"
-    >
-      <Headline
-        style={{ color: "white" }}
-        content="Work TimeLin"
-        lastWord="e"
-      />
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <WrapperTimeLine
+          setLoading="false"
+          id="work"
+          className="bg-[#000000] lg:pt-8 lg:pb-16 py-3 md:py-6 relative"
+        >
+          <Headline
+            style={{ color: "white" }}
+            content="Work TimeLin"
+            lastWord="e"
+          />
 
-      <div className="lg:block hidden md:hidden">
-        {dataSourceArray.slice(0, 1).map((data) => (
-          <Bounce delay={500} left>
-            <Link
-              to={`/work-timeline/${data?._id}`}
-              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2 hover:no-underline border-b-2 border-red-50 "
-            >
-              <img
-                className="xl:mr-auto image-width mt-16"
-                src={
-                  `https://filmmonks-server.onrender.com/timeline/` +
-                  data?.image
-                }
-                alt=""
-              />
-              <div className="text-left mt-24">
-                <h4 className="margin-left-h4 ">{data?.headline}</h4>
-                <p className="margin-left-h4">{data?.type}</p>
-                <p
-                  style={{ textAlign: "justify" }}
-                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
+          <div className="lg:block hidden md:hidden">
+            {dataSourceArray.slice(0, 1).map((data) => (
+              <Bounce delay={500} left>
+                <Link
+                  to={`/work-timeline/${data?._id}`}
+                  className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-t-2 hover:no-underline border-b-2 border-red-50 "
                 >
-                  {data?.content}
-                </p>
-              </div>
-            </Link>
-          </Bounce>
-        ))}
+                  <img
+                    className="xl:mr-auto image-width mt-16"
+                    src={
+                      `https://filmmonks-server.onrender.com/timeline/` +
+                      data?.image
+                    }
+                    alt=""
+                  />
+                  <div className="text-left mt-24">
+                    <h4 className="margin-left-h4 ">{data?.headline}</h4>
+                    <p className="margin-left-h4">{data?.type}</p>
+                    <p
+                      style={{ textAlign: "justify" }}
+                      className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
+                    >
+                      {data?.content}
+                    </p>
+                  </div>
+                </Link>
+              </Bounce>
+            ))}
 
-        {dataSourceArray.slice(1, 2).map((data) => (
-          <Bounce delay={500} right>
-            <Link
-              to={`/work-timeline/${data?._id}`}
-              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16 "
-            >
-              <div className="text-left mt-10">
-                <h4 className="text-3xl ">{data?.headline}</h4>
-                <p>{data?.type}</p>
-                <p
-                  style={{ textAlign: "justify" }}
-                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
+            {dataSourceArray.slice(1, 2).map((data) => (
+              <Bounce delay={500} right>
+                <Link
+                  to={`/work-timeline/${data?._id}`}
+                  className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16 "
                 >
-                  {data?.content}
-                </p>
-              </div>
-              <img
-                className="xl:ml-auto image-width"
-                src={
-                  `https://filmmonks-server.onrender.com/timeline/` +
-                  data?.image
-                }
-                alt=""
-              />
-            </Link>
-          </Bounce>
-        ))}
+                  <div className="text-left mt-10">
+                    <h4 className="text-3xl ">{data?.headline}</h4>
+                    <p>{data?.type}</p>
+                    <p
+                      style={{ textAlign: "justify" }}
+                      className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
+                    >
+                      {data?.content}
+                    </p>
+                  </div>
+                  <img
+                    className="xl:ml-auto image-width"
+                    src={
+                      `https://filmmonks-server.onrender.com/timeline/` +
+                      data?.image
+                    }
+                    alt=""
+                  />
+                </Link>
+              </Bounce>
+            ))}
 
-        {dataSourceArray.slice(2, 3).map((data) => (
-          <Bounce delay={500} left>
-            {" "}
-            <Link
-              to={`/work-timeline/${data?._id}`}
-              className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
-            >
-              <img
-                className="image-width "
-                src={
-                  `https://filmmonks-server.onrender.com/timeline/` +
-                  data?.image
-                }
-                alt=""
-              />
-              <div className="text-left mt-3">
-                <h4 className="text-3xl mb-3 margin-left-h4 ">
-                  {data?.headline}
-                </h4>
-                <p className="margin-left-h4">{data?.type}</p>
-                <p
-                  style={{ textAlign: "justify" }}
-                  className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
+            {dataSourceArray.slice(2, 3).map((data) => (
+              <Bounce delay={500} left>
+                {" "}
+                <Link
+                  to={`/work-timeline/${data?._id}`}
+                  className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
                 >
-                  {data?.content}
-                </p>
-              </div>
-            </Link>
-          </Bounce>
-        ))}
-        <PhotoGalaryWrapper>
-          {" "}
-          <button className="mt-24 mb-8 mx-auto desktop-btn">
-            <Link to="/work-timeline" className="hover:no-underline ">
-              see more
-            </Link>
-          </button>
-        </PhotoGalaryWrapper>
-      </div>
+                  <img
+                    className="image-width "
+                    src={
+                      `https://filmmonks-server.onrender.com/timeline/` +
+                      data?.image
+                    }
+                    alt=""
+                  />
+                  <div className="text-left mt-3">
+                    <h4 className="text-3xl mb-3 margin-left-h4 ">
+                      {data?.headline}
+                    </h4>
+                    <p className="margin-left-h4">{data?.type}</p>
+                    <p
+                      style={{ textAlign: "justify" }}
+                      className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 margin-left-h4"
+                    >
+                      {data?.content}
+                    </p>
+                  </div>
+                </Link>
+              </Bounce>
+            ))}
+            <PhotoGalaryWrapper>
+              {" "}
+              <button className="mt-24 mb-8 mx-auto desktop-btn">
+                <Link to="/work-timeline" className="hover:no-underline ">
+                  see more
+                </Link>
+              </button>
+            </PhotoGalaryWrapper>
+          </div>
 
-      {/* // mobile device */}
-      <div className="lg:hidden block md:block mb-10">
-        {/* {timelineData.map((data) => (
+          {/* // mobile device */}
+          <div className="lg:hidden block md:block mb-10">
+            {/* {timelineData.map((data) => (
           <Link
             to="/article25"
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
@@ -162,99 +177,104 @@ const Timeline = () => {
             </div>
           </Link>
         ))} */}
-        {dataSourceArray.slice(0, 1).map((data) => (
-          <Link
-            to={`/work-timeline/${data?._id}`}
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] mb-10"
-          >
-            <img
-              className="xl:ml-auto w-[450px] timeline-image "
-              src={
-                `https://filmmonks-server.onrender.com/timeline/` + data?.image
-              }
-              alt=""
-            />
-            <div className="text-left mt-10">
-              <h4>{data?.headline}</h4>
-              <p>{data?.type}</p>
-              <p
-                style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
+            {dataSourceArray.slice(0, 1).map((data) => (
+              <Link
+                to={`/work-timeline/${data?._id}`}
+                className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] mb-10"
               >
-                {data?.content}
-              </p>
-            </div>
-          </Link>
-        ))}
-        {dataSourceArray.slice(1, 2).map((data) => (
-          <Link
-            to={`/work-timeline/${data?._id}`}
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-b-2 border-[#FFF8F8]  "
-          >
-            <img
-              className="xl:ml-auto w-[450px] timeline-image"
-              src={
-                `https://filmmonks-server.onrender.com/timeline/` + data?.image
-              }
-              alt=""
-            />
-            <div className="text-left mt-10">
-              <h4>{data?.headline}</h4>
-              <p>{data?.type}</p>
-              <p
-                style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-12 logline"
+                <img
+                  className="xl:ml-auto w-[450px] timeline-image "
+                  src={
+                    `https://filmmonks-server.onrender.com/timeline/` +
+                    data?.image
+                  }
+                  alt=""
+                />
+                <div className="text-left mt-10">
+                  <h4>{data?.headline}</h4>
+                  <p>{data?.type}</p>
+                  <p
+                    style={{ textAlign: "justify" }}
+                    className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
+                  >
+                    {data?.content}
+                  </p>
+                </div>
+              </Link>
+            ))}
+            {dataSourceArray.slice(1, 2).map((data) => (
+              <Link
+                to={`/work-timeline/${data?._id}`}
+                className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-b-2 border-[#FFF8F8]  "
               >
-                {data?.content}
-              </p>
-            </div>
-          </Link>
-        ))}
-        {dataSourceArray.slice(2, 3).map((data) => (
-          <Link
-            to={`/work-timeline/${data?._id}`}
-            className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
-          >
-            <img
-              className="xl:ml-auto w-[450px]  timeline-image"
-              src={
-                `https://filmmonks-server.onrender.com/timeline/` + data?.image
-              }
-              alt=""
-            />
-            <div className="text-left mt-10">
-              <h4>{data?.headline}</h4>
-              <p>{data?.type}</p>
-              <p
-                style={{ textAlign: "justify" }}
-                className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
+                <img
+                  className="xl:ml-auto w-[450px] timeline-image"
+                  src={
+                    `https://filmmonks-server.onrender.com/timeline/` +
+                    data?.image
+                  }
+                  alt=""
+                />
+                <div className="text-left mt-10">
+                  <h4>{data?.headline}</h4>
+                  <p>{data?.type}</p>
+                  <p
+                    style={{ textAlign: "justify" }}
+                    className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-12 logline"
+                  >
+                    {data?.content}
+                  </p>
+                </div>
+              </Link>
+            ))}
+            {dataSourceArray.slice(2, 3).map((data) => (
+              <Link
+                to={`/work-timeline/${data?._id}`}
+                className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
               >
-                {data?.content}
-              </p>
-            </div>
-          </Link>
-        ))}
+                <img
+                  className="xl:ml-auto w-[450px]  timeline-image"
+                  src={
+                    `https://filmmonks-server.onrender.com/timeline/` +
+                    data?.image
+                  }
+                  alt=""
+                />
+                <div className="text-left mt-10">
+                  <h4>{data?.headline}</h4>
+                  <p>{data?.type}</p>
+                  <p
+                    style={{ textAlign: "justify" }}
+                    className="lg:content-2 md:content-md content-sm xs:content-xs text-justify mb-8 logline"
+                  >
+                    {data?.content}
+                  </p>
+                </div>
+              </Link>
+            ))}
 
-        <PhotoGalaryWrapper>
-          <button className="mt-6">
-            <Link to="/work-timeline" className="hover:no-underline">
-              {" "}
-              <span>see more</span>
-            </Link>
-          </button>
-        </PhotoGalaryWrapper>
-      </div>
+            <PhotoGalaryWrapper>
+              <button className="mt-6">
+                <Link to="/work-timeline" className="hover:no-underline">
+                  {" "}
+                  <span>see more</span>
+                </Link>
+              </button>
+            </PhotoGalaryWrapper>
+          </div>
 
-      <div
-        style={{
-          top: "30%",
-          right: "1%",
-        }}
-        className="absolute hidden lg:flex md:flex items-center justify-center"
-      >
-        <SocialMedia />
-      </div>
-    </WrapperTimeLine>
+          <div
+            style={{
+              top: "30%",
+              right: "1%",
+            }}
+            className="absolute hidden lg:flex md:flex items-center justify-center"
+          >
+            <SocialMedia />
+          </div>
+        </WrapperTimeLine>
+      )}
+    </>
   );
 };
 
