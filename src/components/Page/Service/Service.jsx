@@ -10,6 +10,8 @@ import img5 from "../../../Assets/services/5. OVC.png";
 import img6 from "../../../Assets/services/6.Event Documentation.png";
 import img7 from "../../../Assets/services/7. Promotional Content.png";
 import img8 from "../../../Assets/services/8. Collaboration.png";
+import img9 from "../../../Assets/services/8. PHOTOGRAPHY (1).png";
+import img10 from "../../../Assets/services/7. LIVE STREAMING & BROADCASTING.png";
 import { useKeenSlider } from "keen-slider/react";
 import "./Service.css";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
@@ -318,6 +320,22 @@ const servicesData = [
   },
   {
     _id: 7,
+    image: img10,
+    title: "LIVE STREAMING & BROADCASTING",
+    icon: <BiVideoRecording />,
+    content:
+      "Our team, with advanced technology for live streaming and broadcasting, is ready top resent any event or program directly to the audience.",
+  },
+  {
+    _id: 8,
+    image: img9,
+    title: "PHOTOGRAPHY",
+    icon: <BiVideoRecording />,
+    content:
+      "From event photography to studio photography for packshots, products, and many more, we are totally ready to bring the best out of it.. ",
+  },
+  {
+    _id: 9,
     image: img7,
     title: "PROMOTIONAL CONTENT",
     icon: <BiVideoRecording />,
@@ -325,7 +343,7 @@ const servicesData = [
       "Every kind of promotional video that perfectly promote the subject with visuals, we are ready to make.",
   },
   {
-    _id: 8,
+    _id: 10,
     image: img8,
     title: "COLLABORATION",
     icon: <BiVideoRecording />,

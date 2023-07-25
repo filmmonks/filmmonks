@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import logo from "../../../Assets/Logo/logo.png";
 import "./Navbar.css";
 
@@ -16,12 +16,14 @@ const menuItem = [
 
 const Navbar = () => {
   const location = useLocation();
+  const currentPathname = location.pathname;
+  const parts = currentPathname.split("/");
+  const articleId = parts[parts.length - 1];
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(false);
 
   useEffect(() => {
     const changeBackground = () => {
-      console.log(window.scrollY);
       if (window.scrollY >= 80) {
         setActive(true);
       } else {
@@ -77,7 +79,7 @@ const Navbar = () => {
             location.pathname === "/balancing-art" ||
             location.pathname === "/silver-jublie" ||
             location.pathname === "/monks-galary" ||
-            location.pathname === "/work-timeline" ? (
+            location.pathname === `/work-timeline/${articleId}` ? (
               <>
                 <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
                   <Link

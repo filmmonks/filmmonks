@@ -24,7 +24,7 @@ const SocialMedia = ({ style }) => {
       </p>
       <p className="link link-hover text-xl my-5 mx-2">
         <Link
-          to="https://www.linkedin.com/company/91148823/admin/"
+          to="https://www.linkedin.com/company/filmmonks-art-house"
           target="_blank"
         >
           {" "}

@@ -36,15 +36,15 @@ const productionData = [
     list: [
       {
         id: 1,
-        description: "Script Analysis",
+        description: "Scripting",
       },
       {
         id: 2,
-        description: "Reference Findings",
+        description: "Script Analysis",
       },
       {
         id: 3,
-        description: "Research File",
+        description: "Research",
       },
     ],
     showImage: false,
@@ -60,7 +60,7 @@ const productionData = [
       },
       {
         id: 2,
-        description: "Public Relation (PR) Design",
+        description: "PR Branding Design",
       },
     ],
     showImage: false,
@@ -81,56 +81,52 @@ const productionData = [
       },
       {
         id: 3,
-        description: "Script Breakdown",
-      },
-      {
-        id: 4,
-        description: "1st Pre Production Meeting(PPM)",
-      },
-      {
-        id: 5,
         description: "Location Recce",
       },
       {
+        id: 4,
+        description: "Costume Design",
+      },
+      {
+        id: 5,
+        description: "Props & Set Design",
+      },
+      {
         id: 6,
-        description: "Finalizing Costumes",
+        description: "Equipment List",
       },
       {
         id: 7,
-        description: "Finalizing Props & Set Design",
+        description: "Location List",
       },
 
       {
         id: 8,
-        description: "Finalizing Equipment",
+        description: "Directors’ Feedback",
       },
       {
         id: 9,
-        description: "Finalizing Locations",
+        description: "Producers’ Feedback",
       },
       {
         id: 10,
-        description: "Permission and Insurance",
+        description: "1st Pre-Production Meeting (PPM)",
       },
       {
         id: 11,
-        description: "2nd PPM",
-      },
-      {
-        id: 12,
         description: "Shot Division",
       },
       {
-        id: 13,
+        id: 12,
         description: "Storyboard",
       },
       {
-        id: 14,
-        description: "Rehearsal",
+        id: 13,
+        description: "Permission and Insurance",
       },
       {
-        id: 15,
-        description: "3rd PPM",
+        id: 14,
+        description: "2nd PPM(if needed)",
       },
     ],
     showImage: true,
@@ -139,6 +135,12 @@ const productionData = [
     id: 4,
     title: "Shooting or Production",
     img: shooting,
+    list: [
+      {
+        id: 1,
+        description: "Shooting & Management",
+      },
+    ],
     showImage: false,
   },
   {
@@ -156,7 +158,7 @@ const productionData = [
       },
       {
         id: 3,
-        description: "Music",
+        description: "Music Editing",
       },
       {
         id: 4,
@@ -174,11 +176,6 @@ const productionData = [
         id: 7,
         description: "Final Editing",
       },
-
-      {
-        id: 8,
-        description: "Project Submission",
-      },
     ],
     showImage: true,
   },
@@ -186,6 +183,12 @@ const productionData = [
     id: 6,
     title: "Delivery",
     img: delivery,
+    list: [
+      {
+        id: 1,
+        description: "Project Submission",
+      },
+    ],
     showImage: false,
   },
 ];

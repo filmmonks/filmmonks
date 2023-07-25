@@ -13,7 +13,7 @@ import Content from "../../TextComponents/Content";
 import { Link } from "react-router-dom";
 import useGet from "../../../hooks/useGet";
 const PhotoGalary = () => {
-  const url = "http://localhost:5000/api/monks-galary";
+  const url = "https://filmmonks-server.onrender.com/api/monks-galary";
   const { dataSource, loading, error } = useGet(url);
   console.log(dataSource);
 
@@ -30,7 +30,7 @@ const PhotoGalary = () => {
                 {dataSource.slice(0, 6).map((data) => (
                   <div className="xl:w-[320px] lg:w-auto mx-auto">
                     <img
-                      src={`http://localhost:5000/monks/` + data?.image}
+                      src={`https://filmmonks-server.onrender.com/monks/` + data?.image}
                       alt=""
                     />
                   </div>
@@ -54,7 +54,7 @@ const PhotoGalary = () => {
             {dataSource.slice(0, 1).map((data) => (
               <img
                 className="mt-6 w-[320px] mx-auto"
-                src={`http://localhost:5000/monks/` + data?.image}
+                src={`https://filmmonks-server.onrender.com/monks/` + data?.image}
                 alt=""
               />
             ))}

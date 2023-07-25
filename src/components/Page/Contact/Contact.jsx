@@ -12,227 +12,252 @@ import {
   BsLinkedin,
 } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { useState } from "react";
+import { useEffect } from "react";
+import Loading from "../../Shared/Loading/Loading";
 function Contact() {
+  let [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
-    <ContactWrapper className="pt-2 ">
-      <form className=" lg:flex md:flex hidden justify-around items-center">
-        <div className="max-w-md contact-content">
-          {/* <h3>How to get in contact </h3> */}
-          {/* <div className="text-left ">
-            <label
-              className=" text-gray-700 font-bold mb-2 text-start"
-              htmlFor="name"
-            >
-              Drop us an email
-            </label>
-            <input
-              className="form-input border border-gray-400 rounded w-full py-2 px-3 "
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-            />
+    <>
+      {" "}
+      {loading ? (
+        <Loading />
+      ) : (
+        <ContactWrapper
+          style={{ height: "100vh" }}
+          className="pt-2 "
+          setLoading="false"
+        >
+          <form className=" lg:flex md:flex hidden justify-around items-center">
+            <div className="max-w-md contact-content">
+              {/* <h3>How to get in contact </h3> */}
+              {/* <div className="text-left ">
+        <label
+          className=" text-gray-700 font-bold mb-2 text-start"
+          htmlFor="name"
+        >
+          Drop us an email
+        </label>
+        <input
+          className="form-input border border-gray-400 rounded w-full py-2 px-3 "
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
 
-            <label className=" text-gray-700 font-bold mb-2" htmlFor="name">
-              Give us a call
-            </label>
-            <input
-              className="form-input border border-gray-400 rounded w-full py-2 px-3"
-              type="number"
-              id="email"
-              name="phone"
-              placeholder="01705099380"
-            />
+        <label className=" text-gray-700 font-bold mb-2" htmlFor="name">
+          Give us a call
+        </label>
+        <input
+          className="form-input border border-gray-400 rounded w-full py-2 px-3"
+          type="number"
+          id="email"
+          name="phone"
+          placeholder="01705099380"
+        />
 
-            
-          </div> */}
+        
+      </div> */}
 
-          <div className=" text-left ">
-            <h1 className="contact-part text-center">Pitch Us </h1>
-            <p className="contact-part-p text-center p-6 my-6">
-              Bring your ideas and stories to us and make it happen Send us your
-              ideas or stories(Logline-Synopsis or Script) by mail along with
-              your CV
-            </p>
-            <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
-              Connect Us
-            </p>
-            <p className=" text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
-              Office Address:{" "}
-              <span className="link link-hover">
-                House 12,
-                <br /> Block C, Future Town <br /> Housing, Mohammadpur,
-                <br /> Dhaka-1207
-              </span>
-            </p>
-            <p className="link link-hover text-[#B19B9B] flex items-center my-2">
-              <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />
-              <span className="lg:text-lg md:text-lg text-base">
-                {" "}
-                officialfilmmonks@gmail.com
-              </span>
-            </p>
-            <p className="link link-hover text-[#B19B98] flex items-center">
-              <BsTelephoneFill className="mr-3 text-[#fff] lg:text-lg md:text-lg text-base" />
-              <span className="lg:text-lg md:text-lg text-base">
-                {" "}
-                +8801327114855
-              </span>
-            </p>{" "}
-          </div>
-          <p className="link link-hover font-bold mt-4  text-left lg:text-xl md:text-xl text-lg">
-            Follow Us On
-          </p>
-          <div className="flex justify-between  items-center mt-0 w-[200px]">
-            <p className="link link-hover text-xl my-3 mx-2">
-              <Link
-                to="https://www.facebook.com/filmmonksarthouse"
-                target="_blank"
-              >
-                {" "}
-                <BsFacebook />
-              </Link>
-            </p>
-            <p className="link link-hover text-xl my-3 mx-2">
-              <Link
-                to="https://www.instagram.com/filmmonksarthouse/"
-                target="_blank"
-              >
-                {" "}
-                <BsInstagram />
-              </Link>
-            </p>
-            <p className="link link-hover text-xl my-3 mx-2">
-              <Link to="https://www.youtube.com/@filmmonks" target="_blank">
-                {" "}
-                <BsYoutube />
-              </Link>
-            </p>
-            <p className="link link-hover text-xl my-5 mx-2">
-              <Link
-                to="https://www.linkedin.com/company/91148823/admin/"
-                target="_blank"
-              >
-                {" "}
-                <BsLinkedin />
-              </Link>
-            </p>
-          </div>
-        </div>
-        <div>
-          <img
-            className="w-[392px] h-[412px] mt-48"
-            src={contactImg}
-            alt="logo-of-site"
-          />
-        </div>
-      </form>
-
-      {/* //mobile device */}
-      <form className=" block lg:hidden md:hidden h-[100vh] ">
-        <div>
-          {/* <img
-            className="w-[124px]  mx-auto mt-28"
-            src={contactImg}
-            alt="logo-of-site"
-          /> */}
-        </div>
-        <div className="max-w-md contact-content ">
-          {/* <h3>How to get in contact </h3> */}
-          <div className="text-left content ">
-            {/* <label className="" htmlFor="name">
-              Drop us an email
-            </label>
-            <input
-              className="form-input border border-gray-400 rounded w-full py-2 px-3 "
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-            />
-
-            <label className=" text-gray-700 font-bold mb-2" htmlFor="name">
-              Give us a call
-            </label>
-            <input
-              className="form-input border border-gray-400 rounded w-full py-2 px-3"
-              type="number"
-              id="email"
-              name="phone"
-              placeholder="01705099380"
-            /> */}
-            <div className=" text-left mt-24">
-              <h1 className="contact-part text-center mt-0">Pitch Us </h1>
-              <p className="contact-part-p text-center p-6 my-6">
-                Bring your ideas and stories to us and make it happen Send us
-                your ideas or stories(Logline-Synopsis or Script) by mail along
-                with your CV
+              <div className=" text-left ">
+                <h1 className="contact-part text-center">Pitch Us </h1>
+                <p className="contact-part-p text-center p-6 my-6">
+                  Bring your ideas and stories to us and make it happen Send us
+                  your ideas or stories(Logline-Synopsis or Script) by mail
+                  along with your CV
+                </p>
+                <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
+                  Connect Us
+                </p>
+                <p className=" text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
+                  Office Address:{" "}
+                  <span className="link link-hover">
+                    House 12,
+                    <br /> Block C, Future Town <br /> Housing, Mohammadpur,
+                    <br /> Dhaka-1207
+                  </span>
+                </p>
+                <p className="link link-hover text-[#B19B9B] flex items-center my-2">
+                  <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />
+                  <span className="lg:text-lg md:text-lg text-base">
+                    {" "}
+                    officialfilmmonks@gmail.com
+                  </span>
+                </p>
+                <p className="link link-hover text-[#B19B98] flex items-center">
+                  <BsTelephoneFill className="mr-3 text-[#fff] lg:text-lg md:text-lg text-base" />
+                  <span className="lg:text-lg md:text-lg text-base">
+                    {" "}
+                    +8801327114855
+                  </span>
+                </p>{" "}
+              </div>
+              <p className="link link-hover font-bold mt-4  text-left lg:text-xl md:text-xl text-lg">
+                Follow Us On
               </p>
-              <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
-                Connect Us
-              </p>
-              <p className="link link-hover text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
-                Office Address: House 12,
-                <br /> Block C, Future Town <br /> Housing, Mohammadpur,
-                <br /> Dhaka-1207
-              </p>
-              <p className="link link-hover text-[#B19B9B] flex items-center my-2">
-                <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />
-                <span className="lg:text-lg md:text-lg text-base">
-                  {" "}
-                  officialfilmmonks@gmail.com
-                </span>
-              </p>
-              <p className="link link-hover text-[#B19B98] flex items-center">
-                <BsTelephoneFill className="mr-3 text-[#fff] lg:text-lg md:text-lg text-base" />
-                <span className="lg:text-lg md:text-lg text-base">
-                  {" "}
-                  +8801327114855
-                </span>
-              </p>{" "}
+              <div className="flex justify-between  items-center mt-0 w-[200px]">
+                <p className="link link-hover text-xl my-3 mx-2">
+                  <Link
+                    to="https://www.facebook.com/filmmonksarthouse"
+                    target="_blank"
+                  >
+                    {" "}
+                    <BsFacebook />
+                  </Link>
+                </p>
+                <p className="link link-hover text-xl my-3 mx-2">
+                  <Link
+                    to="https://www.instagram.com/filmmonksarthouse/"
+                    target="_blank"
+                  >
+                    {" "}
+                    <BsInstagram />
+                  </Link>
+                </p>
+                <p className="link link-hover text-xl my-3 mx-2">
+                  <Link to="https://www.youtube.com/@filmmonks" target="_blank">
+                    {" "}
+                    <BsYoutube />
+                  </Link>
+                </p>
+                <p className="link link-hover text-xl my-5 mx-2">
+                  <Link
+                    to="https://www.linkedin.com/company/filmmonks-art-house"
+                    target="_blank"
+                  >
+                    {" "}
+                    <BsLinkedin />
+                  </Link>
+                </p>
+              </div>
             </div>
-            <p className="link link-hover font-bold mt-12  text-left lg:text-xl md:text-xl text-lg">
-              Follow Us On
-            </p>
-            <div className="flex items-center justify-between">
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link
-                  to="https://www.facebook.com/filmmonksarthouse"
-                  target="_blank"
-                >
-                  {" "}
-                  <BsFacebook />
-                </Link>
-              </p>
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link
-                  to="https://www.instagram.com/filmmonksarthouse/"
-                  target="_blank"
-                >
-                  {" "}
-                  <BsInstagram />
-                </Link>
-              </p>
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link to="https://www.youtube.com/@filmmonks" target="_blank">
-                  {" "}
-                  <BsYoutube />
-                </Link>
-              </p>
-              <p className="link link-hover text-xl my-3 mx-2">
-                <Link
-                  to="https://www.linkedin.com/company/91148823/admin"
-                  target="_blank"
-                >
-                  {" "}
-                  <BsLinkedin />
-                </Link>
-              </p>
+            <div>
+              <img
+                className="w-[392px] h-[412px] mt-48"
+                src={contactImg}
+                alt="logo-of-site"
+              />
             </div>
-          </div>
-        </div>
-      </form>
-    </ContactWrapper>
+          </form>
+
+          {/* //mobile device */}
+          <form className=" block lg:hidden md:hidden h-[100vh] ">
+            <div>
+              {/* <img
+        className="w-[124px]  mx-auto mt-28"
+        src={contactImg}
+        alt="logo-of-site"
+      /> */}
+            </div>
+            <div className="max-w-md contact-content ">
+              {/* <h3>How to get in contact </h3> */}
+              <div className="text-left content ">
+                {/* <label className="" htmlFor="name">
+          Drop us an email
+        </label>
+        <input
+          className="form-input border border-gray-400 rounded w-full py-2 px-3 "
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+        />
+
+        <label className=" text-gray-700 font-bold mb-2" htmlFor="name">
+          Give us a call
+        </label>
+        <input
+          className="form-input border border-gray-400 rounded w-full py-2 px-3"
+          type="number"
+          id="email"
+          name="phone"
+          placeholder="01705099380"
+        /> */}
+                <div className=" text-left mt-24">
+                  <h1 className="contact-part text-center mt-0">Pitch Us </h1>
+                  <p className="contact-part-p text-center p-6 my-6">
+                    Bring your ideas and stories to us and make it happen Send
+                    us your ideas or stories(Logline-Synopsis or Script) by mail
+                    along with your CV
+                  </p>
+                  <p className="link link-hover font-bold my-2 text-left lg:text-xl md:text-xl text-lg">
+                    Connect Us
+                  </p>
+                  <p className="link link-hover text-[#B19B9B] mb-4 text-left  lg:text-lg md:text-lg text-base">
+                    Office Address: House 12,
+                    <br /> Block C, Future Town <br /> Housing, Mohammadpur,
+                    <br /> Dhaka-1207
+                  </p>
+                  <p className="link link-hover text-[#B19B9B] flex items-center my-2">
+                    <MdEmail className="mr-3 lg:text-lg md:text-lg text-base text-[#fff]" />
+                    <span className="lg:text-lg md:text-lg text-base">
+                      {" "}
+                      officialfilmmonks@gmail.com
+                    </span>
+                  </p>
+                  <p className="link link-hover text-[#B19B98] flex items-center">
+                    <BsTelephoneFill className="mr-3 text-[#fff] lg:text-lg md:text-lg text-base" />
+                    <span className="lg:text-lg md:text-lg text-base">
+                      {" "}
+                      +8801327114855
+                    </span>
+                  </p>{" "}
+                </div>
+                <p className="link link-hover font-bold mt-12  text-left lg:text-xl md:text-xl text-lg">
+                  Follow Us On
+                </p>
+                <div className="flex items-center justify-between">
+                  <p className="link link-hover text-xl my-3 mx-2">
+                    <Link
+                      to="https://www.facebook.com/filmmonksarthouse"
+                      target="_blank"
+                    >
+                      {" "}
+                      <BsFacebook />
+                    </Link>
+                  </p>
+                  <p className="link link-hover text-xl my-3 mx-2">
+                    <Link
+                      to="https://www.instagram.com/filmmonksarthouse/"
+                      target="_blank"
+                    >
+                      {" "}
+                      <BsInstagram />
+                    </Link>
+                  </p>
+                  <p className="link link-hover text-xl my-3 mx-2">
+                    <Link
+                      to="https://www.youtube.com/@filmmonks"
+                      target="_blank"
+                    >
+                      {" "}
+                      <BsYoutube />
+                    </Link>
+                  </p>
+                  <p className="link link-hover text-xl my-3 mx-2">
+                    <Link
+                      to="https://www.linkedin.com/company/91148823/admin"
+                      target="_blank"
+                    >
+                      {" "}
+                      <BsLinkedin />
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </ContactWrapper>
+      )}
+    </>
   );
 }
 

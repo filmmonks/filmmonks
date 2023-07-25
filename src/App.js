@@ -21,6 +21,9 @@ import BalanceArt from "./components/Page/Article/BalanceArt";
 
 function App() {
   const location = useLocation();
+  const currentPathname = location.pathname;
+  const parts = currentPathname.split("/");
+  const articleId = parts[parts.length - 1];
   let [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
@@ -67,7 +70,7 @@ function App() {
             location.pathname !== "/balancing-art" &&
             location.pathname !== "/silver-jublie" &&
             location.pathname !== "/monks-galary" &&
-            location.pathname !== "/work-timeline" && <Footer />}
+            location.pathname !== `/work-timeline/${articleId}` && <Footer />}
         </div>
       )}
     </>

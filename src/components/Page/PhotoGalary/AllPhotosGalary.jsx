@@ -46,6 +46,9 @@ import img43 from "../../../Assets/MonksGalary/AllPhotos/images/50.png";
 import img44 from "../../../Assets/MonksGalary/AllPhotos/images/51.png";
 import img45 from "../../../Assets/MonksGalary/AllPhotos/images/52.png";
 import img46 from "../../../Assets/MonksGalary/AllPhotos/images/53.png";
+import { useState } from "react";
+import { useEffect } from "react";
+import Loading from "../../Shared/Loading/Loading";
 // import img47 from "../../../Assets/MonksGalary/AllPhotos/images/54.png";
 const imageData = [
   { id: 1, img: img1 },
@@ -98,14 +101,28 @@ const imageData = [
 ];
 
 const AllPhotosGalary = () => {
+  let [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
-    <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  xl:mx-36 lg:mx-16 md:mx-8 xl:gap-10 lg:gap-10 md:gap-10 gap-10 mx-auto pt-36 pb-12">
-      {imageData.map((data) => (
-        <div className="lg:w-[320px] w-[300px] mx-auto">
-          <img src={data?.img} alt="" />
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1  xl:mx-36 lg:mx-16 md:mx-8 xl:gap-10 lg:gap-10 md:gap-10 gap-10 mx-auto pt-36 pb-12">
+          {imageData.map((data) => (
+            <div className="lg:w-[320px] w-[300px] mx-auto">
+              <img src={data?.img} alt="" />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 };
 

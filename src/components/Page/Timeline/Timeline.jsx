@@ -7,7 +7,7 @@ import SocialMedia from "../../Shared/SocialMedia/SocialMedia";
 import { PhotoGalaryWrapper } from "../PhotoGalary/PhotoGalary";
 import useGet from "../../../hooks/useGet";
 const Timeline = () => {
-  const url = "http://localhost:5000/api/work-timeline";
+  const url = "https://filmmonks-server.onrender.com/api/work-timeline";
   const { dataSource, loading, error } = useGet(url);
 
   function reverseArray(arr) {
@@ -27,9 +27,9 @@ const Timeline = () => {
 
     return arr;
   }
-  const dataSourceArray =[...dataSource]
+  const dataSourceArray = [...dataSource];
   const reversedArray = reverseArray(dataSourceArray);
-  console.log(reversedArray);
+
   return (
     <WrapperTimeLine
       id="work"
@@ -50,7 +50,10 @@ const Timeline = () => {
             >
               <img
                 className="xl:mr-auto image-width mt-16"
-                src={`http://localhost:5000/timeline/` + data?.image}
+                src={
+                  `https://filmmonks-server.onrender.com/timeline/` +
+                  data?.image
+                }
                 alt=""
               />
               <div className="text-left mt-24">
@@ -70,7 +73,7 @@ const Timeline = () => {
         {dataSourceArray.slice(1, 2).map((data) => (
           <Bounce delay={500} right>
             <Link
-              to={`/work-timeline/${data?.title}`}
+              to={`/work-timeline/${data?._id}`}
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 hover:no-underline  border-b-2 border-[#FFF8F8] pt-16 "
             >
               <div className="text-left mt-10">
@@ -85,7 +88,10 @@ const Timeline = () => {
               </div>
               <img
                 className="xl:ml-auto image-width"
-                src={`http://localhost:5000/timeline/` + data?.image}
+                src={
+                  `https://filmmonks-server.onrender.com/timeline/` +
+                  data?.image
+                }
                 alt=""
               />
             </Link>
@@ -96,12 +102,15 @@ const Timeline = () => {
           <Bounce delay={500} left>
             {" "}
             <Link
-              to={`/work-timeline/${data?.title}`}
+              to={`/work-timeline/${data?._id}`}
               className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-8 md:mx-16 border-b-2  hover:no-underline pt-16"
             >
               <img
                 className="image-width "
-                src={`http://localhost:5000/timeline/` + data?.image}
+                src={
+                  `https://filmmonks-server.onrender.com/timeline/` +
+                  data?.image
+                }
                 alt=""
               />
               <div className="text-left mt-3">
@@ -138,11 +147,11 @@ const Timeline = () => {
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
-              src={`http://localhost:5000/timeline/` + data?.image}
+              src={`https://filmmonks-server.onrender.com/timeline/` + data?.image}
               alt=""
             />
             <div className="text-left mt-10">
-              <h4>{data?.title}</h4>
+              <h4>{data?._id}</h4>
               <p>{data?.type}</p>
               <p
                 style={{ textAlign: "justify" }}
@@ -155,12 +164,14 @@ const Timeline = () => {
         ))} */}
         {dataSourceArray.slice(0, 1).map((data) => (
           <Link
-            to={`/work-timeline/${data?.title}`}
+            to={`/work-timeline/${data?._id}`}
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-t-2  border-b-2 border-[#FFF8F8] mb-10"
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image "
-              src={`http://localhost:5000/timeline/` + data?.image}
+              src={
+                `https://filmmonks-server.onrender.com/timeline/` + data?.image
+              }
               alt=""
             />
             <div className="text-left mt-10">
@@ -177,12 +188,14 @@ const Timeline = () => {
         ))}
         {dataSourceArray.slice(1, 2).map((data) => (
           <Link
-            to={`/work-timeline/${data?.title}`}
+            to={`/work-timeline/${data?._id}`}
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline border-b-2 border-[#FFF8F8]  "
           >
             <img
               className="xl:ml-auto w-[450px] timeline-image"
-              src={`http://localhost:5000/timeline/` + data?.image}
+              src={
+                `https://filmmonks-server.onrender.com/timeline/` + data?.image
+              }
               alt=""
             />
             <div className="text-left mt-10">
@@ -199,12 +212,14 @@ const Timeline = () => {
         ))}
         {dataSourceArray.slice(2, 3).map((data) => (
           <Link
-            to={`/work-timeline/${data?.title}`}
+            to={`/work-timeline/${data?._id}`}
             className="grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 lg:mx-48 mx-16 md:mx-16 hover:no-underline  border-red-50 "
           >
             <img
               className="xl:ml-auto w-[450px]  timeline-image"
-              src={`http://localhost:5000/timeline/` + data?.image}
+              src={
+                `https://filmmonks-server.onrender.com/timeline/` + data?.image
+              }
               alt=""
             />
             <div className="text-left mt-10">
@@ -448,5 +463,86 @@ const aricleData = [
     language: "undefined",
     writer: "undefined",
     videoLink: "https://www.youtube.com/watch?v=TTsB2T00gJ4 ",
+  },
+];
+let article = [
+  {
+    image: "1689446910144-Rectangle 269.png",
+    headline: "Silver Jubilee Events",
+    content:
+      "A compiled project of promotional video, documentary and event documentation video for the Department of Fisheries of Dhaka University on their Silver Jubilee events.",
+    type: "Compiled Project (Promotional video, documentary & event documentation)",
+    director: "Jaynto Kundu",
+    year: "2022",
+    producer: "Shithe Debnath",
+    language: "Bangla",
+    writer: "undefined",
+    videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
+  },
+  {
+    image: "1689446846969-Rectangle 268.png",
+    headline: "Balancing Acts",
+    content:
+      "A portrayal of how women from different professions and social classes balance their lives between professions and other activities in our society.",
+    type: "Documentary",
+    director: "Jaynto Kundu",
+    year: "2023",
+    producer: "Shithe Debnath",
+    language: "Bangla",
+    writer: "undefined",
+    videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
+  },
+  {
+    image: "1689446723858-Rectangle 267.png",
+    headline: "Article 25",
+    content:
+      "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
+    type: "Short Film",
+    director: "Jaynto Kundu",
+    year: "2023",
+    producer: "Shithe Debnath",
+    language: "",
+    writer: "",
+    videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
+  },
+  {
+    image: "1689445879954-IFDC Event Documentation and Broadcasting.jpg",
+    headline: "IFDC Event Documentation and Broadcasting",
+    content:
+      "A compiled project of event photography, documentation, and broadcasting of a two-day-long event organised by IFDC",
+    type: "Event Documentation and Broadcasting",
+    director: "",
+    year: "2023",
+    producer: "Shithe Debnath",
+    language: "",
+    writer: "",
+    videoLink: "https://www.youtube.com/embed/VEhlYdjKzBM",
+  },
+  {
+    image: "1689446064104-FBCCI Election Campaign and Promotional Video.jpg",
+    headline: "FBCCI Election Campaign and Promotional Video",
+    content:
+      "A project involving a promotional video and photoshoot session that was carried out within a studio setup under the FBCCI election campaign.\r\n",
+    type: "Studio Photoshoot and Promotional Video",
+    director: "",
+    year: "2023",
+    producer: "Shithe Debnath",
+    language: "",
+    writer: "",
+    videoLink: "https://www.youtube.com/embed/V4ArMmYgrUw",
+  },
+
+  {
+    image: "1689446081990-‘Hollow Man’ Clothing Photography.jpg",
+    headline: "‘Hollow Man’ Clothing Photography",
+    content:
+      'A "Packshot photoshoot" using the hollow man photography technique was done with Greenbomb\'s various cloth types. \r\n',
+    type: "Packshot Photoshoot",
+    director: "",
+    year: "2023",
+    producer: "Shithe Debnath",
+    language: "",
+    writer: "",
+    videoLink: "",
   },
 ];
