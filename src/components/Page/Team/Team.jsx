@@ -128,7 +128,7 @@ const Team = () => {
                 <p className="title">{data?.title}</p>
 
                 <p
-                  className="title absolute"
+                  className="title absolute lowercase"
                   onClick={() => handleCopyEmail(data?.email)}
                   style={{ cursor: "pointer", left: "20%" }}
                 >
@@ -162,7 +162,7 @@ const Team = () => {
                   <h5 className="name">{data?.name}</h5>
                   <p className="title">{data?.title}</p>
                   <p
-                    className="title "
+                    className="title lowercase"
                     onClick={() => handleCopyEmail(data?.email)}
                     style={{ cursor: "pointer", left: "10%" }}
                   >
@@ -267,7 +267,7 @@ const TeamWrapper = styled.div`
     line-height: 17px;
   }
   .title {
-    text-transform: capitalize;
+
     margin-top: 10px;
     font-family: "Inter";
     font-style: normal;

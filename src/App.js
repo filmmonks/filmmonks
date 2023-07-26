@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 // import ScrollToTop from "react-scroll-up";
 
 import video from "./Assets/FILM MONKS.mp4";
+import gif from "./Assets/FILM MONKS logo (1).gif";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Contact from "./components/Page/Contact/Contact";
 import NotFound from "./components/Shared/NotFound/NotFound";
@@ -29,7 +30,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 3000);
   }, []);
   return (
     <>
@@ -44,7 +45,8 @@ function App() {
           }}
         >
           <div className="flex flex-col justify-center items-center">
-            <video src={video} autoPlay loop muted />
+            {/* <video src={video} autoPlay loop muted /> */}
+            <img src={gif} alt="logo"/>
           </div>
         </div>
       ) : (

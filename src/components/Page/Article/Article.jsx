@@ -32,7 +32,7 @@ const Article = () => {
           <div className="flex  justify-between items-center mb-8">
             <div className="mt-28 text-left xl:mx-24 lg:mx-12 md:mx-12 mx-12">
               <h2 className="article">{aricleData?.headline}</h2>
-              <p className="project-description">project description</p>
+              <p className="project-description">Project Description</p>
               <p className="border mt-2 border-b-[#F25659] w-14"></p>
               {aricleData?.videoLink && (
                 <div>
@@ -54,7 +54,7 @@ const Article = () => {
               )}
               {aricleData?.producer && (
                 <p className="project-description">
-                  Producer: <span>{aricleData?.producer}Shithe Debnath</span>
+                  Producer: <span>{aricleData?.producer}</span>
                 </p>
               )}
               {aricleData?.year && (
