@@ -2,6 +2,8 @@ import React from "react";
 import Headline from "../../TextComponents/Headline";
 import styled from "styled-components";
 import useGet from "../../../hooks/useGet";
+import { PhotoGalaryWrapper } from "../PhotoGalary/PhotoGalary";
+import { Link } from "react-router-dom";
 
 const RecentWorks = () => {
   const url = "https://filmmonks-server.onrender.com/api/work-timeline";
@@ -28,8 +30,8 @@ const RecentWorks = () => {
   return (
     <Wrapper className="">
       <Headline content="Our Recent Work" lastWord="s" />
-      <div className="flex flex-wrap justify-between lg:mx-24 md:mx-16 mx-12 lg:gap-6 gap-y-12 lg:mb-24 mb-16">
-        {reversedArray.map((data) => (
+      <div className="flex flex-wrap justify-between lg:mx-24 md:mx-16 mx-12 lg:gap-6 gap-y-12 lg:mb-12 mb-8">
+        {reversedArray.splice(0, 4).map((data) => (
           <>
             {data?.videoLink && (
               <div className="mx-auto">
@@ -46,13 +48,30 @@ const RecentWorks = () => {
           </>
         ))}
       </div>
+      <PhotoGalaryWrapper className="lg:block md:block hidden">
+        {" "}
+        <button className="mt-0 mb-16 mx-auto desktop-btn">
+          <Link to="/recent-works" className="hover:no-underline ">
+            see more
+          </Link>
+        </button>
+      </PhotoGalaryWrapper>
+
+      <PhotoGalaryWrapper className="lg:hidden md:hidden block">
+        <button className="mb-6">
+          <Link to="/recent-works" className="hover:no-underline">
+            {" "}
+            <span>see more</span>
+          </Link>
+        </button>
+      </PhotoGalaryWrapper>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   .video-size {
-    // width: 320px;
+    width: 320px;
     height: 215px;
     @media only screen and (max-width: 1199px) and (min-width: 1027px) {
       width: 250px;

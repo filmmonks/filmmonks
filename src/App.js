@@ -19,6 +19,7 @@ import AllWorkTimeline from "./components/Page/Timeline/AllWorkTimeline";
 
 import SliverJublie from "./components/Page/Article/SliverJublie";
 import BalanceArt from "./components/Page/Article/BalanceArt";
+import AllRecentWorks from "./components/Page/RecentWorks/AllRecentWorks";
 
 function App() {
   const location = useLocation();
@@ -64,6 +65,7 @@ function App() {
             <Route path="/silver-jublie" element={<SliverJublie />}></Route>
             <Route path="/monks-galary" element={<AllPhotosGalary />}></Route>
             <Route path="/work-timeline" element={<AllWorkTimeline />}></Route>
+            <Route path="/recent-works" element={<AllRecentWorks />}></Route>
             <Route path="*" element={<NotFound />}></Route>
           </Routes>
           <ScrollToTop />
@@ -72,6 +74,7 @@ function App() {
             location.pathname !== "/balancing-art" &&
             location.pathname !== "/silver-jublie" &&
             location.pathname !== "/monks-galary" &&
+            location.pathname !== "/recent-works" &&
             location.pathname !== `/work-timeline/${articleId}` && <Footer />}
         </div>
       )}

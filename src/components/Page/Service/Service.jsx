@@ -46,41 +46,6 @@ const Service = () => {
         <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
           <Headline content="service" lastWord="s" />
           <div className="grid 2xl:grid-cols-4  xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
-            {/* {servicesData.map((data) => (
-       <div
-         key={data._id}
-         className=""
-         style={{ position: "relative" }}
-         onMouseEnter={() => handleMouseEnter(data._id)}
-         onMouseLeave={handleMouseLeave}
-       >
-         <img
-           className=""
-           style={{
-             width: "409px",
-             height: "231px",
-           }}
-           src={data.image}
-           alt=""
-         />
-         <div
-           className="text-white"
-           style={{
-             position: "absolute",
-             top: "45%",
-             left: "50%",
-             transform: "translate(-50%, -50%)",
-             transition: "opacity 0.3s ease",
-             fontSize: "29px",
-           }}
-         >
-           {data?.title}
-           <p className="text-xs text-white text-center">
-             {hoveredId === data._id && data.content}
-           </p>
-         </div>
-       </div>
-     ))} */}
             {servicesData.map((data) => (
               <div
                 key={data._id}
@@ -164,6 +129,7 @@ const Service = () => {
                 )}
               </div>
             ))}
+            
           </div>
         </div>
 

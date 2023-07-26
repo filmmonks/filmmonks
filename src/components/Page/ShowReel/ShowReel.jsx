@@ -4,10 +4,7 @@ import Headline from "../../TextComponents/Headline";
 // import { useState } from "react";
 import styled from "styled-components";
 const ShowReel = () => {
-  // const [play, setPlay] = useState(false);
-  // const handleClick = () => {
-  //   console.log(play);
-  // };
+
   return (
     <Wrapper>
       {" "}

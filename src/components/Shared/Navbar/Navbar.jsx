@@ -80,6 +80,7 @@ const Navbar = () => {
             location.pathname === "/silver-jublie" ||
             location.pathname === "/monks-galary" ||
             location.pathname === "/work-timeline" ||
+            location.pathname === "/recent-works" ||
             location.pathname === `/work-timeline/${articleId}` ? (
               <>
                 <li className="md:ml-8 w-20 lg:w-auto md:w-auto mr-auto lg:text-base  md:text-xs md:my-0 my-7">
