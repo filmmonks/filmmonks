@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 // import ScrollToTop from "react-scroll-up";
 
 import video from "./Assets/FILM MONKS.mp4";
-import gif from "./Assets/FILM MONKS logo (1).gif";
+// import gif from "./Assets/FILM MONKS logo (1).gif";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Contact from "./components/Page/Contact/Contact";
 import NotFound from "./components/Shared/NotFound/NotFound";
@@ -75,6 +75,7 @@ function App() {
             location.pathname !== "/silver-jublie" &&
             location.pathname !== "/monks-galary" &&
             location.pathname !== "/recent-works" &&
+            location.pathname !== "/work-timeline" &&
             location.pathname !== `/work-timeline/${articleId}` && <Footer />}
         </div>
       )}
