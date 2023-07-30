@@ -46,8 +46,8 @@ function App() {
           }}
         >
           <div className="flex flex-col justify-center items-center">
-            {/* <video src={video} autoPlay loop muted /> */}
-            <img src={gif} alt="logo"/>
+            <video src={video} autoPlay loop muted />
+            {/* <img src={gif} alt="logo"/> */}
           </div>
         </div>
       ) : (
