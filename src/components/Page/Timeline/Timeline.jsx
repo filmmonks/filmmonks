@@ -19,7 +19,7 @@ const Timeline = () => {
   }, []);
   const url = "https://filmmonks-server.onrender.com/api/work-timeline";
   const { dataSource } = useGet(url);
-  console.log(dataSource);
+
   function reverseArray(arr) {
     let start = 0;
     let end = arr.length - 1;

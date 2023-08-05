@@ -9,6 +9,7 @@ import useGet from "../../../hooks/useGet";
 const About = () => {
   const url = "https://filmmonks-server.onrender.com/api/about";
   const { dataSource } = useGet(url);
+  const lastElement = dataSource.slice(-1)[0];
 
   const splitTextAtFirstFullStop = (text) => {
     const firstFullStopIndex = text?.indexOf(".");
@@ -21,7 +22,7 @@ const About = () => {
     ];
   };
 
-  const chunks = splitTextAtFirstFullStop(dataSource[0]?.description);
+  const chunks = splitTextAtFirstFullStop(lastElement?.description);
 
   return (
     <>
@@ -53,7 +54,7 @@ const About = () => {
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
               className="lg:mx-24 mx-8 md:mx-16 my-8 grid md:grid-cols-2 grid-cols-2  gap-x-10 gap-y-5"
             >
-              {dataSource[0]?.imageArr?.map((item) => (
+              {lastElement?.imageArr?.map((item) => (
                 <img
                   style={{
                     width: `${item.width}`,
