@@ -8,8 +8,11 @@ import img2 from "../../../Assets/About/about2.jpg";
 import img3 from "../../../Assets/About/about3.jpg";
 import img4 from "../../../Assets/About/about4.png";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia"; // Import your SocialMedia component
+import useGet from "../../../hooks/useGet";
 
 const About = () => {
+  const url = "https://filmmonks-server.onrender.com/api/about";
+  const { dataSource } = useGet(url);
   return (
     <>
       <div

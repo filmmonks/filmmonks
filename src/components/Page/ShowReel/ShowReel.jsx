@@ -3,8 +3,11 @@ import Headline from "../../TextComponents/Headline";
 
 // import { useState } from "react";
 import styled from "styled-components";
+import useGet from "../../../hooks/useGet";
 const ShowReel = () => {
-
+  const url = "https://filmmonks-server.onrender.com/api/showreels-link";
+  const { dataSource } = useGet(url);
+  const latestData = dataSource.slice(-1)[0];
   return (
     <Wrapper>
       {" "}
@@ -21,10 +24,9 @@ const ShowReel = () => {
 
         <div className="flex justify-center ">
           <div className="">
-            {" "}
             <iframe
               className="showReel-video"
-              src="https://www.youtube.com/embed/i0E1WlJqtRM"
+              src={latestData?.link}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

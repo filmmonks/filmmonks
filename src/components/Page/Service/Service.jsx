@@ -45,11 +45,13 @@ const Service = () => {
       <div id="service" className="relative">
         <div className="lg:mx-24 mx-8 md:mx-16 pt-8 mb-8 lg:block hidden md:block ">
           <Headline content="service" lastWord="s" />
-          <div className="grid 2xl:grid-cols-4  xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-7 ">
-            {servicesData.map((data) => (
+          <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-7 pb-12 j">
+            {servicesData.map((data, index) => (
               <div
                 key={data._id}
-                className=""
+                className={`${
+                  index >= servicesData.length - 2 ? "" : ""
+                }`}
                 style={{ position: "relative" }}
                 onMouseEnter={() => handleMouseEnter(data._id)}
                 onMouseLeave={handleMouseLeave}
@@ -86,7 +88,6 @@ const Service = () => {
                         left: "50%",
                         transform: "translate(-50%, -50%)",
                         transition: "opacity 0.3s ease",
-
                         textAlign: "center",
                       }}
                     >
@@ -129,7 +130,6 @@ const Service = () => {
                 )}
               </div>
             ))}
-            
           </div>
         </div>
 

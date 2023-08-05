@@ -26,11 +26,14 @@ const PhotoGalary = () => {
             {" "}
             <Content content="We capture our moments and showcase them here." />
             <div className="">
-              <div className="grid xl:grid-cols-3 lg:grid-cols-3  md:grid-cols-2 grid-cols-1  xl:gap-10 lg:gap-5 xl:mx-40 lg:mx-20 ">
+              <div className="xl:flex xl:justify-between lg:grid grid-cols-3 xl:gap-10 lg:gap-5 xl:mx-28 lg:mx-20 ">
                 {dataSource.slice(0, 6).map((data) => (
                   <div className="xl:w-[320px] lg:w-auto mx-auto">
                     <img
-                      src={`https://filmmonks-server.onrender.com/monks/` + data?.image}
+                      src={
+                        `https://filmmonks-server.onrender.com/monks/` +
+                        data?.image
+                      }
                       alt=""
                     />
                   </div>
@@ -54,7 +57,9 @@ const PhotoGalary = () => {
             {dataSource.slice(0, 1).map((data) => (
               <img
                 className="mt-6 w-[320px] mx-auto"
-                src={`https://filmmonks-server.onrender.com/monks/` + data?.image}
+                src={
+                  `https://filmmonks-server.onrender.com/monks/` + data?.image
+                }
                 alt=""
               />
             ))}
