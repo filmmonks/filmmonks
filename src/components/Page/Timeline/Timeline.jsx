@@ -19,7 +19,7 @@ const Timeline = () => {
   }, []);
   const url = "https://filmmonks-server.onrender.com/api/work-timeline";
   const { dataSource } = useGet(url);
-
+  console.log(dataSource);
   function reverseArray(arr) {
     let start = 0;
     let end = arr.length - 1;
@@ -341,85 +341,3 @@ export const WrapperTimeLine = styled.div`
     }
   }
 `;
-
-let article = [
-  {
-    image: "1689446910144-Rectangle 269.png",
-    headline: "Silver Jubilee Events",
-    content:
-      "A compiled project of promotional video, documentary and event documentation video for the Department of Fisheries of Dhaka University on their Silver Jubilee events.",
-    type: "Compiled Project (Promotional video, documentary & event documentation)",
-    director: "Jaynto Kundu",
-    year: "2022",
-    producer: "Shithe Debnath",
-    language: "Bangla",
-    writer: "undefined",
-    videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
-  },
-  {
-    image: "1689446846969-Rectangle 268.png",
-    headline: "Balancing Acts",
-    content:
-      "A portrayal of how women from different professions and social classes balance their lives between professions and other activities in our society.",
-    type: "Documentary",
-    director: "Jaynto Kundu",
-    year: "2023",
-    producer: "Shithe Debnath",
-    language: "Bangla",
-    writer: "undefined",
-    videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
-  },
-  {
-    image: "1689446723858-Rectangle 267.png",
-    headline: "Article 25",
-    content:
-      "A small-town struggling woman searches for her missing brother who guided and implemented confidence within herself to be independent. While revolving around her she learns about the complex socio-political instances and the substantial uncertainty in it.",
-    type: "Short Film",
-    director: "Jaynto Kundu",
-    year: "2023",
-    producer: "Shithe Debnath",
-    language: "",
-    writer: "",
-    videoLink: "https://www.youtube.com/embed/hjBNiA3_1t8",
-  },
-  {
-    image: "1689445879954-IFDC Event Documentation and Broadcasting.jpg",
-    headline: "IFDC Event Documentation and Broadcasting",
-    content:
-      "A compiled project of event photography, documentation, and broadcasting of a two-day-long event organised by IFDC",
-    type: "Event Documentation and Broadcasting",
-    director: "",
-    year: "2023",
-    producer: "Shithe Debnath",
-    language: "",
-    writer: "",
-    videoLink: "https://www.youtube.com/embed/VEhlYdjKzBM",
-  },
-  {
-    image: "1689446064104-FBCCI Election Campaign and Promotional Video.jpg",
-    headline: "FBCCI Election Campaign and Promotional Video",
-    content:
-      "A project involving a promotional video and photoshoot session that was carried out within a studio setup under the FBCCI election campaign.\r\n",
-    type: "Studio Photoshoot and Promotional Video",
-    director: "",
-    year: "2023",
-    producer: "Shithe Debnath",
-    language: "",
-    writer: "",
-    videoLink: "https://www.youtube.com/embed/V4ArMmYgrUw",
-  },
-
-  {
-    image: "1689446081990-‘Hollow Man’ Clothing Photography.jpg",
-    headline: "‘Hollow Man’ Clothing Photography",
-    content:
-      'A "Packshot photoshoot" using the hollow man photography technique was done with Greenbomb\'s various cloth types. \r\n',
-    type: "Packshot Photoshoot",
-    director: "",
-    year: "2023",
-    producer: "Shithe Debnath",
-    language: "",
-    writer: "",
-    videoLink: "",
-  },
-];

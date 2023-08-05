@@ -24,9 +24,9 @@ import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 import styled from "styled-components";
 import "./Production.css";
 import {
-  BiAccessibility,
+
   BiDownArrow,
-  BiSolidDownArrowCircle,
+
 } from "react-icons/bi";
 const productionData = [
   {
@@ -219,7 +219,6 @@ const Production = () => {
   const [dropdownHeight, setDropdownHeight] = useState("h-0");
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  console.log("clicked", dropdownHeight);
   const toggleDropdown = (id) => {
     setActiveDropdown(activeDropdown === id ? null : id);
   };

@@ -18,8 +18,7 @@ const Article = () => {
     )
       .then((res) => res.json())
       .then((data) => setAricleData(data));
-  }, []);
-  console.log(aricleData);
+  }, [articleId.id]);
 
   return (
     <>

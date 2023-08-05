@@ -3,16 +3,26 @@ import "./About.css";
 import Headline from "../../TextComponents/Headline";
 import { Fade } from "react-reveal";
 import styled from "styled-components";
-import img1 from "../../../Assets/About/about1.png";
-import img2 from "../../../Assets/About/about2.jpg";
-import img3 from "../../../Assets/About/about3.jpg";
-import img4 from "../../../Assets/About/about4.png";
 import SocialMedia from "../../Shared/SocialMedia/SocialMedia"; // Import your SocialMedia component
 import useGet from "../../../hooks/useGet";
 
 const About = () => {
   const url = "https://filmmonks-server.onrender.com/api/about";
   const { dataSource } = useGet(url);
+
+  const splitTextAtFirstFullStop = (text) => {
+    const firstFullStopIndex = text?.indexOf(".");
+    if (firstFullStopIndex === -1) {
+      return [text];
+    }
+    return [
+      text?.slice(0, firstFullStopIndex + 1),
+      text?.slice(firstFullStopIndex + 2),
+    ];
+  };
+
+  const chunks = splitTextAtFirstFullStop(dataSource[0]?.description);
+
   return (
     <>
       <div
@@ -28,22 +38,11 @@ const About = () => {
             />
 
             <Fade left>
-              <p className="lg:content-2 md:content-md content-sm xs:content-xs pb-6">
-                Film Monks is a production house that specializes in the
-                development and production of a wide range of visual mediums,
-                including fiction and non-fiction cinema online video content,
-                television commercials event videography and photography, music
-                videos, and promotional materials.
-              </p>
-              <p className="lg:content-2 md:content-md content-sm xs:content-xs ">
-                We place an emphasis on contemporary storylines and story
-                telling with a focus on aesthetics. We strive to create
-                cinematic experiences that entertain and provoke thought while
-                keeping in mind the emotions, arguments, traditions nature, and
-                crises that are universally accessible to our audiences. We aim
-                to produce visually stunning and impactful content for our
-                clients.
-              </p>
+              {chunks?.map((data) => (
+                <p className="lg:content-2 md:content-md content-sm xs:content-xs pb-6">
+                  {data}
+                </p>
+              ))}
             </Fade>
           </div>
         </Wrapper>
@@ -54,14 +53,17 @@ const About = () => {
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
               className="lg:mx-24 mx-8 md:mx-16 my-8 grid md:grid-cols-2 grid-cols-2  gap-x-10 gap-y-5"
             >
-              {itemData.map((item) => (
+              {dataSource[0]?.imageArr?.map((item) => (
                 <img
                   style={{
                     width: `${item.width}`,
                     marginTop: `${item.marginTop}`,
                   }}
-                  key={item.title}
-                  src={item.img}
+                  key={item?.title}
+                  src={
+                    `https://filmmonks-server.onrender.com/about/` +
+                    item?.pathname
+                  }
                   alt=""
                 />
               ))}
@@ -75,17 +77,13 @@ const About = () => {
               style={{ width: "70%", marginLeft: "auto", marginRight: "auto" }}
               className="lg:mx-24 mx-8 md:mx-16 my-8 grid grid-cols-2 gap-7"
             >
-              {itemData1.map((item) => (
+              {dataSource[0]?.imageArr?.map((item) => (
                 <img
-                  // style={{
-                  //   width: `${item.width}`,
-                  //   height: `${item.height}`,
-                  //   marginLeft: `${item.marginLeft}`,
-                  //   marginTop: `${item.marginTop}`,
-                  //   zIndex: `${item.zIndex}`,
-                  // }}
-                  key={item.title}
-                  src={item.img}
+                  key={item?.title}
+                  src={
+                    `https://filmmonks-server.onrender.com/about/` +
+                    item?.pathname
+                  }
                   alt=""
                 />
               ))}
@@ -108,53 +106,3 @@ const About = () => {
 const Wrapper = styled.div``;
 
 export default About;
-
-const itemData = [
-  {
-    img: img1,
-    title: "1",
-    width: "300px",
-  },
-  {
-    img: img2,
-    title: "2",
-    width: "300px",
-  },
-  {
-    img: img3,
-    title: "1",
-    width: "300px",
-  },
-  {
-    img: img4,
-    title: "2",
-    width: "300px",
-  },
-];
-
-const itemData1 = [
-  {
-    img: img1,
-    title: "1",
-    width: "200px",
-  },
-  {
-    img: img2,
-    title: "2",
-    width: "200px",
-    marginLeft: "10px",
-  },
-  {
-    img: img3,
-    title: "1",
-    width: "200px",
-    marginTop: "10px",
-  },
-  {
-    img: img4,
-    title: "2",
-    width: "200px",
-    marginTop: "10px",
-    marginLeft: "10px",
-  },
-];

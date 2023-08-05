@@ -14,8 +14,7 @@ import { Link } from "react-router-dom";
 import useGet from "../../../hooks/useGet";
 const PhotoGalary = () => {
   const url = "https://filmmonks-server.onrender.com/api/monks-galary";
-  const { dataSource, loading, error } = useGet(url);
-  console.log(dataSource);
+  const { dataSource } = useGet(url);
 
   return (
     <div id="monks-gallery">

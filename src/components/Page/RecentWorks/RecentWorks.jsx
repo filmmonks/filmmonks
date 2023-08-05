@@ -147,17 +147,4 @@ export const Wrapper = styled.div`
 `;
 export default RecentWorks;
 
-const itemData = [
-  {
-    videoLink: "https://www.youtube.com/embed/gx2G1mfMpVM",
-    title: "Breakfast",
-  },
-  {
-    videoLink: "https://www.youtube.com/embed/uN1C1d8AlyQ",
-    title: "Burger",
-  },
-  {
-    videoLink: "https://www.youtube.com/embed/uqep8ajOiMU",
-    title: "Camera",
-  },
-];
+

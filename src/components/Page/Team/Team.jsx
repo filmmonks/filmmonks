@@ -17,17 +17,10 @@ import "swiper/css/pagination";
 // import required modules
 import { Keyboard, Mousewheel, Navigation, Pagination } from "swiper";
 
-import img1 from "../../../Assets/MonksGalary/AllPhotos/images/1.png";
-import img2 from "../../../Assets/MonksGalary/AllPhotos/images/2.png";
-import img3 from "../../../Assets/MonksGalary/AllPhotos/images/3.png";
-import img4 from "../../../Assets/MonksGalary/AllPhotos/images/4.png";
-import img5 from "../../../Assets/MonksGalary/AllPhotos/images/5.png";
-import img6 from "../../../Assets/MonksGalary/AllPhotos/images/6.png";
-import img7 from "../../../Assets/MonksGalary/AllPhotos/images/7.png";
 import { Link } from "react-router-dom";
-import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
+// import fb from "../../../Assets/SocialMedia/5305154_fb_facebook_facebook logo_icon 3.png";
 // import mail from "../../../Assets/SocialMedia/1564504_email_letter_mail_message_icon (1) 2.png";
-import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
+// import linkedin from "../../../Assets/SocialMedia/2986200_linkdin_logo_media_social_icon 2.png";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io";
@@ -39,12 +32,12 @@ import useGet from "../../../hooks/useGet";
 
 const Team = () => {
   const url = "https://filmmonks-server.onrender.com/api/teams";
-  const { dataSource, loading, error } = useGet(url);
+  const { dataSource } = useGet(url);
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
-  const [copiedEmail, setCopiedEmail] = useState("");
+  const [setCopiedEmail] = useState("");
 
   const handleCopyEmail = (email) => {
     navigator.clipboard.writeText(email);
@@ -313,69 +306,3 @@ const TeamWrapper = styled.div`
   }
 `;
 export default Team;
-
-const teamData = [
-  {
-    id: 1,
-    name: "SHITHE DEBNATH",
-    title: "Co-Founder, Producer",
-    email: "shithe.deb@gmail.com",
-    fb_link: "https://www.facebook.com/shithe.debnath",
-    linkedin: "https://www.linkedin.com/in/shithe-debnath-b19465271",
-    img: img1,
-  },
-  {
-    id: 2,
-    name: "JAYNTO KUNDU",
-    title: "Co-Founder, Director",
-    email: "jaynto.k.kundu@gmail.com",
-    fb_link: "https://www.facebook.com/profile.php?id=100011977185218",
-    linkedin: "https://www.linkedin.com/in/jaynto-kumar-kundu-4679621a0",
-    img: img2,
-  },
-  {
-    id: 3,
-    name: "ANIRBAN SAHA",
-    title: "Head of Research & Assistant Director",
-    email: "anirbansahaarpon@gmail.com",
-    fb_link: "https://www.facebook.com/aami.anirban",
-    linkedin: "https://www.linkedin.com/in/anirbansahaarpon",
-    img: img3,
-  },
-  {
-    id: 4,
-    name: "EBSAN ZAMAN",
-    title: "Editor",
-    email: "ebsanzaman404@gmail.com",
-    fb_link: "https://www.facebook.com/ebsanzaman.ebsanzaman",
-    linkedin: "https://www.linkedin.com/in/ebsan-zaman-3159aa277/",
-    img: img5,
-  },
-  {
-    id: 5,
-    name: "SUDIPTA DEBNATH",
-    title: "PR Executive",
-    email: "sudiptadtoma@gmail.com",
-    fb_link: "https://www.facebook.com/sudipta.debnath.148",
-    linkedin: "https://www.linkedin.com/in/debnath-sudipta",
-    img: img4,
-  },
-  {
-    id: 6,
-    name: "SAMIYA ATHAY",
-    title: "Line Producer",
-    email: "samiyaathay@gmail.com",
-    fb_link: "https://www.facebook.com/athay.udhay",
-    linkedin: "https://www.linkedin.com/in/samia-athay-1953b2276/",
-    img: img6,
-  },
-  {
-    id: 7,
-    name: "MONJURI BISWAS",
-    title: "Assistant Director",
-    email: "moonjuribiswas@gmail.com",
-    fb_link: "https://www.facebook.com/monjuri.biswas.5",
-    linkedin: "https://www.linkedin.com/in/monjuri-biswas-85b289276/",
-    img: img7,
-  },
-];
