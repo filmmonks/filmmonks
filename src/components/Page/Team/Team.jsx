@@ -40,8 +40,7 @@ import useGet from "../../../hooks/useGet";
 const Team = () => {
   const url = "https://filmmonks-server.onrender.com/api/teams";
   const { dataSource, loading, error } = useGet(url);
-  console.log(dataSource);
-  console.log(teamData);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -109,7 +108,10 @@ const Team = () => {
                 <div className="relatives group ">
                   <img
                     className="w-[250px] mx-auto mb-5"
-                    src={`https://filmmonks-server.onrender.com/team/` + data?.image}
+                    src={
+                      `https://filmmonks-server.onrender.com/team/` +
+                      data?.image
+                    }
                     alt=""
                   />
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 hover:brightness-200   transition-opacity duration-600 ease-in-out">
@@ -155,7 +157,10 @@ const Team = () => {
                   <div className="relative group">
                     <img
                       className="w-[250px] mx-auto mb-5"
-                      src={`https://filmmonks-server.onrender.com/team/` + data?.image}
+                      src={
+                        `https://filmmonks-server.onrender.com/team/` +
+                        data?.image
+                      }
                       alt=""
                     />
                   </div>
@@ -267,7 +272,6 @@ const TeamWrapper = styled.div`
     line-height: 17px;
   }
   .title {
-
     margin-top: 10px;
     font-family: "Inter";
     font-style: normal;
