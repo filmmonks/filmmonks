@@ -40,8 +40,15 @@ const AllRecentWorks = () => {
       {loading ? (
         <Loading />
       ) : (
-        <Wrapper className="pt-44">
-          <div className="flex flex-wrap justify-between lg:mx-12 md:mx-12 mx-12 lg:gap-6 gap-y-12 lg:mb-12 mb-8">
+        <Wrapper
+          style={{
+            backgroundImage: "none",
+            backgroundColor: "rgb(15 12 14)",
+            marginBottom: "0px",
+          }}
+          className="pt-44 "
+        >
+          <div className="flex flex-wrap justify-between mx-12 lg:gap-6 gap-y-12 lg:mb-12 pb-8 all-recent-works">
             {reversedArray.map((data) => (
               <>
                 {data?.videoLink && (

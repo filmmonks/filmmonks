@@ -96,7 +96,13 @@ export const Wrapper = styled.div`
       width: 100%;
     }
   }
-
+  .all-recent-works {
+    height: 100vh;
+    margin-bottom: 0px;
+    @media screen and (max-width: 767px) {
+      height: auto;
+    }
+  }
   @media screen and (max-width: 768px) {
     background-image: none;
     background-color: rgb(15 12 14);
@@ -106,21 +112,23 @@ export const Wrapper = styled.div`
   .video-size {
     width: 320px;
     height: 215px;
-    margin-left: 20px;
 
     @media only screen and (max-width: 1199px) and (min-width: 1027px) {
       width: 250px;
+      height: 215px;
     }
     @media only screen and (min-width: 765px) and (max-width: 1026px) {
       width: auto;
     }
     @media screen and (max-width: 440px) {
       width: 320px;
+      margin-left: 0px;
       height: 215px;
     }
     @media screen and (max-width: 376px) {
       width: 280px;
       height: 215px;
+      margin-left: 0px;
     }
 
     @media screen and (max-width: 440px) {
