@@ -40,17 +40,17 @@ const Banner = () => {
         ))} */}
         <img
           className=" h-screen w-[100%] hidden lg:block pt-16 "
-          src={banner1}
+          src={banner}
           alt="banner"
         />
         <img
           className=" h-screen w-[100%] hidden md:block lg:hidden pt-16"
-          src={banner1}
+          src={tabBanner}
           alt="banner"
         />
         <img
           className=" h-[60vh] w-[100%] lg:hidden md:hidden block pt-16"
-          src={banner1}
+          src={mobileBannar}
           alt="banner"
         />
       </div>
