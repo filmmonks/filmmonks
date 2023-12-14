@@ -30,10 +30,62 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useGet from "../../../hooks/useGet";
 
+const teamData = [
+  {
+    _id: "64b284dc1516ab930808d5b2",
+    image: "https://i.ibb.co/pj2Cwf7/1689421020413-1.png",
+    title: "Co-Founder, Producer",
+    email: "shithe.deb@gmail.com",
+    fb_link: "https://www.facebook.com/shithe.debnath",
+    linkedin: "https://www.linkedin.com/in/shithe-debnath-b19465271",
+    name: "SHITHE DEBNATH",
+  },
+  {
+    _id: "64b2856c1516ab930808d5b3",
+    image: "https://i.ibb.co/Y3PSp7H/1689421164728-2.png",
+    title: "Co-Founder, Director",
+    email: "jaynto.k.kundu@gmail.com",
+    fb_link: "https://www.facebook.com/profile.php?id=100011977185218",
+    linkedin: "https://www.linkedin.com/in/jaynto-kumar-kundu-4679621a0",
+    name: "JAYNTO KUNDU",
+  },
+  {
+    name: "Syed Sadman",
+    title: "Line Producer",
+    email: "syed.sakib.sadman@gmail.com",
+    fb_link: "https://www.facebook.com/evolved.sadman",
+    linkedin: "https://www.linkedin.com/in/sadman-sakib-196b8b2a2/",
+    image: "https://i.ibb.co/346MrwC/Sadman.png",
+  },
+  {
+    name: "Tahmid Hosen Rijon",
+    title: "Digital Marketing Expert",
+    email: "tahmidhr101@gmail.com",
+    fb_link: "https://www.facebook.com/thamid.hosen.92",
+    linkedin: "https://www.linkedin.com/in/tahmid-hosen-rijon-802837251/",
+    image: "https://i.ibb.co/qFnSWLb/Rijon.png",
+  },
+  {
+    name: "Jannatul Ferdos Akhi",
+    title: "Assistant Editor",
+    email: "jannatul.akhi.ferdos@gmail.com",
+    fb_link: "https://www.facebook.com/aami.akhii/",
+    linkedin: "https://www.linkedin.com/in/jannatulferdosakhi/",
+    image: "https://i.ibb.co/DgZjjZn/Aakhi.png",
+  },
+  {
+    name: "Mohtarema Mrinmoe",
+    title: "Assistant Director",
+    email: "mohtaremamrinmoe@gmail.com",
+    fb_link: "https://www.facebook.com/MohtaremaSubahTabassumMrinmoye",
+    linkedin: "https://www.linkedin.com/in/mohtarema-mrinmoe-7ba30b240/",
+    image: "https://i.ibb.co/Vttd2Pg/Mrinmoe.png",
+  },
+];
 const Team = () => {
   const url = "https://filmmonks-server.onrender.com/api/teams";
   const { dataSource } = useGet(url);
-
+  console.log(teamData);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
@@ -96,15 +148,16 @@ const Team = () => {
               },
             }}
           >
-            {dataSource.map((data) => (
+            {teamData.map((data) => (
               <SwiperSlide key={data._id}>
                 <div className="relatives group ">
                   <img
                     className="w-[250px] mx-auto mb-5"
-                    src={
-                      `https://filmmonks-server.onrender.com/team/` +
-                      data?.image
-                    }
+                    // src={
+                    //   `https://filmmonks-server.onrender.com/team/` +
+                    //   data?.image
+                    // }
+                    src={data.image}
                     alt=""
                   />
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 hover:brightness-200   transition-opacity duration-600 ease-in-out">
@@ -145,15 +198,16 @@ const Team = () => {
         >
           <div className="navigation-wrapper  relative mt-10">
             <div ref={sliderRef} className="keen-slider">
-              {dataSource.map((data) => (
+              {teamData.map((data) => (
                 <div key={data._id} className="keen-slider__slide  mb-10">
                   <div className="relative group">
                     <img
                       className="w-[250px] mx-auto mb-5"
-                      src={
-                        `https://filmmonks-server.onrender.com/team/` +
-                        data?.image
-                      }
+                      // src={
+                      //   `https://filmmonks-server.onrender.com/team/` +
+                      //   data?.image
+                      // }
+                      src={data.image}
                       alt=""
                     />
                   </div>
